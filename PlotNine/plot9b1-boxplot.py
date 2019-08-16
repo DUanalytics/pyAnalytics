@@ -16,3 +16,11 @@ mtcars.columns
 
 #%%%
 (ggplot(mtcars)    + geom_boxplot(aes(x='factor(gear)', y='mpg')) +  coord_flip())
+
+#%% Violin
+(ggplot(mpg, aes(x='factor(cyl)', y='cty')) + geom_violin() + xlab('cylinders') + ylab('miles/galon'))
+
+#%%
+( ggplot(mpg, aes(x='factor(cyl)', y='cty')) + geom_violin() + geom_jitter(width=.05, height=0) + xlab('cylinders') + ylab('miles/galon'))
+#%%
+( ggplot(mpg, aes(x='factor(cyl)', y='cty')) + geom_violin(scale='count') + xlab('cylinders')  + ylab('miles/galon'))
