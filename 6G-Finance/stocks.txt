@@ -1,0 +1,4 @@
+sbin.ns
+icicibank.ns
+hdfcbank.ns
+reliance.ns
