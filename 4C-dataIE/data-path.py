@@ -15,7 +15,7 @@ df1 = pd.read_csv('data/iris.csv')
 df1.head()
 df1
 #change for your folder
-df1a = pd.read_csv('E:/pywork/pyProjects/sipPython/data/iris.csv')
+df1a = pd.read_csv('E:/pywork/pyProjects/duanalytics/pyAnalytics/data/iris.csv')
 df1a.head()
 
 #when reverse slash use two back slash

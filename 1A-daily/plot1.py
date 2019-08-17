@@ -5,11 +5,12 @@ import pandas as pd
 import numpy as np
 
 #numpy
-np1 = np.array([1,5,6])
+np1 = np.array([1,5,6,5,2,3,4,5,3,4,6,3])
 np1
 hist = np.histogram(np1)
+hist#nothing will happen.
 
-#numpy plot; pandas plor
+# pandas plot
 studentcount = pd.Series([30, 25, 37])
 studentcount.plot(kind='barh')
 studentcount.plot(kind='bar')
