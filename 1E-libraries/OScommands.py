@@ -5,7 +5,8 @@ import sys
 
 #path where modules are searched
 sys.path
-
+#Python imports work by searching the directories listed in sys.path.
+print('\n'.join(sys.path))
 #curren working directory
 import os
 os.getcwd()
@@ -29,3 +30,5 @@ os.listdir('C:/Users/du/desktop/')
 
 
 #https://learnbatta.com/blog/working-with-os-module-in-python-71/
+#https://www.studytonight.com/network-programming-in-python/installing-third-party-libraries
+#https://www.youtube.com/watch?v=Z_Kxg-EYvxM
