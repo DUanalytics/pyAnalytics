@@ -1,0 +1,13 @@
+- C++
+- Forex/FX, J2EE, Spring, Hibernate, REST
+- Clojure
+- Scala
+
+Java Enterprise
+JEE/J2EE
+Hibernate
+Spring
+Struts
+
+Java 7, Java 8, Agile, TDD, NoSQL
+Kafka, Scala Test, Scala, Python, Hazelcast, Cassandra, Docker

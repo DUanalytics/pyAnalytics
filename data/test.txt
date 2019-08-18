@@ -1,0 +1,2 @@
+Programming is fun with Python 
+, R is also good
