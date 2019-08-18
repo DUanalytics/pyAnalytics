@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 #Python write to file
-
 #csv
 #excel
 #googlesheets

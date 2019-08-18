@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #Data sets in Python Libraries
 #https://gitential.com/datasets
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#%
 #data import
 
 import pandas as pd

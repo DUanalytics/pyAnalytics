@@ -1,9 +1,7 @@
 #General Introduction : based on mtcars data set
 #%
-
 url = "https://raw.githubusercontent.com/dupadhyaya/hheanalytics/master/data/mtcars.csv"
 #mtcars is inbuilt data in R, exported csv, pushed to git and now importing it here
-
 #load libraries
 #import pandas as pd  #dataframe
 import numpy as np # arrays type
@@ -14,14 +12,13 @@ df = pd.read_csv(url)
 #check
 df.shape
 df.head()
-
 #category Columns
 df.columns
 catcolumns1 = ['cyl', 'vs', 'am', 'gear', 'carb']
 catcolumns1
 df[catcolumns1] = df[catcolumns1].astype('category')
 df.dtypes
-
+dir(df)
 #describe data
 df.describe()
 df[catcolumns1].describe()

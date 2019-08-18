@@ -1,19 +1,18 @@
-# -*- coding: utf-8 -*-
-#-----------------------------
+#Pandas -Group By
 #%
-#Group By
-#%
-
 import pandas as pd
+pd.set_option('display.max_columns',11)
 import numpy as np
-
-#import data
-df2 = pd.read_csv('data\mtcars.csv')
+import matplotlib.pyplot as plt
+from pydataset import data
+mtcars = data('mtcars')
+mtcars.head()
+df2 = mtcars
 df2.head()
 df2.columns
 df2.am
-df2[df2['am']== 0]['mpg'].min()
-df2.groupby("am").agg({ "mpg" : "min" })
+df2[df2['am']== 0]['mpg'].min() #min mileage of cars=0(auto)
+df2.groupby("am").agg({ "mpg" : "min" }) #min mileage of each am 
 
 #groupby
 
@@ -43,9 +42,8 @@ df2.groupby(['cyl','gear'], sort=True, as_index= True).aggregate({'mpg' :'mean'}
 
 #level 
 df2.groupby(level=0)['mpg'].mean()  #first level of index (here only 1)
+#only 1 index column ie car names
 df2.groupby(level=1)['mpg'].mean()  #error as there is no index
-
-
 
 #axis
 df2.groupby(['cyl','gear'], axis=0, sort=True).aggregate({'mpg':'mean'})
@@ -60,8 +58,7 @@ df2.groupby(['cyl','gear'], observed=False).aggregate({'mpg':'mean'})
 
 #groupkeys - with apply, index pieces
 
-
-#squeeze - reduce dimn
+#squeeze - reduce dimn : 1 output
 df2.groupby(['cyl','gear'], squeeze=True)['mpg'].mean()
 df2.groupby(['cyl','gear'], squeeze=False)['mpg'].mean()
 
