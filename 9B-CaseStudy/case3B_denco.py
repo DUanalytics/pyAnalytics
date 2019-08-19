@@ -97,4 +97,5 @@ df[['revenue', 'region']].groupby( 'region').sum().sort_values(by='revenue', asc
 
 
 #%%%
-
+df.groupby(['custname'])['margin'].nlargest(3)
+df.sort_values(['revenue'], ascending= True).groupby( 'region' ).mean()
