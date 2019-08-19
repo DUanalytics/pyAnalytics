@@ -7,3 +7,8 @@
 #Statistics is the science of data.
 #Data is any collection of observations on a population of interest.
 #Statistics give us a concrete way to compare populations using numbers rather than ambiguous description.
+
+#Links
+https://scipy.org/
+https://docs.scipy.org/doc/numpy/
+https://www.numpy.org/
