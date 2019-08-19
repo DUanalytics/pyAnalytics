@@ -1,5 +1,6 @@
 #Topic: Pandas - group-aggregate, pivot, crosstab together 
 #-----------------------------
+#https://github.com/duanalytics/pyAnalytics/blob/master/5G-pd/pd_agg_xtab_pivot.py
 #libraries
 import pandas as pd
 pd.set_option('display.max_columns',11)
@@ -35,7 +36,7 @@ group1['mpg'].agg([np.sum, np.mean, np.median])  #one column agg mpg
 group1.agg([np.sum, np.mean, np.median])  #all numeric columns
 
 #rename columns as you aggregate
-group1['mpg'].agg([np.sum, np.mean, np.median])
+group1['mpg'].agg([np.sum, np.mean, np.median, "count"])
 group1['mpg'].agg([np.sum, np.mean, np.median]).rename(columns={'sum':'Total', 'mean':"Average", 'median':'Middle_Value'})
 
 #different functions different columns
