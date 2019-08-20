@@ -9,8 +9,13 @@ from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 
 # Load the diabetes dataset
-url='https://github.com/DUanalytics/datasets/blob/master/csv/areaRent.csv'
+url1 = "https://github.com/DUanalytics/datasets/blob/master/csv/"
+url2a = "slr1.csv"
+url2b = "women1.csv"
+url = url1 + url2a
+url
 data = pd.read_csv(url)
+data = pd.read_csv('data/slr1.csv')
 data
 
 #data has features, target has DV value Use only one feature
@@ -22,6 +27,18 @@ y = data.Y.values
 y=y.reshape(-1,1)
 y
 
+#%%%
+from sklearn import linear_model
+lm = linear_model.LinearRegression()
+model1 = lm.fit(X, y)
+print(model1)
+model1.summary()  #no summary
+lm.score(X,y)  #R2
+lm.coef_   #b1 coef
+lm.intercept_ #b0 coef
+y_pred = lm.predict(X)
+mean_squared_error(y,y_pred))
+r2_score(y, y_pred)
 # Create linear regression object from sklearn import linear_model
 regr = linear_model.LinearRegression()
 #select linear regression
@@ -69,14 +86,6 @@ predictions = model2.predict(X2)
 predictions
 y
 #%%
-from sklearn import linear_model
-lm = linear_model.LinearRegression()
-model3 = lm.fit(X, y)
-print(model3)
-model3.summary()  #no summary
-lm.score(X,y)  #R2
-lm.coef_   #b1 coef
-lm.intercept_ #b0 coef
 
 
 #%%
