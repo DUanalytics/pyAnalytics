@@ -60,4 +60,7 @@ plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
 plt.xticks(())
 plt.yticks(())
 
-plt.show()
+plt.show();
+
+#Links
+#https://towardsdatascience.com/machine-learning-workflow-on-diabetes-data-part-01-573864fcc6b8

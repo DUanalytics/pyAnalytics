@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 
 # Load the diabetes dataset
-url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/slr1.csv'
+url='https://github.com/DUanalytics/datasets/blob/master/csv/areaRent.csv'
 data = pd.read_csv(url)
 data
 
@@ -72,6 +72,7 @@ y
 from sklearn import linear_model
 lm = linear_model.LinearRegression()
 model3 = lm.fit(X, y)
+print(model3)
 model3.summary()  #no summary
 lm.score(X,y)  #R2
 lm.coef_   #b1 coef
