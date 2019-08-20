@@ -64,6 +64,26 @@ mtcars = data('mtcars')
 df1 = mtcars[['mpg','wt','hp']]
 MTmodel1 = ols("mpg ~ wt + hp", data=df1).fit()
 print(MTmodel1.summary())
+predictionM1 = MTmodel1.predict()
+predictionM1
+
+fig= plt.figure(figsize=(15,8))
+fig = sm.graphics.plot_regress_exog(MTmodel1, 'wt', fig=fig)
+
+fig, ax = plt.subplots(figsize=(12, 8))
+fig = sm.graphics.plot_fit(MTmodel1, "wt", ax=ax) 
+
+fig, ax = plt.subplots(figsize=(12, 8))
+fig = sm.graphics.plot_ccpr(MTmodel1, "wt", ax=ax)
+
+fig = plt.figure(figsize=(12, 8))
+fig = sm.graphics.plot_ccpr_grid(MTmodel1, fig=fig)
+
+fig = plt.figure(figsize=(12, 8))
+fig = sm.graphics.plot_ccpr_grid(MTmodel1, fig=fig)
+
+#fig, ax = plt.subplots()
+#fig = sm.graphics.plot_fit(MTmodel1, 0, ax=ax)
 #----
 IV = df1[['wt','hp']].values
 IV
