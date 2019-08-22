@@ -2,6 +2,7 @@
 #%
 import pandas as pd
 pd.set_option('display.max_columns',11)
+pd.set_option('display.width', 1000)
 import numpy as np
 import matplotlib.pyplot as plt
 from pydataset import data
@@ -17,6 +18,13 @@ df2.groupby("am").agg({ "mpg" : "min" }) #min mileage of each am
 #new in 25 version
 df2.groupby('gear').agg(Mean_mpg=('mpg','mean'), Mean_wt=('wt','mean'))
 df2.groupby('gear').agg(Min_mpg=('mpg','min'), Max_mpg = ('mpg','max'))
+df2.groupby("gear").agg(  min_mpg=pd.NamedAgg(column='mpg', aggfunc='min'), max_mpg=pd.NamedAgg(column='mpg', aggfunc='max'), average_wt= pd.NamedAgg( column='wt', aggfunc=np.mean))
+df2.groupby("gear").mpg.agg( min_mpg="min", max_mpg="max", sd_mpg='std' )
+#first and last mpg for each gear type
+gGear = df2.groupby('gear').apply(lambda x: x.sort_values(['mpg']))
+gGear
+df2.groupby('gear', sort=1).mpg.agg([lambda x: x.iloc[0], lambda x: x.iloc[-1]])
+df2.groupby('gear').mpg.agg([lambda x: x.iloc[0], lambda x: x.iloc[1], lambda x: x.iloc[-1]])
 #groupby
 
 df2.groupby('cyl')
