@@ -14,6 +14,9 @@ df2.am
 df2[df2['am']== 0]['mpg'].min() #min mileage of cars=0(auto)
 df2.groupby("am").agg({ "mpg" : "min" }) #min mileage of each am 
 
+#new in 25 version
+df2.groupby('gear').agg(Mean_mpg=('mpg','mean'), Mean_wt=('wt','mean'))
+df2.groupby('gear').agg(Min_mpg=('mpg','min'), Max_mpg = ('mpg','max'))
 #groupby
 
 df2.groupby('cyl')
