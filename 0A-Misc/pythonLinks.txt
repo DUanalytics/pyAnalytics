@@ -1,0 +1,10 @@
+#Topic: Python Links
+#-----------------------------
+#libraries
+https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/Python4_DataAnalysis.html
+
+https://www.webpages.uidaho.edu/~stevel/504/Pandas%20DataFrame%20Notes.pdf
+https://jeffdelaney.me/blog/useful-snippets-in-pandas/
+https://www.tutorialspoint.com/python/index.htm
+
+https://www.hackerearth.com/practice/python/getting-started/functions/tutorial/
