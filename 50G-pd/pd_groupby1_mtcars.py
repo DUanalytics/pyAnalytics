@@ -50,6 +50,13 @@ df2.groupby('cyl', as_index=False).aggregate({'mpg':'mean'})  #no index
 #sort
 df2.groupby(['cyl','gear'], sort=False, as_index= True).aggregate({'mpg' :'mean'})
 df2.groupby(['cyl','gear'], sort=True, as_index= True).aggregate({'mpg' :'mean'})
+df2[['mpg','wt','gear']].groupby('gear').apply(lambda x: x.sort_values(by = 'mpg', ascending = 1))
+df2
+df2.sort_values(by='mpg')
+df2.sort_values(by=['cyl','wt'])
+
+df2.apply(lambda x: x.sort_values()) #index column only
+
 
 #level 
 df2.groupby(level=0)['mpg'].mean()  #first level of index (here only 1)
