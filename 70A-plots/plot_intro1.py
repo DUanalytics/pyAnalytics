@@ -43,6 +43,7 @@ plt.show();
 plt.plot(npA[:,0], npA[:,1],'g-', npA[:,0], npA[:,2], 'r-' )
 plt.show();
 
+
 #%%%
 x1 = df.wt.values
 y1 = df.mpg.values
