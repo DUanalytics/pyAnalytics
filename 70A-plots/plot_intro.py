@@ -36,7 +36,7 @@ ax.set_ylim(ymin=0, ymax=30)
 ax.annotate(10, (0,10))
 ax.annotate(20, (1,20))
 ax.annotate(15, (2,15))
-plt.gca().set_title('Main title')
+#plt.gca().set_title('Main title')
 fig.tight_layout()
 plt.show();
 
@@ -79,14 +79,11 @@ ax[0, 0].plot(range(10), 'r') #row=0, col=0
 ax[0, 0].title.set_text('1 Plot')
 ax[1, 0].plot(range(10), 'b') #row=1, col=0
 ax[1, 0].title.set_text('2 Plot')
-
 ax[0, 1].plot(range(10), 'g') #row=0, col=1
 ax[0, 1].title.set_text('3 Plot')
-
 ax[1, 1].plot(range(10), 'k') #row=1, col=1
 ax[1, 1].title.set_text('4 Plot')
-
-plt.show()
+plt.show();
 #ax.title.set_text('My Plot Title')
 
 #-------
@@ -109,12 +106,11 @@ ax.plot(data)
 ax = plt.subplot("212")
 ax.set_title("2 Plot")
 ax.plot(data)
-plt.show()
+plt.show();
     
 #------------    
 #import matplotlib.pyplot as plt
-for i in range(4):
-    plt.subplot(2,2,i+1).set_title('Subplot n°{}' .format(i+1))
+for i in range(4):    plt.subplot(2,2,i+1).set_title('Subplot n°{}' .format(i+1))
 plt.show()
 
 #
