@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+#https://www.dropbox.com/preview/1%20Noida/03C%20ML-DM/03B%20Descriptive/P/Py%20Denco.smmx
 #see all columns
 pd.set_option('display.max_columns',15)
 #others - max_rows, width, precision, height, date_dayfirst, date_yearfirst
@@ -14,12 +14,13 @@ df = pd.read_csv(url)
 #see properties of data
 df.head()
 df.columns
+df.shape
 len(df)
 df.describe()
 df.shape
 df.dtypes
 df['region'] = df['region'].astype('category')
-
+df.dtypes
 df.region.value_counts()
 df.region.value_counts().plot(kind='bar')
 df.sort_values(['custname']) 
@@ -28,7 +29,7 @@ df.sort_values(['custname'])
 #count by customers, sort, pick top 5 
 #Series
 df.custname.value_counts()
-df.custname.value_counts().sort_values(ascending=False)[0:8]
+df.custname.value_counts().sort_values(ascending=True)[0:30]
 df.custname.value_counts().sort_values(ascending=False).head(5)
 #pandas
 df.groupby('custname').size().sort_values(ascending=False)
@@ -55,6 +56,8 @@ df[['partnum','revenue']].sort_values(by='revenue', ascending=False).head(5)
 #these are top parts which give max revenue per part
 #which partnum gave how much revenue total
 df[['partnum','revenue']].groupby('partnum').sum()
+df[['partnum','revenue']].groupby('partnum').aggregate([np.sum, 'size', 'max', 'min'])
+
 df[['partnum','revenue']].groupby('partnum').sum().sort_values(by='revenue', ascending=False).head(5)
 #this total revenue value giving items
 
@@ -64,7 +67,7 @@ df[['partnum','revenue']].groupby('partnum').sum().sort_values(by='revenue', asc
 df[['partnum','margin']].sort_values(by='margin', ascending=False)
 df[['partnum','margin']].sort_values(by='margin', ascending=False).head(5)
 #these are top parts which give max margins
-
+df.iloc[2805,]
 #if total sales has to be considered
 df[['partnum','margin']].groupby('partnum').sum()
 df[['partnum','margin']].groupby('partnum').sum().sort_values(by='margin', ascending=False).head(5)
@@ -75,7 +78,7 @@ df[['partnum','margin']].groupby('partnum').sum().sort_values(by='margin', ascen
 df.groupby('partnum').size().sort_values(ascending=False).head(5)
 
 #which regions gave max revenue
-df[['revenue', 'region']].groupby( 'region').sum().sort_values(by='revenue', ascending=False)
+df[['margin','revenue', 'region']].groupby( 'region').sum().sort_values(by='revenue', ascending=False)
 #East gave max revenue
 df[['revenue', 'region']].groupby( 'region' ).sum().sort_values( by='revenue', ascending=False).plot(kind='barh')
 
