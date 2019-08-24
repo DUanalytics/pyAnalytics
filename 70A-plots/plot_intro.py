@@ -1,7 +1,7 @@
 #Plot introduction
 #-----------------------------
 #%
-https://realpython.com/python-matplotlib-guide/#a-burst-of-color-imshow-and-matshow
+#https://realpython.com/python-matplotlib-guide/#a-burst-of-color-imshow-and-matshow
 
 import matplotlib.pyplot as plt
 [attr for attr in dir(plt) if attr.startswith('rc')]
@@ -25,8 +25,7 @@ plt.style.use('fivethirtyeight')
 #subplots
 fig, ax = plt.subplots()
 
-#
-
+# run these lines together
 fig, ax = plt.subplots(nrows=1,ncols=1,figsize=(5, 3))
 ax.bar(height=[10,20,15],x=['A','B','C'])
 ax.set_title('Title')
@@ -35,6 +34,7 @@ ax.set_ylabel('Y Label')
 ax.set_xlabel('X Label')
 ax.set_ylim(ymin=0, ymax=30)
 ax.annotate(10, (0,10))
+ax.annotate(20, (1,20))
 ax.annotate(15, (2,15))
 plt.gca().set_title('Main title')
 fig.tight_layout()
@@ -48,34 +48,30 @@ plt.title('Title-1')
 plt.subplot(1,2,2)
 plt.title('Title2')
 plt.bar(height=[10,20,15],x=['A','B','C'])
+plt.show();
 #
+x=[1,2,3]; y=[4,5,6]
 fig = plt.figure()
-
 plt.subplot(2, 2, 1)
 plt.plot(x, y)
-
 plt.subplot(2, 2, 2)
 plt.plot(x, y)
-
 plt.subplot(2, 2, 3)
 plt.plot(x, y)
-
 plt.subplot(2, 2, 4)
 plt.plot(x, y)
-
-plt.show()
+plt.show();
 
 #%%%
 import matplotlib.pyplot as plt
 x = range(10)
 y = range(10)
 dir(fig); dir(ax)
-
+#
 fig, ax = plt.subplots(nrows=2, ncols=2)
 for row in ax:
-    for col in row:
-       col.plot(x, y)
-plt.show()
+    for col in row:       col.plot(x, y)
+plt.show();
 
 #plan before
 fig, ax = plt.subplots(nrows=2,ncols=2,figsize=(8, 4))

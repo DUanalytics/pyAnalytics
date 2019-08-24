@@ -7,4 +7,4 @@ x
 np.sin(x)
 #fig = plt.figure()
 plt.plot(x, np.sin(x))
-plt.show() # import when running from script
+plt.show(); # import when running from script
