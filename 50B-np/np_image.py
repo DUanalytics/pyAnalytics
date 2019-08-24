@@ -4,7 +4,7 @@
 
 from skimage import io
 #load an image from your file : change path to suit the location
-photo = io.imread('E:/pywork/pydata/southblock.jpg')
+photo = io.imread('plot1.png')
 type(photo)
 
 import matplotlib.pyplot as plt
