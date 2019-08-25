@@ -1,6 +1,4 @@
 #Boxplots and paired differences
-
-import pandas
 import matplotlib.pyplot as plt
 #data
 from pydataset import data
@@ -12,6 +10,13 @@ plt.figure()
 mtcars.boxplot(column=['mpg'])
 plt.yticks(5)
 plt.show();
+
+plt.figure()
+mtcars.boxplot(column=['mpg','wt'])
+plt.yticks(5)
+plt.show();
+
+
 
 #Different dataset
 import pandas as pd

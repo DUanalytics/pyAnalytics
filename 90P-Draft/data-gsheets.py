@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Tue May  8 17:48:11 2018: Dhiraj
-"""
 from io import StringIO  # got moved to io in python3.
 import pandas as pd
 
@@ -9,6 +6,7 @@ import requests
 r = requests.get('https://docs.google.com/spreadsheet/ccc?key=0Ak1ecr7i0wotdGJmTURJRnZLYlV3M2daNTRubTdwTXc&output=csv')
 data = r.content
 data
+
 df = pd.read_csv(StringIO(data), index_col=0,parse_dates=['Quradate'])
 
 df.head()
@@ -16,17 +14,9 @@ df.head()
 
 
 #%%
+# Set first column as rownames in data frame
 
-
-est = pd.read_csv('https://docs.google.com/spreadsheets/d/' + 
-                   '0Ak1ecr7i0wotdGJmTURJRnZLYlV3M2daNTRubTdwTXc' +
-                   '/export?gid=0&format=csv',
-                   # Set first column as rownames in data frame
-                   index_col=0,
-                   # Parse column values to datetime
-                   parse_dates=['Quradate']
-                  )
-test.head(5)  # Same result as @TomAugspurger
+ 
 
 
 #%%  Not working

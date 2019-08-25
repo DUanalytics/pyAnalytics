@@ -1,11 +1,8 @@
 #Multiple Columns
 #-----------------------------
-#%
-#Converting multiple columns to Categories
-
+#%#Converting multiple columns to Categories
 #multiple columns to categories
 df=df2
-
 df
 for col_name in df.columns:
     if(df[col_name].dtype == 'object'):

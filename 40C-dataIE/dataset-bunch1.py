@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Tue May  8 16:51:42 2018: Dhiraj
-"""
-
 # Create a bunch type of data objects
 import numpy as np
 import sklearn.datasets

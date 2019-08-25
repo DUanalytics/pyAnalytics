@@ -1,5 +1,4 @@
 #Printing items in list
-
 #-----------------------------
 #%
 #print list items without using index

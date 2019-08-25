@@ -41,25 +41,31 @@ fig.tight_layout()
 plt.show();
 
 #multiple plots - add realtime
+
 fig, ax = plt.subplots(figsize=(8, 4))
-plt.subplot(1,2,1)
+plt.subplot(1,2,1)# 1 row, 2 columns plot : first plot
 plt.bar(height=[10,20,15],x=['A','B','C'])
 plt.title('Title-1')
-plt.subplot(1,2,2)
+plt.subplot(1,2,2)# 1 row, 2 columns plot : Second plot
 plt.title('Title2')
 plt.bar(height=[10,20,15],x=['A','B','C'])
 plt.show();
-#
-x=[1,2,3]; y=[4,5,6]
-fig = plt.figure()
-plt.subplot(2, 2, 1)
+
+# 4 plots in 2 x 2 matrix
+x=[1,2,3]; y=[4,8,6]
+fig = plt.figure(figsize=(10, 6))
+plt.subplot(2, 2, 1) # matrix of 2 x 2 plots : first plot
 plt.plot(x, y)
-plt.subplot(2, 2, 2)
+plt.title('1st plot')
+plt.subplot(2, 2, 2) # matrix of 2 x 2 plots : 2nd plot
 plt.plot(x, y)
-plt.subplot(2, 2, 3)
+plt.title('2nd plot')
+plt.subplot(2, 2, 3) # matrix of 2 x 2 plots : 3nd plot
 plt.plot(x, y)
-plt.subplot(2, 2, 4)
-plt.plot(x, y)
+plt.title('3rd plot')
+plt.subplot(2, 2, 4) # matrix of 2 x 2 plots : 4th plot
+plt.bar(height=x, x=y)
+plt.title('4th plot')
 plt.show();
 
 #%%%
@@ -94,7 +100,7 @@ ax1.plot(range(10), 'r')
 ax2.plot(range(10), 'b')
 ax3.plot(range(10), 'g')
 ax4.plot(range(10), 'k')
-plt.show()
+plt.show();
 
 #
 data = [1, 2, 3, 4, 5]

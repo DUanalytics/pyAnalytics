@@ -10,7 +10,7 @@ sns.set(style="ticks")
 from pydataset import data
 mtcars = data('mtcars')
 mtcars.head()
-
+mtcars.cyl.value_counts()
 #no of cylinders
 g = sns.FacetGrid(mtcars, col="cyl")
 plt.figure(figsize=(6, 5))

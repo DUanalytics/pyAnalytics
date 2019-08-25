@@ -1,11 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Tue May  8 16:40:18 2018: Dhiraj
-"""
-# Code source: Jaques Grobler
-# License: BSD 3 clause
-
-
+#Linear Regression -Diabetes
+#data from bunch; 1 IV, 1 DV, sklearn
+#partition data based on serial order
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
@@ -15,7 +10,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 diabetes = datasets.load_diabetes()
 diabetes
 type(diabetes)
-
+diabetes.data
 diabetes.columns
 # Use only one feature
 diabetes_X = diabetes.data[:, np.newaxis, 2]
@@ -40,8 +35,7 @@ diabetes_y_pred = regr.predict(diabetes_X_test)
 # The coefficients
 print('Coefficients: \n', regr.coef_)
 # The mean squared error
-print("Mean squared error: %.2f"
-      % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+print("Mean squared error: %.2f"   % mean_squared_error(diabetes_y_test, diabetes_y_pred))
 # Explained variance score: 1 is perfect prediction
 print('Variance score: %.2f' % r2_score(diabetes_y_test, diabetes_y_pred))
 
@@ -52,4 +46,7 @@ plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
 plt.xticks(())
 plt.yticks(())
 
-plt.show()
+plt.show();
+
+#end; 
+#------------------------------------

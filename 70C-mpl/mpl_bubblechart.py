@@ -18,7 +18,7 @@ plt.scatter(x,y,s=z*777,c='Chartreuse') ; plt.show()
 #assign random colors to different bubbles chart in Python.
 colors=np.random.rand(30)
 colors
-plt.scatter(x,y,s=z*777,c=colors,alpha=0.5) ; plt.show();
+plt.scatter(x,y,s=z*777,c=colors,alpha=0.8) ; plt.show();
 #alpha for transparency
 
 #%%%
@@ -32,7 +32,7 @@ plt.scatter(x,y,s=z*3001,marker='*',color='pink'); plt.show();
 plt.scatter(x,y,s=z*3001,marker='8',color='lavender') ; plt.show();
 
 #Setting the edges for your Python bubbles charts
-plt.scatter(x,y,s=z*4000,c='beige', alpha=0.4,linewidth=7) ; plt.show();
+plt.scatter(x,y,s=z*4000,c='beige', alpha=0.8,linewidth=7) ; plt.show();
 
 plt.scatter(x,y,s=z*4000, c='beige', linewidth=7,edgecolors='brown') ; plt.show();
 

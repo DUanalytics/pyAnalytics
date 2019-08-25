@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-#Created on Mon Jun 10 17:53:20 2019 : dhiraj@sony
-#write to twitter : developer-accounts@twitter.com
+#Twitter : Tweets Download
+#-----------------------------
+
 #Download tweets from twitter
 import tweepy
 import csv
@@ -17,26 +17,29 @@ auth.set_access_token(AccessToken, AccessTokenSecret)
 
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-#update your status 
-#api.update_status("Using Python for downloading Tweets")
-
 #open / Create a file
 csvFile = open('du.csv','w')
 #r - read, w -new, a -append,r+ read&write
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="@narendramodi", count=100, lang="en", since = "2019-08-23").items():
+handle ='@dupadhyaya'
+#change to see the values, tweets will be stored in du.csv in project folder #run the for loop together
+for tweet in tweepy.Cursor(api.search, q=handle, count=100, lang= "en", since = "2019-07-01").items():
     print(tweet.created_at, tweet.text)
-    csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
+    csvWriter.writerow([tweet.created_at, tweet.text.encode( 'utf-8') ])
+
+
     
-csvFile = open('ua.csv','a')
+csvFile = open('ua.csv','w')
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="#unitedAirlines", count=100, lang="en", since = "2019-01-01").items():
+topic = '#unitedAirlines'
+for tweet in tweepy.Cursor(api.search, q=topic, count=100, lang="en", since = "2019-01-01").items():
     print(tweet.created_at, tweet.text)
-    csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
+    csvWriter.writerow([tweet.created_at, tweet.text.encode( 'utf-8')])
                  
 csvFile = open('icc.csv','w')
 csvWriter = csv.writer(csvFile)
-for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-06-22").items():
+topic = '#ICC'
+for tweet in tweepy.Cursor(api.search, q="#ICC", count=100, lang="en", since = "2019-07-01").items():
     print(tweet.created_at, tweet.text)
     csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
 
