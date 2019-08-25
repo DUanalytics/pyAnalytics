@@ -19,10 +19,14 @@ df.columns
 #For calculating skewness by using df.skew() python inbuilt function.
 
 df.mpg
-df.mpg.skew()  #positive : right skewed
+df.mpg.skew()  #positive : right skewed, moderate, right tail longer
+#majority of values in left of mean
+#If skewness is not close to zero, then your data set is not normally distributed.If skewness is between -0.5 and 0.5, the distribution is approximately symmetric.  If skewness is less than -1 or greater than 1, the distribution is highly skewed. If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.If skewness is between -0.5 and 0.5, the distribution is approximately symmetric.
 df.mpg.plot(kind='hist')
 df.mpg.plot(kind='density')
 df.wt.plot(kind='density')
+df.disp.plot(kind='density')
+
 #%%%
 #Kurtosis: Kurtosis is the measure of thickness or heaviness of the given distribution.#Its actually represents the height of the distribution.
 #The distribution with kurtosis equal to 3 is known as mesokurtic. A random variable which follows normal distribution has kurtosis 3.
@@ -30,12 +34,15 @@ df.wt.plot(kind='density')
 #If the kurtosis is greater than three, the distribution is called as leptykurtic. Here, the distribution has longer and fatter tails than normal distribution.
 #For calculating kurtosis by using df.kurtosis() python inbuilt function.
 # ========
-
+#meso kurtic : +3 between 
+#https://www.quora.com/What-does-a-negative-kurtosis-indicates   : Read this
 df.kurtosis()
+df.mpg.kurtosis()  # towards plateau away from normal
 df.mpg.plot(kind='hist')
 df.mpg.plot(kind='density')
 
-df.mpg.kurtosis()
+df.wt.kurtosis() # towards peakedness away from normal
+df.wt.plot(kind='density')
 
 #end 
 

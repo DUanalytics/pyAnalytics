@@ -8,7 +8,7 @@ from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 import seaborn as sns
-sns.set_style('darkgrid'
+sns.set_style('darkgrid')
 # Load the diabetes dataset
 url1 = "https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/"
 url2a = "slr1.csv"
