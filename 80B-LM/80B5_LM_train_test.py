@@ -51,7 +51,7 @@ X_test.shape
 y_train
 y_test
 #%% split data into training and test data.- specify train and test size
-train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=0.5, test_size=0.5,                        random_state =123)
+train_X, test_X, train_y, test_y = train_test_split(X, y, train_size=0.5, test_size=0.5, random_state =123)
 print("Labels for training and testing data")
 print(train_y)
 print(test_y)
@@ -67,22 +67,22 @@ MTmodel1 = ols("mpg ~ wt + hp", data=df1).fit()
 print(MTmodel1.summary())
 predictionM1 = MTmodel1.predict()
 predictionM1
-
+#%%%
 fig= plt.figure(figsize=(15,8))
 fig = sm.graphics.plot_regress_exog(MTmodel1, 'wt', fig=fig)
-
+#%%%
 fig, ax = plt.subplots(figsize=(12, 8))
 fig = sm.graphics.plot_fit(MTmodel1, "wt", ax=ax) 
-
+#%%%%
 fig, ax = plt.subplots(figsize=(12, 8))
 fig = sm.graphics.plot_ccpr(MTmodel1, "wt", ax=ax)
-
+#%%%
 fig = plt.figure(figsize=(12, 8))
 fig = sm.graphics.plot_ccpr_grid(MTmodel1, fig=fig)
-
+#%%
 fig = plt.figure(figsize=(12, 8))
 fig = sm.graphics.plot_ccpr_grid(MTmodel1, fig=fig)
-
+#%%%
 #fig, ax = plt.subplots()
 #fig = sm.graphics.plot_fit(MTmodel1, 0, ax=ax)
 #----
