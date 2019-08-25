@@ -14,6 +14,8 @@ count, bins, ignored = plt.hist(s, 20, normed=True)
 
 # Plot the distribution curve
 plt.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) *   np.exp( - (bins - mu)**2 / (2 * sigma**2) ),       linewidth=3, color='y')
-plt.show()
+plt.show();
+
 
 #https://www.tutorialspoint.com/python/python_normal_distribution.htm
+#%% end

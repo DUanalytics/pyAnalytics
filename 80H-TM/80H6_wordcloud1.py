@@ -1,31 +1,34 @@
-# -*- coding: utf-8 -*-
 #word Cloud 2
 
 import pandas as pd
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-
-df = pd.read_csv(r"data\wcwords1.csv")
+url ='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/wcwords1.csv'
+df = pd.read_csv(url)
+#df = pd.read_csv(r"data\wcwords1.csv")
+df.head()
 df.columns
 df1=df.sort_values(by='freq', ascending=False)
 df1.head(50)
-#now make wordcloud
-wc = WordCloud(min_font_size=5, max_words=100, max_font_size=20)
-wc2a = WordCloud(min_font_size=5, max_words=100, max_font_size=20)
-wc2b = WordCloud(min_font_size=8, max_words=50, max_font_size=25)
-
+#now make wordcloud with different options
+wc2a = WordCloud(min_font_size=2, max_words=100, max_font_size=10)
+wc2b = WordCloud(min_font_size=5, max_words=100, max_font_size=20)
+wc2c = WordCloud(min_font_size=8, max_words=50, max_font_size=25)
+#collect data from df1
 wordcloud2a  = wc2a.generate(' '.join(df1['word']))
-wordcloud2b =  wc2b.generate(' '.join(df1['word']))
+wordcloud2b  = wc2b.generate(' '.join(df1['word']))
+wordcloud2c =  wc2c.generate(' '.join(df1['word']))
 #wordcloud2 = WordCloud().generate(' '.join(df['word']))
 
-
-plt.figure(figsize=(15,20), facecolor=None)
+plt.figure(figsize=(10,6), facecolor=None)
 plt.imshow(wordcloud2b)
+#change above to wordcloud2a, 2b, 2c
 plt.axis('off')
 plt.tight_layout(pad=0)
-plt.show()
+plt.show();
 
+#%%%  End here....
 #
 #pandas to dictionary
 df
