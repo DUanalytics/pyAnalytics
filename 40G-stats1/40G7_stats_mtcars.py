@@ -49,6 +49,8 @@ data.groupby('cyl').size().sort_values(ascending=False).head(1)
 data.mode()
 data[['cyl','gear','am','vs','carb']].mode()
 data.carb.value_counts()  #2 modes in carb
+data.carb.plot(kind='hist') # two peaks
+data.carb.plot(kind='kde')
 
 import statistics  #single column, single mode
 statistics.mode(data.cyl)
@@ -58,7 +60,7 @@ statistics.mode(data.carb)#error
 #https://www.geeksforgeeks.org/finding-mean-median-mode-in-python-without-libraries/
 
 #%% Quantiles
-#uantile() function return values at the given quantile over requested axis, a numpy.percentile. 
+#Quantile() function return values at the given quantile over requested axis, a numpy.percentile. 
 #data.quantile?
 data.quantile(q=.5) #default 50%
 data.quantile([0,.25, .50, .75, 1.0]) #quartiles
@@ -82,10 +84,11 @@ pd.cut(data.wt, bins=3, labels=['Low','Medium','High']).value_counts().plot.bar(
 #another plot
 h1= data.Weight.value_counts()
 h1
+#run upto plt.show() together
 plt.bar(['Low Wt','Medium Wt','High Wt'], h1, label="Count of Weight Category")
 plt.legend(loc='best')
 plt.xticks(rotation = 90)
-plt.show()
+plt.show();
 
 #%% Histogram
 data.mpg.plot(kind='hist')
@@ -137,7 +140,7 @@ data.iloc[15:20,0:5]  #toyota Corolla MPG is outlier
 #https://www.analyticsvidhya.com/blog/2019/02/outlier-detection-python-pyod/
 #http://colingorrie.github.io/outlier-detection.html
 #https://www.dasca.org/world-of-big-data/article/identifying-and-removing-outliers-using-python-packages
-
+#https://heartbeat.fritz.ai/how-to-make-your-machine-learning-models-robust-to-outliers-44d404067d07
 #%%%Range and interquartile range
 #range() is commonly used in for looping hence, knowledge of same is key aspect when dealing with any kind of Python code.
 range(1,10,2)  #nothing
@@ -229,8 +232,6 @@ sns.kdeplot(iris['petal_length'])
 plt.subplot(2, 2, 4)
 sns.kdeplot(iris['petal_width'])
 plt.show();
-
-
 
 
 #%%%Kurtosis -  degree of peakedness of a distribution” 

@@ -5,12 +5,24 @@ from pydataset import data
 mtcars = data('mtcars')
 mtcars.head()
 df=mtcars
-df.quantile(q=.5) #default 50%
-df.quantile([0,.25, .50, .75, 1.0]) #quartiles
+df.quantile()
+#0,100 ; #40,60
+df.mpg.mean()
+df.mpg.median()
+df.mpg.sort_values()
+df.quantile(q=.5) #default 50% Q2
+df.quantile([0,.25, .50, .75, 1.0]) #quartiles:Q1, Q2, Q3, Q4
 df.quantile(np.arange(0,1,.1))  #decile
-df.quantile(np.arange(0,1,.01))  #percentile
+np.arange(0,100,5)
+df[['mpg','wt']].quantile(np.arange(0,1,.01))  #percentile
+df[['cyl','gear','am']]= df[['cyl','gear','am']].astype('category')
 df.quantile([.1,.5, .9], numeric_only=True, axis=0) #selected percentile
-df.mpg.quantile([0,.25, .50, .75, 1.0]) #numpy single column 
+df.mpg.quantile([0,.25, .50,.6, .75, 1.0]) #numpy single column 
+df["mpg"].plot.box()
+#clockwise 
+df["wt"].plot.box(vert=False)
+df["wt"].plot.kde()
+
 
 #Box Plots columns
 fig = plt.figure(figsize=(10, 6))

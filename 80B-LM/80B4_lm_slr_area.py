@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import seaborn as sns
 sns.set_style('darkgrid')
