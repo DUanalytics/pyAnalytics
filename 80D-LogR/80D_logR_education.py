@@ -147,6 +147,7 @@ X = data_final.loc[:, data_final.columns != 'y']
 y = data_final.loc[:, data_final.columns == 'y']
 #%%%
 import statsmodels.api as sm
+sm.Logit?
 logit_model=sm.Logit(y,X)
 result=logit_model.fit()
 print(result.summary2())
@@ -155,9 +156,10 @@ print(result.summary2())
 cols=['euribor3m', 'job_blue-collar', 'job_housemaid', 'marital_unknown', 'education_illiterate', 'month_apr', 'month_aug', 'month_dec', 'month_jul', 'month_jun', 'month_mar', 'month_may', 'month_nov', 'month_oct', "poutcome_failure", "poutcome_success"] 
 X=X[cols]
 y=y['y']
-logit_model=sm.Logit(y,X)
+logit_model=sm.Logit(y,X).fit()
 result=logit_model.fit()
 print(result.summary2())
+#logit_model=sm.Logit(y,X).fit()
 
 
 #%%%

@@ -17,18 +17,18 @@ train.count()
 train.info()
 train.describe()
 #%%%
-PassengerID-type should be integers
-Survived-survived or not
-Pclass-class of Travel of every passenger
-Name- the name of the passenger
-Sex -gender
-Age-age of passengers
-SibSp -No. of siblings/spouse aboard
-Parch-No. of parent/child aboard
-Ticket-Ticket number
-Fare -what Prices they paid
-Cabin -cabin number
-Embarked-the port in which a passenger has embarked.
+#PassengerID-type should be integers
+#Survived-survived or not
+#Pclass-class of Travel of every passenger
+#Name- the name of the passenger
+#Sex -gender
+#Age-age of passengers
+#SibSp -No. of siblings/spouse aboard
+#Parch-No. of parent/child aboard
+#Ticket-Ticket number
+#Fare -what Prices they paid
+#Cabin -cabin number
+#Embarked-the port in which a passenger has embarked.
 #%% Missing Data
 sns.heatmap(train.isnull(),yticklabels=False,cbar=False,cmap='viridis')
 #Roughly 20 percent of the Age data is missing. The proportion of Age missing is likely small enough for reasonable replacement with some form of imputation. Looking at the Cabin column, it looks like we are just missing too much of that data to do something useful with at a basic level. 

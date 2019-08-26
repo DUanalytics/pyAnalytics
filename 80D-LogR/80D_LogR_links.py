@@ -14,3 +14,7 @@
 #https://www.datacamp.com/community/tutorials/understanding-logistic-regression-python
 
 
+
+
+#AUC score for the case is 0.86. AUC score 1 represents perfect classifier, and 0.5 represents a worthless classifier.
+
