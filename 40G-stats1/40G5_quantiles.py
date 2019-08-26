@@ -41,3 +41,6 @@ df["disp"].plot.box()
 plt.title('Displacement')
 plt.xticks(rotation=25)
 plt.show();
+
+
+#A boxplot is a standardized way of displaying the distribution of data based on a five number summary (“minimum”, first quartile (Q1), median, third quartile (Q3), and “maximum”). It can tell you about your outliers and what their values are. It can also tell you if your data is symmetrical, how tightly your data is grouped, and if and how your data is skewed.
