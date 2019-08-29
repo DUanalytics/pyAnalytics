@@ -40,36 +40,20 @@ clf = DecisionTreeClassifier()
 
 # Train Decision Tree Classifer
 clf = clf.fit(X_train,y_train)
-
+y_train
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
 
 #%%% : Evaluating Model
-# estimate, how accurately the classifier or model can predict the type of cultivars.
-# Accuracy can be computed by comparing actual test set values and predicted values.
-
+# estimate, how accurately the classifier or model can predict the type of cultivars.# Accuracy can be computed by comparing actual test set values and predicted values.
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
-
 #classification rate of 67.53%, considered as good accuracy. You can improve this accuracy by tuning the parameters in the Decision Tree Algorithm.
-
-#%%% : Visualizing Decision Trees
-#You can use Scikit-learn's export_graphviz function for display the tree within a Jupyter notebook. For plotting tree, you also need to install graphviz and pydotplus.
-#pip install graphviz
-#pip install pydotplus
-
-#export_graphviz function converts decision tree classifier into dot file and pydotplus convert this dot file to png or displayable form
-
-from sklearn.tree import export_graphviz
-from sklearn.externals.six import StringIO  
-from IPython.display import Image  
-import pydotplus
-
-dot_data = StringIO()
-export_graphviz(clf, out_file=dot_data, filled=True, rounded=True, special_characters=True,feature_names = feature_cols, class_names=['0', '1'])
-graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
-graph.write_png('diabetes.png')
-Image(graph.create_png())
+#%%%
+y_train
+labels
+graph = Source(tree.export_graphviz(clf, out_file=None, class_names=['0', '1']  , filled = True))
+display(SVG(graph.pipe(format='svg')))
 
 #%%%  Create Decision Tree classifer object
 clf = DecisionTreeClassifier(criterion="entropy", max_depth=3)
@@ -84,21 +68,6 @@ y_pred = clf.predict(X_test)
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #classification rate increased to 77.05%, which is better accuracy than the previous model.
 
-#%%%
-from sklearn.externals.six import StringIO  
-from IPython.display import Image  
-from sklearn.tree import export_graphviz
-import pydotplus
-dot_data = StringIO()
-export_graphviz(clf, out_file=dot_data,filled=True, rounded=True, special_characters=True, feature_names = feature_cols, class_names=['0','1'] )
-graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
-dir(pydotplus)
-graph.write_png('diabetes.png')
-
-Image(graph.create_png())
-
-
-
 #%%% : Features
 Decision trees are easy to interpret and visualize.
 It can easily capture Non-linear patterns.
@@ -109,3 +78,25 @@ The decision tree has no assumptions about distribution because of the non-param
 Sensitive to noisy data. It can overfit noisy data.
 The small variation(or variance) in data can result in the different decision tree. This can be reduced by bagging and boosting algorithms.
 Decision trees are biased with imbalance dataset, so it is recommended that balance out the dataset before creating the decision tree.
+
+
+#%%%
+#%%% : Visualizing Decision Trees
+#You can use Scikit-learn's export_graphviz function for display the tree within a Jupyter notebook. For plotting tree, you also need to install graphviz and pydotplus.
+#pip install graphviz
+#pip install pydotplus
+#export_graphviz function converts decision tree classifier into dot file and pydotplus convert this dot file to png or displayable form
+
+from sklearn.tree import export_graphviz
+from sklearn.externals.six import StringIO  
+from IPython.display import Image  
+import pydotplus
+
+dot_data = StringIO()
+export_graphviz(clf, out_file=dot_data, filled=True, rounded=True, special_characters=True,feature_names = feature_cols, class_names=['0', '1'])
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
+graph.write_png('diabetes.png')
+Image(graph.create_png())
+
+graph = Source(tree.export_graphviz(estimator, out_file=None   , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
+display(SVG(graph.pipe(format='svg')))
