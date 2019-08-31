@@ -1,25 +1,30 @@
 #Time Series - SIP
 #-----------------------------
-#%
-#program started for Business Days from 15 Jun to 28 Jul
-
+#%#program started for Business Days from 15 Jun to 28 Jul
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+pd.date_range?
 classDate = pd.date_range('2019-06-15', '2019-07-28', freq='B')
+#B - buisness days; D-daily, M
+classDate
+list(classDate)
 type(classDate)
 len(classDate)
 classDate.strftime('%a')  #day of class
 #all are between Mon to Fri
-random.seed(1234)
+np.random.seed(1234)
 attendance1 = np.random.randint(low=25,high=50, size=30)
+attendance1
 np.mean(attendance1)
+
 #%%%
-workshop1 = pd.DataFrame({'attendance1':attendance1, 'days' : classDate.strftime( '%a') }, index=classDate)
+workshop1 = pd.DataFrame( {'attendance1':attendance1, 'days' : classDate.strftime( '%a') }, index=classDate)
+workshop1.head(4)
 workshop1.head(3).append(workshop1.tail(2))
 workshop1.describe()
 workshop1.dtypes
+workshop1.attendance1.sort_values().head(15)
 #make days as categories
 workshop1.days = workshop1.days.astype('category', ordered=True)
 #depreciated - days should be in order
@@ -36,16 +41,17 @@ workshop1.days
 workshop1.attendance1.plot(figsize=(10,5)) 
 #only on those days where attendance was taken
 #Sat and Sun was off
-workshop1.asfreq('D').plot(figsize=(10,5))
+workshop1.asfreq('D')workshop1.asfreq('D').attendance1.fillna(method='ffill', limit=2)
 #with gaps - blanks 
 #fill these gaps : only 1,2 ahead ffill
+workshop1.head(10)
 workshop1.asfreq('D').attendance1.fillna(method='ffill', limit=1)
 workshop1.asfreq('D').attendance1.fillna(method='ffill', limit=2)
 #fill only 1 value or 2 next 
-
+workshop1.asfreq('D').attendance1.fillna(method='ffill', limit=2).plot(figsize=(10,5)) 
 #original data - group by Days 
 #average attendance on Mondays, Tues, 
-workshop1.head()
+workshop1.head(15)
 from pandas import Grouper
 workshop1.groupby(['days', pd.Grouper(freq='M')])['attendance1' ].mean()
 #all mondays on month; find their mean day wise
