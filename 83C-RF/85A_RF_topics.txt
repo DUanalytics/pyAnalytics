@@ -1,0 +1,7 @@
+#Topic: Random Forest
+#-----------------------------
+
+
+#%%%
+#Why do we get different results using Random Forests
+You are randomly sampling the variables and observations in your training step. This is random. Each time you run the algorithm without setting a seed, you’ll have a different random sample. This goes for any algorithm that involves sampling steps. 
