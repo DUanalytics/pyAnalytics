@@ -1,0 +1,15 @@
+#Topic: LM Topics
+#-----------------------------
+#libraries
+
+
+
+
+
+#%%% Redicted and Actual Adjusted R2
+#https://blog.minitab.com/blog/adventures-in-statistics-2/multiple-regession-analysis-use-adjusted-r-squared-and-predicted-r-squared-to-include-the-correct-number-of-variables
+#https://statisticsbyjim.com/regression/interpret-adjusted-r-squared-predicted-r-squared-regression/
+
+#Both adjusted R-squared and predicted R-square provide information that helps you assess the number of predictors in your model:
+##Use the adjusted R-square to compare models with different numbers of predictors
+##Use the predicted R-square to determine how well the model predicts new observations and whether the model is too complicated

@@ -70,7 +70,14 @@ plt.show();
 
 
 #%%%
-
+#Summarise
+#Data - load/ import
+#Data - cleaning, Missing Manipulation
+#data - Split : X,y ; Train ,Test
+#dummy variable - levels
+#Model : DV ~ IV... ; Coeficient pvalues
+#Predict : DV on X_test  and get predicted_y  (1 or 0)
+#Accuracy, Confusion Matrix, Precision
 
 
 #%%%

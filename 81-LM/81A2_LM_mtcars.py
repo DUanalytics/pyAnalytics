@@ -91,19 +91,32 @@ IV
 DV= df1['mpg'].values
 DV
 IV_train, IV_test, DV_train, DV_test = train_test_split(IV, DV,test_size=0.2, random_state=123)
-IV_train
-
+IV_train, IV_test, DV_train, DV_test
+#from sklearn import linear_model as lm
 MTmodel2a = linear_model.LinearRegression()
-MTmodel2a.fit(IV_train, DV_train)
+MTmodel2a.fit(IV_train, DV_train)  #putting data to model
+#MTmodel2a.summary()  #no summary in sklearn
 MTmodel2a.intercept_
 MTmodel2a.coef_
 predicted2a = MTmodel2a.predict(IV_test)
 predicted2a
+DV_test
+r2_score(DV_train, MTmodel2a.predict(IV_train))
 #The mean squared error
 from sklearn.metrics import mean_squared_error, r2_score
 mean_squared_error(DV_test, predicted2a)
-r2_score(DV_test, predicted2a)
-
+r2_score(DV_test, predicted2a)  #???
+#%%%
+# what to LM
+# Predicting Continuous, Finding relationship between variables
+# Steps : load data, split : DV & IV ; Train and test set
+# Load the libraries
+# create model : function + IV & DV from Train
+# see r2, adjst R2, coeff, significant, other model 
+# predict : Model + IV_test -> predicted_y
+# rmse : predicted_y - actual_y : as less as possible
+# R2 ??
+# check for assumption - linear, normality, homoscedascity, multi-collinearity, auto-collinearity
 
 #%%%% Links
 #https://pythonprogramminglanguage.com/training-and-test-data/

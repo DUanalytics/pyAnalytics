@@ -12,10 +12,13 @@ url_train = 'https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/t
 url_test  ='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/titanic_test.csv'
 
 train = pd.read_csv(url_train)
+train.columns
 train.head()
 train.count()
 train.info()
 train.describe()
+train.drop('PassengerId', axis=1, inplace=True) #column
+train.columns
 #%%%
 #PassengerID-type should be integers
 #Survived-survived or not
@@ -84,12 +87,22 @@ train.head()
 
 #%%Converting Categorical Features
 #We’ll need to convert categorical features to dummy variables using pandas! Otherwise, our machine learning algorithm won’t be able to directly take in those features as inputs.
+train.columns
+train.Sex
 sex = pd.get_dummies(train['Sex'],drop_first=True)
+sex
+train.Embarked.value_counts()
 embark = pd.get_dummies(train['Embarked'],drop_first=True)
+
+embark[1:100]
+train = pd.concat([train,sex,embark],axis=1)
+train.loc[1:5, ['Embarked','Q','S', 'Sex','male']]
 #drop the sex,embarked,name and tickets columns
 train.drop(['Sex','Embarked','Name','Ticket'],axis=1,inplace=True)
+train.columns
 #concatenate new sex and embark column to our train dataframe
 train = pd.concat([train,sex,embark],axis=1)
+train.loc[1:5, ['Embarked','Q','S', 'Sex','male']]
 #check the head of dataframe
 train.head()
 #%%%Now our data is ready for our model!
@@ -100,6 +113,8 @@ train.head()
 #Train Test Split
 #X will contain all the features and y will contain the target variable
 from sklearn.model_selection import train_test_split
+
+train.columns
 
 X_train, X_test, y_train, y_test = train_test_split ( train.drop('Survived',axis=1), train['Survived'], test_size=0.30,      random_state=101)
 
@@ -117,6 +132,8 @@ logmodel.fit(X_train, y_train)
 #Let’s see how accurate is our model for predictions
 #predictions: Now we call some predictions based on the X_test dataset.
 predictions = logmodel.predict(X_test)
+X_test, y_test
+predictions
 #%%% Model Evaluation
 #We can check precision, recall, f1-score using classification report and also see how accurate is our model for predictions:
 from sklearn.metrics import classification_report
@@ -127,6 +144,7 @@ print(classification_report(y_test,predictions))
 #To evaluate our model for some specific values, it can be directly done from our confusion matrix.
 from sklearn.metrics import confusion_matrix
 print(confusion_matrix(y_test, predictions))
+(151 + 68)/(151 + 68 + 12 + 36)
 
 #%%%
 #From our confusion matrix we conclude that:

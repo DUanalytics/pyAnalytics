@@ -28,7 +28,7 @@ y
 # split X and y into training and testing sets
 from sklearn.model_selection import train_test_split
 
-X_train,X_test,y_train,y_test=train_test_split(X,y, test_size=0.25, random_state=0)
+X_train,X_test,y_train,y_test=train_test_split(X, y, test_size=0.25, random_state=0)
 #Here, the Dataset is broken into two parts in a ratio of 75:25. It means 75% data will be used for model training and 25% for model testing.
 
 #%%%
@@ -54,6 +54,7 @@ y_pred
 from sklearn import metrics
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
 cnf_matrix
+(119 + 36)/(119 + 36 + 26 + 11)
 #Here, you can see the confusion matrix in the form of the array object. The dimension of this matrix is 2*2 because this model is binary classification. You have two classes 0 and 1. Diagonal values represent accurate predictions, while non-diagonal elements are inaccurate predictions. In the output, 119 and 36 are actual predictions, and 26 and 11 are incorrect predictions.
 
 
