@@ -7,4 +7,10 @@ https://towardsdatascience.com/an-introduction-to-clustering-algorithms-in-pytho
 https://www.datacamp.com/community/tutorials/k-means-clustering-python
 https://www.learndatasci.com/tutorials/k-means-clustering-algorithms-python-intro/
 https://scikit-learn.org/stable/modules/clustering.html
+https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/
+
+
+#Case Studies
+https://blog.cambridgespark.com/how-to-determine-the-optimal-number-of-clusters-for-k-means-clustering-14f27070048f
+#https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html
 

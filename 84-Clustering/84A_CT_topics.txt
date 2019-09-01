@@ -1,7 +1,12 @@
 #Topic: Clustering Topics 
 #-----------------------------
 #
-What is Clustering
+#What is Clustering
+Clustering is the process of dividing the entire data into groups (also known as clusters) based on the patterns in the data.
+#https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/
+#%%%---------------------
+
+
 How to do Clustering
 What are the various ways of doing clustering
 
