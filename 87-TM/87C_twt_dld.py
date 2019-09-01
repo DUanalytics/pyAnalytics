@@ -1,8 +1,7 @@
 #Twitter : Tweets Download
 #-----------------------------
-
 #Download tweets from twitter
-import tweepy
+import tweepy  #install pip install tweepy
 import csv
 import pandas as pd
 

@@ -1,6 +1,5 @@
 #Topic: DT - Diabetis Data Set
 #-----------------------------
-#libraries
 #https://www.datacamp.com/community/tutorials/decision-tree-classification-python
 # Load libraries
 import pandas as pd

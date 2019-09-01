@@ -1,6 +1,5 @@
-#
+# Topic - Sentiment Analysis
 #-----------------------------
-#%
 #https://programminghistorian.org/en/lessons/sentiment-analysis
 
 import nltk
@@ -22,3 +21,4 @@ scores = sid.polarity_scores(message_text)
                                                                                                                                                                                                                                                                                       # Here we loop through the keys contained in scores (pos, neu, neg, and compound scores) and print the key-value pairs on the screen
 for key in sorted(scores):
         print('{0}: {1}, '.format(key, scores[key]), end='')
+        
