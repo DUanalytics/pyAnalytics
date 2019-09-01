@@ -12,6 +12,9 @@ x1.min
 x1.max
 #Extract Year from todays date
 print(x1.year)
+x1.month
+x1.day
+x1.hour
 #Day of the week
 x1
 print(x1.strftime("%A %B"))

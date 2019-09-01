@@ -1,6 +1,5 @@
 #Dates  - Range
 #-----------------------------
-#%
 #https://towardsdatascience.com/playing-with-time-series-data-in-python-959e2485bff8
 
 import pandas as pd
@@ -11,8 +10,7 @@ dtrange1D
 dtrange1D.min()
 
 
-#The resulting DatetimeIndex has an attribute freq with a value of 'D', indicating daily frequency.
-#Available frequencies in pandas include 
+#The resulting DatetimeIndex has an attribute freq with a value of 'D', indicating daily frequency.#Available frequencies in pandas include 
 #hourly ('H'), 
 #calendar daily ('D'),
 #business daily ('B'),
@@ -36,22 +34,26 @@ pd.date_range('2019-7-11 09:00', periods=8, freq='H')
 #https://www.dataquest.io/blog/tutorial-time-series-analysis-with-pandas/
 #convert to different freq
 #create data frame - weekly freq with some data
-classStrength = np.random.randint(25,60, size=10)
-weekdates = pd.date_range('2019-5-1', periods=10, freq='1W')
+classStrength = np.random.randint(25,60, size=100)
+weekdates = pd.date_range('2019-5-1', periods=100, freq='B')
+weekdates
 attendance = pd.DataFrame({'classStr':classStrength, 'wdates':weekdates})
-attendance.head()
+attendance.head(10).append(attendance.tail(10))
+
 #
 attendance.set_index('wdates', inplace=True)
 attendance
 #create another column with daily freq
-attendance.asfreq('D')
-attendance.head()
+attendance.asfreq('D')  #some missing values Sat/ Sun
+attendance.head(10)
+#temporarily creates dates for Sat/ Sun, fill with NA
 
 #del dailyAttendance
 attendance.asfreq('D', method='ffill')
 attendance.head()
 daily1 = attendance.asfreq('D', method='bfill')
-daily1.head()
+daily1.head(10)
+#replace permanently
 daily1.rename(columns= {'classStr':'Dattnd'}, inplace=True)
 
 newAttendance2 = pd.concat([attendance, daily1], axis=1)
@@ -69,14 +71,14 @@ newAttendance2.Dattnd
 # Start and end of the date range to extract
 start, end = '2019-05', '2019-06'
 # Plot daily and weekly resampled time series together
+#run together upto plt.show
 fig, ax = plt.subplots()
-
 ax.plot(newAttendance2.loc[start:end, 'Dattnd'], marker='.', linestyle='-', linewidth=0.5, label='Daily')
-
 ax.plot(newAttendance2.loc[start:end, 'classStr'], marker='o', markersize=8, linestyle='-', label='Weekly Mean Resample')
 ax.set_ylabel('Class Strength')
-plt.xticks(rotation=90);
-ax.legend();
+plt.xticks(rotation=90)
+ax.legend()
+plt.show();
 
 #------------------------------------
 
