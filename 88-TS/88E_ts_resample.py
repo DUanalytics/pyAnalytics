@@ -93,7 +93,8 @@ ax.plot(newAttendance2['Dattnd'], color='black', label='Daily Attendance')
 newAttendance2[['classStr','Dattnd']].plot.area(ax=ax, linewidth=0)
 ax.xaxis.set_major_locator(mdates.YearLocator())
 ax.legend()
-ax.set_ylabel('Student Strength');
+ax.set_ylabel('Student Strength')
+plt.show();
 
 
 #https://www.dataquest.io/blog/tutorial-time-series-analysis-with-pandas/
