@@ -61,8 +61,7 @@ datetime.datetime.is
 d = datetime.datetime.now()
 print(getattr(d,'hour'))  #put this in loop
 #
-for attr in [ 'year', 'month', 'day', 'hour', 'minute', 'second', 'microsecond']:
-    print(attr, ':', getattr(d, attr), end= ' ; ' )
+for attr in [ 'year', 'month', 'day', 'hour', 'minute', 'second', 'microsecond']:     print(attr, ':', getattr(d, attr), end= ' ; ' )
 #
     
     
@@ -90,3 +89,5 @@ print('strftime:', s)
 
 d = datetime.datetime.strptime(s, format)
 print('strptime:', d.strftime(format))
+
+#%%% #end

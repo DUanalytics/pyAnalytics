@@ -1,6 +1,7 @@
-#Time Series Case Study
+#Time Series Case Study - Furntiture Sales
 #-----------------------------
-#%
+# Import, Format Data, Subset, Monthly averages, plot
+#https://towardsdatascience.com/an-end-to-end-project-on-time-series-analysis-and-forecasting-with-python-4835e6bf050b
 
 import warnings
 import itertools
@@ -17,14 +18,21 @@ matplotlib.rcParams['ytick.labelsize'] = 12
 matplotlib.rcParams['text.color'] = 'k'
 
 #%%
-df = pd.read_excel("data/Superstore.xls")  #by default sheet1
+url = 'https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/Superstore_orders.csv'
+df = pd.read_csv(url) 
 df.head()
+df.info()  #date in not correct format
 df.columns
 df.shape
 furniture = df.loc[df['Category'] == 'Furniture']
 #only furniture 4 yr old data
 furniture['Order Date'].min()
 furniture['Order Date'].max()  #latest sale date
+#
+furniture.head()
+furniture['Order Date'] = furniture['Order Date'].apply(pd.to_datetime)
+furniture['Order Date'].max()  #latest sale date
+furniture['Order Date'].min()
 
 #Data Preprocessing - remove unwanted cols
 cols = ['Row ID', 'Order ID', 'Ship Date', 'Ship Mode', 'Customer ID', 'Customer Name', 'Segment', 'Country', 'City', 'State', 'Postal Code', 'Region', 'Product ID', 'Category', 'Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit']
@@ -50,22 +58,23 @@ y = furniture['Sales'].resample('MS').mean()
 #'3T', MS - monthstart
 y
 
-
 #Visualise
-y.plot(figsize=(15, 6))
-plt.show()
+y.plot(figsize=(12, 6))
+plt.annotate(y,xy=y)
+plt.show();
 #Some distinguishable patterns appear when we plot the data. The time-series has seasonality pattern, such as sales are always low at the beginning of the year and high at the end of the year. There is always an upward trend within any single year with a couple of low months in the mid of the year.
 
 
 #
 from pylab import rcParams
-rcParams['figure.figsize'] = 18, 8
+rcParams['figure.figsize'] = 12, 8
 decomposition = sm.tsa.seasonal_decompose(y, model='additive')
 fig = decomposition.plot()
-plt.show()
+plt.show();
 
 #he plot above clearly shows that the sales of furniture is unstable, along with its obvious seasonality.
 
 
 #ARIMA - practise
 #https://towardsdatascience.com/an-end-to-end-project-on-time-series-analysis-and-forecasting-with-python-4835e6bf050b
+#https://swcarpentry.github.io/python-novice-gapminder/09-plotting/

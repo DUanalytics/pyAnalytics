@@ -34,13 +34,12 @@ series.head()
 series.set_index('Date', inplace=True)
 
 series.plot(linewidth=0.1)
-pyplot.show()
+pyplot.show();
 
 #with multiple cols
 cols_plot = ['C1', 'C2', 'C3']
 axes = df[cols_plot].plot(marker='.', alpha=0.5, linestyle='None', figsize=(11, 9), subplots=True)
-for ax in axes:
-    ax.set_ylabel('Y Label')
+for ax in axes:    ax.set_ylabel('Y Label')
     
 #customising Dates
 import matplotlib.dates as mdates    

@@ -2,3 +2,10 @@ sbin.ns
 icicibank.ns
 hdfcbank.ns
 reliance.ns
+
+
+
+
+https://blog.quandl.com/api-for-stock-data
+https://docs.quandl.com/docs/data-organization
+https://docs.quandl.com/docs/python

@@ -3,3 +3,6 @@
 #%
 
 https://towardsdatascience.com/an-end-to-end-project-on-time-series-analysis-and-forecasting-with-python-4835e6bf050b
+https://www.dataquest.io/blog/tutorial-time-series-analysis-with-pandas/
+
+http://www.blackarbs.com/blog/advanced-time-series-plots-in-python/1/6/2017

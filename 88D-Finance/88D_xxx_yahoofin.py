@@ -1,19 +1,20 @@
-#Stock Prices
+#Time Series - Stock Prices
+#Not working becoz pandas has removed the functionality for pandas.compat.
+#can work with older version of Pandas 24.0
 #-----------------------------
-#%
 #pip install pandas_datareader
 #https://www.red-gate.com/simple-talk/sql/bi/historical-stock-prices-volumes-python-csv-file/
 #%%%
 #import external pandas_datareader library with alias of web
 import pandas_datareader as web
- 
+from pandas.compat import StringIO 
 #import datetime internal datetime module
 #datetime is a Python module
 import datetime
  
 #datetime.datetime is a data type within the datetime module
 start = datetime.datetime(2019, 6, 1)
-end = datetime.datetime(2019, 6, 30)
+end = datetime.datetime(2019, 8, 30)
  
 #DataReader method name is case sensitive
 sbi = web.DataReader("sbin.ns", 'yahoo', start, end)

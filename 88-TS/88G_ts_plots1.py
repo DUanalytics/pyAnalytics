@@ -22,7 +22,7 @@ x
 y = np.random.randint(100, size=x.shape)
 y
 plt.plot(x,y)
-plt.show()
+plt.show();
 
 
 # Using plotly.express
@@ -36,7 +36,7 @@ px.line(df, x='Date', y='AAPL.High')
 px.line?
 %matplotlib inline
 fig = px.line(df, x='Date', y='AAPL.High')
-fig.show()
+fig.show();
 
 #
 # Using graph_objects
@@ -46,4 +46,4 @@ import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
 
 fig = go.Figure([go.Scatter(x=df['Date'], y=df['AAPL.High'])])
-fig.show()
+fig.show();
