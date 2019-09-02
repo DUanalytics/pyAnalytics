@@ -6,3 +6,10 @@ https://towardsdatascience.com/an-end-to-end-project-on-time-series-analysis-and
 https://www.dataquest.io/blog/tutorial-time-series-analysis-with-pandas/
 
 http://www.blackarbs.com/blog/advanced-time-series-plots-in-python/1/6/2017
+
+
+#ARIMA
+https://www.analyticsvidhya.com/blog/2018/08/auto-arima-time-series-modeling-python-r/
+https://www.analyticsvidhya.com/blog/2018/02/time-series-forecasting-methods/
+https://www.seanabu.com/2016/03/22/time-series-seasonal-ARIMA-model-in-python/
+https://www.statsmodels.org/dev/examples/notebooks/generated/statespace_sarimax_stata.html
