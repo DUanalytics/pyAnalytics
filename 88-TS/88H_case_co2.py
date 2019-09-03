@@ -7,15 +7,17 @@ import itertools
 import matplotlib.pyplot as plt
 import warnings
 import statsmodels.api as sm
+#pip install statsmodels --upgrade
 plt.style.use('fivethirtyeight')
 #%%%
 data = sm.datasets.co2.load_pandas()
+help(sm.datasets.co2)
 data.head()  #no head
 data.data.head()   # Amount of CO2 for certain time series
 y= data.data
 y.columns
 y.dtypes
-y.shape
+y.shape  #2284 : 
 y.index.min(), y.index.max()
 #1958 to 2001
 y_copy = y.copy()
