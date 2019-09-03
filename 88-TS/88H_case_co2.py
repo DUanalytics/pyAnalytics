@@ -12,9 +12,19 @@ plt.style.use('fivethirtyeight')
 #%%%
 data = sm.datasets.co2.load_pandas()
 help(sm.datasets.co2)
+#https://www.statsmodels.org/dev/datasets/generated/co2.html
+#Number of observations: 2225
+#Number of variables: 2; Variable name definitions:
+#    date - sample date in YYMMDD format
+#    co2 - CO2 Concentration ppmv
+#The data returned by load_pandas contains the dates as the index.
+#https://cdiac.ess-dive.lbl.gov/trends/co2/sio-keel-flask/sio-keel-flaskmlo_c.html
+
 data.head()  #no head
 data.data.head()   # Amount of CO2 for certain time series
 y= data.data
+y.to_csv('data/co2.csv')
+(d)
 y.columns
 y.dtypes
 y.shape  #2284 : 
