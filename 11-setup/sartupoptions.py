@@ -38,8 +38,7 @@ pd.get_option("display.max_rows")
 pd.reset_option("^display")
 pd.get_option("display.max_rows")
 
-
-
+#display.[max_categories, max_columns, max_colwidth, max_info_columns, max_info_rows, max_rows, max_seq_items, memory_usage, min_rows, multi_sparse, notebook_repr_html, pprint_nest_depth, precision, show_dimensions]
 #Setting Startup Options in python/ipython Environmen
 #Using startup scripts for the python/ipython environment to import pandas and set options makes working with pandas more efficient. To do this, create a .py or .ipy script in the startup directory of the desired profile. An example where the startup folder is in a default ipython profile can be found at:
 

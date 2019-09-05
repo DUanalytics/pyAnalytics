@@ -1,0 +1,15 @@
+#Topic ---- Market Basket Analysis - Links
+
+
+#%%%
+
+https://pbpython.com/market-basket-analysis.html
+
+#%%%
+https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
+https://github.com/tstreamDOTh/Instacart-Market-Basket-Analysis/blob/master/code/Market_Basket_Analysis.ipynb
+https://dzenanhamzic.com/2017/01/19/market-basket-analysis-mining-frequent-pairs-in-python/
+
+
+#%%%
+

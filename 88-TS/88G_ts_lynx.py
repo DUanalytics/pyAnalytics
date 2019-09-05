@@ -14,7 +14,7 @@ data = pm.datasets.load_lynx()
 train, test = data[:90], data[90:]
 
 # Fit a simple auto_arima model
-modl = pm.auto_arima(train, start_p=1, start_q=1, start_P=1, start_Q=1,                     max_p=5, max_q=5, max_P=5, max_Q=5, seasonal=True, stepwise= True, suppress_warnings=True, D=10, max_D=10, error_action='ignore')
+modl = pm.auto_arima(train, start_p=1, start_q=1, start_P=1, start_Q=1, max_p=5, max_q=5, max_P=5, max_Q=5, seasonal=True, stepwise= True, suppress_warnings=True, D=10, max_D=10, error_action='ignore')
 
 # Create predictions for the future, evaluate on test
 preds, conf_int = modl.predict(n_periods=test.shape[0], return_conf_int=True)
@@ -29,11 +29,8 @@ x_years = x_axis + 1821  # Year starts at 1821
 
 plt.plot(x_years[x_axis[:train.shape[0]]], train, alpha=0.75)
 plt.plot(x_years[x_axis[train.shape[0]:]], preds, alpha=0.75)  # Forecasts
-plt.scatter(x_years[x_axis[train.shape[0]:]], test,
-            alpha=0.4, marker='x')  # Test data
-plt.fill_between(x_years[x_axis[-preds.shape[0]:]],
-                 conf_int[:, 0], conf_int[:, 1],
-                 alpha=0.1, color='b')
+plt.scatter(x_years[x_axis[train.shape[0]:]], test, alpha=0.4, marker='x')  # Test data
+plt.fill_between(x_years[x_axis[-preds.shape[0]:]], conf_int[:, 0], conf_int[:, 1], alpha=0.1, color='b')
 plt.title("Lynx forecasts")
 plt.xlabel("Year");
 

@@ -1,0 +1,14 @@
+#Topic ----MB - Topics
+
+
+#%%%
+Market basket analysis scrutinizes the products customers tend to buy together, and uses the information to decide which products should be cross-sold or promoted together. The term arises from the shopping carts supermarket shoppers fill up during a shopping trip.
+
+
+#%%%
+
+
+
+#%%% Libraries
+pip install mlxtend
+
