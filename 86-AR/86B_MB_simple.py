@@ -9,6 +9,10 @@ from mlxtend.frequent_patterns import association_rules
 import time
 import logging
 #%%%
+
+
+
+#%%%
 transactions = [['milk', 'bread', 'water'],['coffe', 'sugar' ],['burgers', 'eggs']]
 transactions
 #%%%

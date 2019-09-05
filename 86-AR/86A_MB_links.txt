@@ -4,6 +4,10 @@
 #%%%
 
 https://pbpython.com/market-basket-analysis.html
+https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python/
+https://intellipaat.com/blog/data-science-apriori-algorithm/
+https://towardsdatascience.com/a-gentle-introduction-on-market-basket-analysis-association-rules-fa4b986a40ce
+https://www.datatheque.com/posts/association-analysis/
 
 #%%%
 https://towardsdatascience.com/mba-for-breakfast-4c18164ef82b
