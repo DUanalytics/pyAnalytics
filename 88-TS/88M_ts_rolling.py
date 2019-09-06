@@ -2,6 +2,7 @@
 #-----------------------------
 #%
 #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html
+import pandas as pd
 
 df = pd.DataFrame({'B': [0, 1, 2, np.nan, 4]})
 df

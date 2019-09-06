@@ -1,4 +1,4 @@
-#SARIMA
+#SARIMA - Seasonal ARIMA
 #-----------------------------
 #%
 #Seasonal Autoregressive Integrated Moving-Average (SARIMA)

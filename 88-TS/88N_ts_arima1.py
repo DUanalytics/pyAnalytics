@@ -16,7 +16,7 @@ from random import random
 
 # contrived dataset
 data = [x + random() for x in range(1, 100)]
-
+data
 # fit model
 model = ARIMA(data, order=(1, 1, 1))
 model_fit = model.fit(disp=False)
