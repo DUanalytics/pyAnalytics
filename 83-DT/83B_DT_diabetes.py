@@ -1,6 +1,7 @@
 #Topic: DT - Diabetis Data Set
 #-----------------------------
 #https://www.datacamp.com/community/tutorials/decision-tree-classification-python
+#As a marketing manager, you want a set of customers who are most likely to purchase your product. This is how you can save your marketing budget by finding your audience. As a loan manager, you need to identify risky loan applications to achieve a lower loan default rate. This process of classifying customers into a group of potential and non-potential customers or safe or risky loan applications is known as a classification problem. Classification is a two-step process, learning step and prediction step. In the learning step, the model is developed based on given training data. In the prediction step, the model is used to predict the response for given data. Decision Tree is one of the easiest and popular classification algorithms to understand and interpret. It can be utilized for both classification and regression kind of problem.
 # Load libraries
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
@@ -10,10 +11,13 @@ from sklearn.model_selection import train_test_split
 # Import train_test_split function
 from sklearn import metrics
 #Import scikit-learn metrics module for accuracy calculation
-
+from graphviz import Source  #install
 #%%%% : Load Data
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
 url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/pima-indians-diabetes.csv'
+#This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage.
+#https://www.kaggle.com/uciml/pima-indians-diabetes-database
+#he datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.
 # load dataset
 pima = pd.read_csv(url, header=None, names=col_names)
 pima.head()
@@ -23,9 +27,9 @@ pima.head()
 
 #split dataset in features and target variable
 feature_cols = ['pregnant', 'insulin', 'bmi', 'age', 'glucose', 'bp', 'pedigree']
-X = pima[feature_cols] # Features
-y = pima.label # Target variable
-
+X = pima[feature_cols] # Features - bmi, age etc
+y = pima.label # Target variable : has diabetes =1
+#predict y on X
 #%%% Splitting Data
 #To understand model performance, dividing the dataset into a training set and a test set is a good strategy.
 #Let's split the dataset by using function train_test_split(). You need to pass 3 parameters features, target, and test_set size.
@@ -34,10 +38,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # 70% training and 30% test
 
 #%%%: Building Decision Tree Model :create a Decision Tree Model using Scikit-learn.
-
 # Create Decision Tree classifer object
 clf = DecisionTreeClassifier()
-
 # Train Decision Tree Classifer
 clf = clf.fit(X_train,y_train)
 y_train
@@ -54,14 +56,16 @@ y_train
 y_test
 import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
-graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
-display(SVG(graph.pipe(format='svg')))
 
 #%%%  Create Decision Tree classifer object
 clf = DecisionTreeClassifier(criterion="entropy", max_depth=3)
 
 # Train Decision Tree Classifer
 clf = clf.fit(X_train,y_train)
+#Visualise
+
+graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
+display(SVG(graph.pipe(format='svg')))
 
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
@@ -101,3 +105,25 @@ Image(graph.create_png())
 
 graph = Source(tree.export_graphviz(estimator, out_file=None   , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
 display(SVG(graph.pipe(format='svg')))
+
+
+#%%%%
+Optimizing Decision Tree Performance
+criterion : optional (default=”gini”) or Choose attribute selection measure: This parameter allows us to use the different-different attribute selection measure. Supported criteria are “gini” for the Gini index and “entropy” for the information gain.
+
+splitter : string, optional (default=”best”) or Split Strategy: This parameter allows us to choose the split strategy. Supported strategies are “best” to choose the best split and “random” to choose the best random split.
+
+max_depth : int or None, optional (default=None) or Maximum Depth of a Tree: The maximum depth of the tree. If None, then nodes are expanded until all the leaves contain less than min_samples_split samples. The higher value of maximum depth causes overfitting, and a lower value causes underfitting (Source).
+
+#%%%%
+# Create Decision Tree classifer object
+clf = DecisionTreeClassifier(criterion="entropy", max_depth=3)
+
+# Train Decision Tree Classifer
+clf = clf.fit(X_train,y_train)
+
+#Predict the response for test dataset
+y_pred = clf.predict(X_test)
+
+# Model Accuracy, how often is the classifier correct?
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred))

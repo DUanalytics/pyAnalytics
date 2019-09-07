@@ -27,24 +27,6 @@ iris_clustering
 X = iris_clustering.iloc[:, [0,2]].values
 X
 #We only chose 2 features as we are going to plot in 2D space. The algorithm will work  for any number of features.
-#%%%Using Elbow Graph To Find Optimum Number Of Clusters
-# Using the elbow method to find the optimal number of clusters
-from sklearn.cluster import KMeans
-wcss = []
-for i in range(1, 11):    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
-kmeans.fit(X)
-#appending the WCSS to the list (kmeans.inertia_ returns the WCSS value for an initialized cluster)
-wcss.append(kmeans.inertia_)  
-wcss
-
-##ERROR  ????
-#Plotting The Elbow graph: together till plt.show()
-plt.plot(range(1, 11), wcss)
-plt.title('The Elbow Point Graph')
-plt.xlabel('Number of clusters')
-plt.ylabel('WCSS')
-plt.show();
-
 
 #%%Initialising K-Means With Optimum Number Of Clusters
 #Fitting K-Means to the dataset
@@ -75,4 +57,39 @@ plt.legend()
 plt.show() ;
 
 
-#%%%
+#%%% wcss not working properly... ? check library
+
+
+distortions = []
+K = range(1,5)
+for k in K:
+    kmeanModel = KMeans(n_clusters=k).fit(df)
+    kmeanModel.fit(X)
+    distortions.append(sum(np.min(cdist(X, kmeanModel.cluster_centers_, 'euclidean'), axis=1)) / X.shape[0])
+
+# Plot the elbow
+plt.plot(K, distortions, 'bx-')
+plt.xlabel('k')
+plt.ylabel('Distortion')
+plt.title('The Elbow Method showing the optimal k')
+plt.show();
+
+
+#%%%Using Elbow Graph To Find Optimum Number Of Clusters
+# Using the elbow method to find the optimal number of clusters
+from sklearn.cluster import KMeans
+wcss = []
+for i in range(1, 11):    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
+kmeans.fit(X)
+#appending the WCSS to the list (kmeans.inertia_ returns the WCSS value for an initialized cluster)
+wcss.append(kmeans.inertia_)  
+wcss
+
+##ERROR  ????
+#Plotting The Elbow graph: together till plt.show()
+plt.plot(range(1, 12), wcss)
+plt.title('The Elbow Point Graph')
+plt.xlabel('Number of clusters')
+plt.ylabel('WCSS')
+plt.show();
+

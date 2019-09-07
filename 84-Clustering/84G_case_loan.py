@@ -43,16 +43,15 @@ plt.show();
 
 
 #K-Means++ to Choose Initial Cluster Centroids for K-Means Clustering
-In some cases, if the initialization of clusters is not appropriate, K-Means can result in arbitrarily bad clusters. This is where K-Means++ helps. It specifies a procedure to initialize the cluster centers before moving forward with the standard k-means clustering algorithm.
+#In some cases, if the initialization of clusters is not appropriate, K-Means can result in arbitrarily bad clusters. This is where K-Means++ helps. It specifies a procedure to initialize the cluster centers before moving forward with the standard k-means clustering algorithm.
 
-Using the K-Means++ algorithm, we optimize the step where we randomly pick the cluster centroid. We are more likely to find a solution that is competitive to the optimal K-Means solution while using the K-Means++ initialization.
+#Using the K-Means++ algorithm, we optimize the step where we randomly pick the cluster centroid. We are more likely to find a solution that is competitive to the optimal K-Means solution while using the K-Means++ initialization.
 
-The steps to initialize the centroids using K-Means++ are:
-
-The first cluster is chosen uniformly at random from the data points that we want to cluster. This is similar to what we do in K-Means, but instead of randomly picking all the centroids, we just pick one centroid here
-Next, we compute the distance (D(x)) of each data point (x) from the cluster center that has already been chosen
-Then, choose the new cluster center from the data points with the probability of x being proportional to (D(x))2
-We then repeat steps 2 and 3 until k clusters have been chosen
+#The steps to initialize the centroids using K-Means++ are:
+#The first cluster is chosen uniformly at random from the data points that we want to cluster. This is similar to what we do in K-Means, but instead of randomly picking all the centroids, we just pick one centroid here
+#Next, we compute the distance (D(x)) of each data point (x) from the cluster center that has already been chosen
+#Then, choose the new cluster center from the data points with the probability of x being proportional to (D(x))2
+#We then repeat steps 2 and 3 until k clusters have been chosen
 
 
 #%%%
