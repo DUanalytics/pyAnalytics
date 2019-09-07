@@ -20,10 +20,6 @@ y = data.target
 # class labels
 labels = data.feature_names
 
-
-
-
-
 #%%% error
 import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'

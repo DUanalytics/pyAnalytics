@@ -21,7 +21,9 @@ url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/pima-indi
 # load dataset
 pima = pd.read_csv(url, header=None, names=col_names)
 pima.head()
-
+pima.label.value_counts()
+pima.shape
+.7 * 768
 #%%% : Feature Selection
 #need to divide given columns into two types of variables dependent(or target variable) and independent variable(or feature variables).
 
@@ -56,21 +58,24 @@ y_train
 y_test
 import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
-
+#%%
+graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
+display(SVG(graph.pipe(format='svg')))
 #%%%  Create Decision Tree classifer object
-clf = DecisionTreeClassifier(criterion="entropy", max_depth=3)
-
+clf3 = DecisionTreeClassifier(criterion="entropy", max_depth=3)
 # Train Decision Tree Classifer
-clf = clf.fit(X_train,y_train)
+clf3 = clf3.fit(X_train,y_train)
 #Visualise
 
-graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
+graph = Source(tree.export_graphviz(clf3, out_file=None, class_names= ['0', '1']  , filled = True))
 display(SVG(graph.pipe(format='svg')))
 X_train[0:1]  
 #Class:1 : glucose > 127, glucose < 158, bmi, age,
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
-
+len(X_test)
+y_pred
+len(y_pred)
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #classification rate increased to 77.05%, which is better accuracy than the previous model.
