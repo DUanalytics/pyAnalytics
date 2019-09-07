@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Wed May  9 18:10:39 2018: Dhiraj
-"""
-
 #Clustering
 #https://github.com/jupyter/docker-demo-images/blob/master/datasets/cluster/xclara.csv
 from copy import deepcopy

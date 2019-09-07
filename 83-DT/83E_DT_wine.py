@@ -20,13 +20,7 @@ y = data.target
 # class labels
 labels = data.feature_names
 
-# print dataset description
-print(data.DESCR)
-estimator = DecisionTreeClassifier()
-estimator.fit(X, y)
 
-graph = Source(tree.export_graphviz(estimator, out_file=None   , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
-display(SVG(graph.pipe(format='svg')))
 
 
 
@@ -35,3 +29,11 @@ import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
 #https://stackoverflow.com/questions/35064304/runtimeerror-make-sure-the-graphviz-executables-are-on-your-systems-path-aft
 #https://graphviz.gitlab.io/_pages/Download/Download_windows.html
+#%%%
+# print dataset description
+print(data.DESCR)
+estimator = DecisionTreeClassifier()
+estimator.fit(X, y)
+
+graph = Source(tree.export_graphviz(estimator, out_file=None   , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
+display(SVG(graph.pipe(format='svg')))

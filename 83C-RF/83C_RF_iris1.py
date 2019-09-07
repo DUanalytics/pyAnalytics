@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Wed May  9 18:43:30 2018: Dhiraj
-"""
+#Random Forests - iris
 #https://github.com/alexhwoods/Machine-Learning/tree/master/Random%20Forest
 # RandomForests
 # First let's import the dataset, using Pandas.
@@ -23,8 +20,7 @@ test['class'].value_counts()
 from sklearn.ensemble import RandomForestClassifier
 
 
-#%%
-# however, are data has to be in a numpy array in order for the random forest algorithm to except it!
+#%%# however, are data has to be in a numpy array in order for the random forest algorithm to except it!
 cols = ['petal_length', 'petal_width', 'sepal_length', 'sepal_width']
 colsRes = ['class']
 trainArr = train.as_matrix(cols)    # training array
@@ -45,7 +41,10 @@ rf.fit(trainArr, trainRes)          # finally, we fit the data to the algorithm!
 testArr = test.as_matrix(cols)
 results = rf.predict(testArr)
 
-# something I like to do is to add it back to the dataframe, so I can compare side-by-side
+# add it back to the dataframe, so I can compare side-by-side
 test['predictions'] = results
 test.head()
 
+
+
+#end here...

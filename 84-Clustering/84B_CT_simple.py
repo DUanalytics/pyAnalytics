@@ -1,6 +1,6 @@
 #Topic: Clustering - Simple and Data Camp Site
 #-----------------------------
-https://www.datacamp.com/community/tutorials/k-means-clustering-python
+#https://www.datacamp.com/community/tutorials/k-means-clustering-python
 
 X = [1,1,1,2,1,2,1,2]
 Y = [4,2,4,1,1,4,1,1]
@@ -38,11 +38,10 @@ pd.concat([df, pd.Series(km2.labels_)], axis=1)
 
 #%%% #How to selected i ? - optimal number of clusters
 wcss = []
-for i in range(1, 5):
-    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
+for i in range(1, 5):    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
 
 kmeans.fit(df)
-#wcss.append(kmeans.inertia_)  
+wcss.append(kmeans.inertia_)  
 wcss  #this is approx value of i ~ 2
 
 

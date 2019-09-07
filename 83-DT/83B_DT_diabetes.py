@@ -3,7 +3,8 @@
 #https://www.datacamp.com/community/tutorials/decision-tree-classification-python
 # Load libraries
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+from sklearn import tree
 # Import Decision Tree Classifier
 from sklearn.model_selection import train_test_split
 # Import train_test_split function
@@ -42,7 +43,7 @@ clf = clf.fit(X_train,y_train)
 y_train
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
-
+y_pred
 #%%% : Evaluating Model
 # estimate, how accurately the classifier or model can predict the type of cultivars.# Accuracy can be computed by comparing actual test set values and predicted values.
 # Model Accuracy, how often is the classifier correct?
@@ -50,8 +51,10 @@ print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #classification rate of 67.53%, considered as good accuracy. You can improve this accuracy by tuning the parameters in the Decision Tree Algorithm.
 #%%%
 y_train
-labels
-graph = Source(tree.export_graphviz(clf, out_file=None, class_names=['0', '1']  , filled = True))
+y_test
+import os
+os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
+graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
 display(SVG(graph.pipe(format='svg')))
 
 #%%%  Create Decision Tree classifer object
@@ -79,7 +82,6 @@ The small variation(or variance) in data can result in the different decision tr
 Decision trees are biased with imbalance dataset, so it is recommended that balance out the dataset before creating the decision tree.
 
 
-#%%%
 #%%% : Visualizing Decision Trees
 #You can use Scikit-learn's export_graphviz function for display the tree within a Jupyter notebook. For plotting tree, you also need to install graphviz and pydotplus.
 #pip install graphviz

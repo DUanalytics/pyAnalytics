@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Tue May  8 21:54:03 2018: Dhiraj
-"""
-# Decision Tree
+# Decision Tree - iris - Not working
 import numpy as np
 from sklearn.externals.six import StringIO
 from sklearn.tree import DecisionTreeClassifier, export_graphviz

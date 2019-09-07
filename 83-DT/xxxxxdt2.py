@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Wed May  9 14:38:47 2018: Dhiraj
-"""
-
+#Decision Tree - iris - Not working
 from sklearn import tree
 
 X = [[0,0],[1,1]]
