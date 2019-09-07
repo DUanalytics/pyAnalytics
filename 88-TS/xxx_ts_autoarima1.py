@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#not working
 """
 Wed May  9 21:44:51 2018: Dhiraj
 """
@@ -15,7 +15,6 @@ import pyramid
 
 print('numpy version: %r' % np.__version__)
 print('pyramid version: %r' % pyramid.__version__)
-forecast::wineind
 from pyramid.arima import ARIMA
 
 fit = ARIMA(order=(1, 1, 1), seasonal_order=(0, 1, 1, 12)).fit(y=wineind)

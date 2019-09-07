@@ -1,4 +1,4 @@
-#Moving Average
+ #Moving Average
 #-----------------------------
 #%https://machinelearningmastery.com/time-series-forecasting-methods-in-python-cheat-sheet/
 #Moving Average (MA)
@@ -21,7 +21,7 @@ data
 
 # fit model
 model = ARMA(data, order=(0, 1))
-
+ARMA?
 model_fit = model.fit(disp=False)
 
 # make prediction
