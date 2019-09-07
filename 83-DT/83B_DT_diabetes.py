@@ -66,7 +66,8 @@ clf = clf.fit(X_train,y_train)
 
 graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
 display(SVG(graph.pipe(format='svg')))
-
+X_train[0:1]  
+#Class:1 : glucose > 127, glucose < 158, bmi, age,
 #Predict the response for test dataset
 y_pred = clf.predict(X_test)
 
