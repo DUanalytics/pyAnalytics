@@ -46,3 +46,7 @@ mashift = lag3.rolling(window=width).mean()
 dataframe = pd.concat([mashift, lag1, series], axis=1)
 dataframe.columns = ['mashift', 't-1', 't+1']
 print(dataframe.head(10))
+
+
+
+#https://machinelearningmastery.com/moving-average-smoothing-for-time-series-forecasting-python/

@@ -1,6 +1,5 @@
 #HWES
 #-----------------------------
-#%
 #Holt Winter’s Exponential Smoothing (HWES)
 #The Holt Winter’s Exponential Smoothing (HWES) also called the Triple Exponential Smoothing method models the next time step as an exponentially weighted linear function of observations at prior time steps, taking trends and seasonality into account.
 #
