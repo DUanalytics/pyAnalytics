@@ -4,14 +4,18 @@
 #As a marketing manager, you want a set of customers who are most likely to purchase your product. This is how you can save your marketing budget by finding your audience. As a loan manager, you need to identify risky loan applications to achieve a lower loan default rate. This process of classifying customers into a group of potential and non-potential customers or safe or risky loan applications is known as a classification problem. Classification is a two-step process, learning step and prediction step. In the learning step, the model is developed based on given training data. In the prediction step, the model is used to predict the response for given data. Decision Tree is one of the easiest and popular classification algorithms to understand and interpret. It can be utilized for both classification and regression kind of problem.
 # Load libraries
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier, export_graphviz
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
-# Import Decision Tree Classifier
+from sklearn.tree import export_graphviz
 from sklearn.model_selection import train_test_split
-# Import train_test_split function
 from sklearn import metrics
-#Import scikit-learn metrics module for accuracy calculation
-from graphviz import Source  #install
+from sklearn.externals.six import StringIO 
+from graphviz import Source
+from IPython.display import Image  
+import pydotplus
+from IPython.display import SVG
+
 #%%%% : Load Data
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
 url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/pima-indians-diabetes.csv'
@@ -38,7 +42,7 @@ y = pima.label # Target variable : has diabetes =1
 # Split dataset into training set and test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) 
 # 70% training and 30% test
-
+X_train.head()
 #%%%: Building Decision Tree Model :create a Decision Tree Model using Scikit-learn.
 # Create Decision Tree classifer object
 clf = DecisionTreeClassifier()
@@ -53,32 +57,68 @@ y_pred
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #classification rate of 67.53%, considered as good accuracy. You can improve this accuracy by tuning the parameters in the Decision Tree Algorithm.
+from sklearn.metrics import confusion_matrix
+confusion_matrix = confusion_matrix(y_test, y_pred)
+print(confusion_matrix)
+from sklearn.metrics import classification_report
+print(classification_report(y_test, y_pred))
+#%%% 
+y_test.shape, y_pred.shape
+y_test.head()
+y_pred[0:6]
 #%%%
-y_train
-y_test
+from graphviz import Source
+from sklearn import tree
+from IPython.display import SVG
+#libraries & path of graphviz
 import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
 #%%
-graph = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
-display(SVG(graph.pipe(format='svg')))
+graph1 = Source(tree.export_graphviz(clf, out_file=None, class_names= ['0', '1']  , filled = True))
+display(SVG(graph1.pipe(format='svg')))
+#change labels names
+graph2 = Source( tree.export_graphviz(clf, out_file=None, feature_names=X.columns, filled=True, class_names=['NoDiabetis','Diabetis']))
+graph2
+#change max_depth : 1 to 4
+Source(tree.export_graphviz(clf, out_file=None, max_depth=1, feature_names=X.columns, class_names=['NonDB','DB'], label='all', filled=True, leaves_parallel=True, impurity=True, node_ids=True, proportion=True, rotate=True, rounded=True, special_characters=False, precision=1))
+#https://stackoverflow.com/questions/27817994/visualizing-decision-tree-in-scikit-learn
+# This is for saving image in file system
+#https://scikit-learn.org/stable/modules/generated/sklearn.tree.export_graphviz.html
+import pydotplus
+dotfile = StringIO()
+tree.export_graphviz(clf, out_file=dotfile, filled=True, feature_names=X.columns, class_names=['NoDiabetis','Diabetis'])
+pydotplus.graph_from_dot_data(dotfile.getvalue()).write_png("E:/graphs/dtree2.png")
+#True should be returned. goto location and see the file
+
 #%%%  Create Decision Tree classifer object
+#change max_depth at the time of creation and method
+#criterio= entropy, gini
 clf3 = DecisionTreeClassifier(criterion="entropy", max_depth=3)
 # Train Decision Tree Classifer
 clf3 = clf3.fit(X_train,y_train)
 #Visualise
-
-graph = Source(tree.export_graphviz(clf3, out_file=None, class_names= ['0', '1']  , filled = True))
-display(SVG(graph.pipe(format='svg')))
+Source(tree.export_graphviz(clf3, out_file=None, class_names= ['0', '1']  , filled = True, feature_names=X.columns,node_ids=True))
+#display(SVG(graph3b.pipe(format='svg')))
 X_train[0:1]  
 #Class:1 : glucose > 127, glucose < 158, bmi, age,
 #Predict the response for test dataset
-y_pred = clf.predict(X_test)
+y_pred3 = clf3.predict(X_test)
 len(X_test)
-y_pred
-len(y_pred)
+y_pred3
+len(y_pred3)
 # Model Accuracy, how often is the classifier correct?
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred3))
 #classification rate increased to 77.05%, which is better accuracy than the previous model.
+
+#----
+clf4 = DecisionTreeClassifier(criterion="gini", max_depth=3)
+# Train Decision Tree Classifer
+clf4 = clf4.fit(X_train,y_train)
+y_pred4 = clf4.predict(X_test)
+Source(tree.export_graphviz(clf4, out_file=None, class_names= ['0', '1']  , filled = True, feature_names=X.columns))
+#display(SVG(graph4b.pipe(format='svg')))
+print("Accuracy:",metrics.accuracy_score(y_test, y_pred4))
+
 
 #%%% : Features
 Decision trees are easy to interpret and visualize.

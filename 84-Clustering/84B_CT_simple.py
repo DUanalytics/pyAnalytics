@@ -43,12 +43,14 @@ pd.concat([df, pd.Series(km2.labels_)], axis=1)
 
 #%%% #How to selected i ? - optimal number of clusters
 wcss = []
-for i in range(1, 5):    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
-# what is the effect of i here... ?
-kmeans.fit(df)
-wcss.append(kmeans.inertia_)  
-wcss  #this is approx value of i ~ 2
+#run these together
+for i in range(1, 5):    
+    kmeans = KMeans(n_clusters = i, init = 'k-means++', random_state = 42)
+    kmeans.fit(df)
+    wcss.append(kmeans.inertia_)  
 
+wcss  #this is approx value of i ~ 2
+plt.plot(wcss)
 #%%%
 km1 = KMeans(n_clusters = 1, init = 'k-means++', random_state = 42)
 km1.fit(df)
