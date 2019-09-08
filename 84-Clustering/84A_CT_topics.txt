@@ -10,4 +10,18 @@ Clustering is the process of dividing the entire data into groups (also known as
 How to do Clustering
 What are the various ways of doing clustering
 
+#%%%
+#Hierarchical Clustering
+#Agglomerative Hierarchical Clustering
+We assign each point to an individual cluster in this technique. Suppose there are 4 data points. We will assign each of these points to a cluster and hence will have 4 clusters in the beginning: multiple clusters
+Then, at each iteration, we merge the closest pair of clusters and repeat this step until only a single cluster is left: agglomerative clustering
+We are merging (or adding) the clusters at each step, right? Hence, this type of clustering is also known as additive hierarchical clustering.
 
+#Divisive Hierarchical Clustering :Divisive hierarchical clustering works in the opposite way. Instead of starting with n clusters (in case of n observations), we start with a single cluster and assign all the points to that cluster.
+So, it doesn’t matter if we have 10 or 1000 data points. All these points will belong to the same cluster at the beginning: single cluster
+Now, at each iteration, we split the farthest point in the cluster and repeat this process until each cluster only contains a single point: multiple clusters
+We are splitting (or dividing) the clusters at each step, hence the name divisive hierarchical clustering.
+#--------
+Agglomerative Clustering is widely used in the industry and that will be the focus in this article. Divisive hierarchical clustering will be a piece of cake once we have a handle on the agglomerative type.
+
+https://www.analyticsvidhya.com/blog/2019/05/beginners-guide-hierarchical-clustering/
