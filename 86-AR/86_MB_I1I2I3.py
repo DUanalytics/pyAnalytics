@@ -50,6 +50,8 @@ lift2 = association_rules(frequent_itemsets, metric="lift", min_threshold=2)
 print(lift2)
 print(lift2[['antecedents', 'consequents', 'support', 'lift','confidence']])
 
+lift2[(lift2.confidence > .5) & (lift2.support > .2)]
+
 #%%%% Confidence
 confidence10 = association_rules(frequent_itemsets, metric="confidence", min_threshold=1)
 print(confidence10)
@@ -78,7 +80,7 @@ frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets[ 'sup
 #### Part - 3 
 from efficient_apriori import apriori
 #install efficient_apriori
-
+#https://pypi.org/project/efficient-apriori/
 itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
 itemsets2
 rules2
