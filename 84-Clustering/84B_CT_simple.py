@@ -1,7 +1,7 @@
 #Topic: Clustering - Simple and Data Camp Site
 #-----------------------------
 #https://www.datacamp.com/community/tutorials/k-means-clustering-python
-
+#https://scikit-learn.org/stable/modules/clustering.html
 X = [1,1,1,2,1,2,1,2]
 Y = [4,2,4,1,1,4,1,1]
 Z = [1,2,2,2,1,2,2,1]
@@ -25,6 +25,9 @@ km3.fit_predict(df)
 km3.cluster_centers_
 km3.inertia_
 km3.labels_   #which row has goes to which cluster no
+km3.get_params
+km3.n_clusters
+
 df
 pd.concat([df, pd.Series(km3.labels_)], axis=1)
 
@@ -79,14 +82,26 @@ for k in K:
     kmeanModel.fit(df)
     distortions.append(sum(np.min(cdist(df, kmeanModel.cluster_centers_, 'euclidean'), axis=1)) / df.shape[0])
 
-km1.inertia_
-
 distortions
 # Plot the elbow
 plt.plot(K, distortions, 'bx-')
 plt.xlabel('k')
 plt.ylabel('Distortion')
 plt.title('The Elbow Method showing the optimal k')
+plt.show();
+#%%%%
+#Plot clusters %%%%
+km3b = KMeans(n_clusters = 3, init = 'k-means++', random_state = 42)
+X2 = np.random.randint(50,100, size=100)
+Y2 = np.random.randint(60,90, size=100)
+
+df2 = pd.DataFrame({'X':X2, 'Y':Y2})
+km3b.fit(df2)
+km3b.inertia_
+centers = np.array(km3b.cluster_centers_)
+centers
+plt.scatter(x=df2.X, y=df2.Y)
+plt.scatter(centers[:,0], centers[:,1], marker="x", color='r')
 plt.show();
 
 
