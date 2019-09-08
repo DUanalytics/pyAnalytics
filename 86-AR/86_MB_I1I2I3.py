@@ -28,6 +28,7 @@ te.inverse_transform(orgtrans1)
 
 #%%% #frequent itemsets - Most Imp Step
 support_threshold = 0.01
+#https://github.com/rasbt/mlxtend/blob/master/mlxtend/frequent_patterns/apriori.py
 frequent_itemsets = apriori(df, min_support= support_threshold, use_colnames = True)
 frequent_itemsets
 print(frequent_itemsets) #dataframe with the itemsets

@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 
 #load the data
 url = 'https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/airline.csv'
-data = pd.read_csv('data/airline.csv')
+#data = pd.read_csv('data/airline.csv')
 data
 #divide into train and validation set
 train = data[:int(0.7*(len(data)))]
