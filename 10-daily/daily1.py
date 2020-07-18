@@ -49,7 +49,7 @@ set3 = {'Australia', 'South Africa', 'INDIA'}
 set3
 sorted(set3)
 set2.union(set3) #set2 | set3
-A.intersection(B)
+#A.intersection(B)
 set2.intersection(set3) #set2 & set
 
 type(set2)
