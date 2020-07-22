@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+pip install pydataset  #installing a library
 from pydataset import data
 #Data
 mtcars = data('mtcars')

@@ -2,6 +2,10 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+#pandas DF are combination of panda Series..
+#one column data is a Series of one datatype, DF can have multiple data types
+
+#pip install pydataset
 from pydataset import data
 mtcars = data('mtcars')
 #conda upgrade --all -y
@@ -11,8 +15,8 @@ df.columns
 df.dtypes
 df.shape
 #%%
-plot([x], y, [fmt], *, data=None, **kwargs)
-plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)
+#plot([x], y, [fmt], *, data=None, **kwargs)
+#plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)
 #%%%  Data from Data Frame
 df.sort_values(by='wt', inplace=True)
 plt.plot('wt', 'mpg', data=df)
@@ -54,3 +58,9 @@ plt.show()
 #%%%  X & Y
 Y = df.mpg
 plt.plot(X,Y)
+
+
+
+
+
+#%% graphs

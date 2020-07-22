@@ -12,6 +12,8 @@ list2 = ['f','c','d','e','f']
 list2
 list2.count('f')
 len(list2)
+dir(list)
+dir(tuple)
 dir(list) #functions which can be operated on list of DS
 sorted(list2)
 
@@ -148,7 +150,7 @@ dir(pd)
 df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60.5, 70 ], 'gender':['M', 'M','M', 'F']})
 df1
 type(df1) 
-
+import numpy as np
 df1.columns  #columnanes
 df1.describe() #description of numerical values
 df1.dtypes #data types

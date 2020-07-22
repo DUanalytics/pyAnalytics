@@ -41,7 +41,7 @@ model1.intercept_ #b0 coef
 y_pred1 = model1.predict(X)
 y_pred1
 #The mean squared error
-mean_squared_error(y,y_pred1)
+?mean_squared_error(y,y_pred1)
 r2_score(y, y_pred1)
 print('Variance score: %.2f' % r2_score(y, y_pred1))
 # Plot outputs  : select all at once and run
