@@ -26,3 +26,7 @@ dotfile = open('dtree2.dot','w')
 tree.export_graphviz(clf, out_file = dotfile, feature_names= features, filled=True, rounded=True, impurity=False, class_names=['No Umbrella','Umbrella'])
 dotfile.close()
 #paste the code here : http://www.webgraphviz.com/
+#this will create tree 
+
+#predict for unknown instance
+clf.predict([[0]])
