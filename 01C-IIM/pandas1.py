@@ -18,20 +18,53 @@ mtcarsDF.head(3)
 mtcarsDF.tail(4)
 mtcarsDF.describe
 mtcarsDF.columns
+mtcarsDF.dtypes
+
 mtcarsDF.index  #here index by rownames
 type(mtcarsDF)
+
+mtcarsDF.select_dtypes(include=['int64'])
+mtcarsDF.select_dtypes(exclude=['int64'])
+mtcarsDF.isna()
+mtcarsDF.notna()
+id(mtcarsDF)
+mtcars.empty
+mtcars.size
+mtcars.ndim
+mtcars.axes
+mtcars.values
+
 #%%% access DF
 mtcarsDF[0:5]
 mtcarsDF[0:5,0:3]
-mtcarsDF.loc[['Mazda']]
-mtcarsDF.loc('Mazda', axis=1)
+
+#single value: at
+mtcarsDF.at['Mazda RX4', 'mpg']
+mtcarsDF.at['Mazda RX4', 'mpg']
+
+#single values : iat : integer
+mtcarsDF.iat[0,0]
+mtcarsDF.iat[0,0:5]
+
+#set of values : loc : index values
+mtcarsDF.index
+mtcarsDF.loc[['Mazda 4X4']]
+mtcarsDF.loc['Mazda 4X4', ['mpg']]
 mtcarsDF.loc[7:9]
-mtcarsDF.at[4, 'am']
-mtcarsDF.filter(['gear', 'am'])
-mtcarsDF.filter(regex = '[gGa]')  #small or big G or a in the column name
+
+#iloc
+mtcarsDF
+mtcarsDF.loc['Mazda RX4']
+mtcarsDF.loc['Mazda RX4', 'mpg']
+mtcarsDF.loc['Mazda RX4', ['mpg', 'wt']]
+mtcarsDF.loc['Merc 280', ['mpg', 'wt']]
+mtcarsDF.loc['Mazda RX4':'Datsun 710']  #difficult to implement
 
 #loc uses index labels, iloc considers position in the index
-#position 
+
+mtcarsDF.iloc[1:10, 1:5]
+mtcarsDF.iloc[1:10:2, 1:5:2]
+mtcarsDF.iloc[1::2, 1::2]
 mtcarsDF.iloc[0]
 mtcarsDF.iloc[1:5]
 mtcarsDF.iloc[1,5] #2nd row, 6th column
@@ -42,16 +75,28 @@ mtcarsDF.iloc[::-1]  #reverse order
 mtcarsDF.iloc[::2].iloc[::2] #first alternate, again alternate
 mtcarsDF.iloc[:-2:-2]  #which rows is this
 mtcarsDF.iloc[1::5,:]  #5th row start from 1(2nd row)
-
-
 mtcarsDF.iloc[0:3]
-mtcarsDF.loc['Mazda RX4':'Datsun 710']  #different to implement
 
 
+#filter
+mtcarsDF.filter(['gear', 'am'])
+mtcarsDF.filter(regex = '[gGa]')  #small or big G or a in the column name
 
 mtcarsDF.filter(items=['gear','am'])
 mtcarsDF.filter(regex='Toyota', axis=0)  #rownames axis=0
 mtcarsDF.filter(regex='am', axis=1)  #colnames axis=1
+
+#%%statistics 0- column, 1-row
+mtcarsDF.mean(axis=0)
+mtcarsDF.mean(axis=1)
+mtcarsDF.kurt(axis=0)
+mtcarsDF.kurt(axis=1)
+mtcarsDF.max(axis=0)
+mtcarsDF.max(axis=1)
+mtcarsDF.rank(axis=0)
+mtcarsDF.skew(axis=0)
+mtcarsDF.skew(axis=1)
+
 
 
 #%%filter
@@ -105,9 +150,16 @@ mtcarsDF['mpg'].count()
 #other stats functions - count, sum, mean, mad, median, min, max, mode, abs, prod, std, var, sem, skew, kurt, quantile, cumsum, cumprod, cummax, cummin, describe
 mtcarsDF.describe()  # default only numeric
 
+#%% sort
+mtcarsDF.sort_values(by='gear', axis=0)
+mtcarsDF.sort_values(by=['gear', 'mpg'])
 
-#groups
 
+
+
+
+#%%% groupby
+mtcarsDF.describe()
 mtcarsDF.groupby('gear')
 mtcarsDF.groupby(['gear'])
 mtcarsDF.groupby(['gear']).groups.keys()
@@ -117,7 +169,25 @@ mtcarsDF.groupby('carb').last()
 mtcarsDF.groupby('gear')['mpg'].mean()
 mtcarsDF.groupby('gear').count()
 mtcarsDF.groupby('gear')['mpg'].count()
-mtcarsDF[]
+mtcarsDF.groupby('cyl')['mpg','wt'].mean()
+mtcarsDF.groupby(['cyl','gear'])['mpg','wt'].mean()
+
+#with aggregate
+mtcarsDF.groupby('gear').agg('mean')
+mtcarsDF.groupby('gear').size()
+mtcarsDF.groupby(['gear','cyl']).size()
+mtcarsDF.groupby(['gear','cyl']).count() #size better
+
+
+mtcarsDF.groupby('gear').mpg.agg('mean')
+mtcarsDF.groupby('gear')['mpg'].agg('mean')
+mtcarsDF.groupby('gear')['mpg','wt'].agg('mean')
+mtcarsDF.groupby('gear')['mpg','wt'].agg(['mean','max'])
+mtcarsDF.groupby('gear').agg([np.mean, np.sum])  #all columns, np is faster, numeric values
+mtcarsDF.groupby('gear')['mpg','wt'].agg([np.mean, np.sum, 'count'])
+mtcarsDF.groupby('gear')['mpg'].agg([np.mean, np.sum, 'count']).rename(columns={'meanMPG')
+
+
 
 mtcarsDF.groupby('gear').agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='mean'))
 mtcarsDF.groupby(['gear','am']).agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='max'))
@@ -125,8 +195,102 @@ mtcarsDF.groupby('gear').agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='mean')
 mtcarsDF['gear'].count()
 mtcarsDF['gear'].max()
 
+mtcarsDF.groupby('gear').mean()
+mtcarsDF.groupby('gear').mean().add_prefix('MEAN_')
+
+gearGp = mtcarsDF.groupby('gear')
+gearGp.mean()
+gearGp.nth(1)
+gearGp.nth([1,3])
+
+
+#crosstab
+import pandas as pd
+pd.crosstab(mtcarsDF.cyl, mtcarsDF.gear)
+
+#pivot
+pd.crosstab(mtcarsDF.cyl, mtcarsDF.gear, margins=True, margins_name='Total')
+pd.crosstab(mtcarsDF.cyl, [mtcarsDF.gear, mtcarsDF.am])
+pd.crosstab([mtcarsDF.cyl, mtcarsDF.vs], [mtcarsDF.gear, mtcarsDF.am], rownames=['Cylinder','EngineShape'], colnames=['Gear', 'TxType'], dropna=False)
+
+#pivottable
+mtcarsDF.pivot_table('cyl','am', columns='gear')  #mean by default
+mtcarsDF.pivot_table(values=['mpg','hp'], index=['gear'], columns=['am','vs'])
+#index on left, values on columns, columns on left top
+
+#dfply
+#pip install dfply  #install this library first
+from dfply import *
+mtcarsDF2 = mtcarsDF.copy()
+id(mtcarsDF)
+id(mtcarsDF2)
+mtcarsDF2['carname'] = mtcarsDF2.index
+mtcarsDF2.head()  #column with carnames
+
+catcol = ['cyl', 'vs', 'am', 'gear' , 'carb']
+mtcarsDF2[catcol] = mtcarsDF2[catcol].astype('category')
+mtcarsDF2.dtypes
+#chaining with >>
+mtcarsDF2 >> select(X.mpg)   #X is current DF
+mtcarsDF2 >> select(~X.mpg, ~X.wt).tail()   # exclude
+mtcarsDF2 >> select(X.mpg, X.wt, X.am) >> head()
+mtcarsDF2 >> select(X.mpg, X.wt)  >> arrange(X.mpg, ascending = False)
+mtcarsDF2 >> select(X.mpg, X.gear, X.wt)  >> arrange(-X.gear, X.mpg) 
+mtcarsDF2 >> mutate(newMPG = 1.2 * X.mpg)  >> select(X.mpg, X.newMPG)
+
+mtcarsDF2 >> group_by(X.cyl) #nothing
+mtcarsDF2 >> group_by(X.cyl, X.am) >> summarise(meanMPG = X.mpg.mean())
+
+mtcarsDF2 >> group_by(X.cyl, X.am) >> summarise(meanMPG = X.mpg.mean()) >> arrange(X.cyl, X.meanMPG)
+
+
+
 
 #%% graphs 
+
+#from pandas: some graphs may not come correct. This is just syntax demo
+mtcarsDF.plot(x='wt', y='mpg')
+mtcarsDF.plot.area(x='wt', y='mpg')
+mtcarsDF.plot.bar(x='gear', y='am')
+mtcarsDF.plot.barh(x='gear', y='am')
+
+mtcarsDF.plot.density()
+mtcarsDF.mpg.plot.density()
+mtcarsDF.plot.hist()
+mtcarsDF.mpg.plot.hist()
+mtcarsDF.plot.line()
+mtcarsDF.mpg.plot.line()
+mtcarsDF.plot.pie(y='gear')
+mtcarsDF.gear.plot.pie() #not correct
+mtcarsDF.boxplot()
+mtcarsDF.plot.scatter(x='mpg',y='hp')
+
+
+
+#seaborn
+import seaborn as sns
+xt1 = pd.crosstab(mtcarsDF.cyl, mtcarsDF.gear)
+xt1
+sns.heatmap(xt1, cmap='YlGnBu', annot=True, cbar=False)
+xt2 = pd.crosstab(index=mtcarsDF.gear, columns=[mtcarsDF.am, mtcarsDF.vs], rownames=['Gear'] , colnames =['AM','VS'])
+xt2
+sns.heatmap(xt2)
+sns.heatmap(xt2, cmap='YlGnBu', annot=True, cbar=False)
+
+
+#ggplot
+#pip install ggplot
+from ggplot import *
+ggplot(data=mtcarsDF, mapping= aes(x='wt', y='mpg')) + geom_point(colour='r')
+#error tslib https://github.com/yhat/ggpy/issues/662
+
+#%% save to/from excel
+mtcarsDF.to_csv('mtcars.csv') #check the folder in working dir tab
+mtcarsDF.to_excel('mtcars.xlsx', sheet_name='mtcars1')
+mtcarsDF.to_clipboard() #clipboard, paste it anywhere
+
+
+
 import matplotlib.pyplot as plt
 #scatter plot
 plt.scatter(x=mtcarsDF.wt, y=mtcarsDF.mpg)
@@ -146,3 +310,16 @@ mtcarsDF.groupby(['gear']).count()
 df = df.groupby(['home_team'])['arrests'].mean()
 
 df.plot.bar()
+
+
+#using matplotlib
+
+
+
+
+
+
+#%%  other pandas function
+#merge, missing values, outliers, join, reshape
+
+
