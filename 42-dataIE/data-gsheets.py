@@ -21,6 +21,7 @@ df.head()
 
 #%%  Not working
 #pandas.Dataframe() but obviously needed to install and import gspread. And it worked fine!
+#pip install gspread
 import gspread as gs
 gsheet = gs.open("https://docs.google.com/spreadsheets/d/1h7HU0X_Q4T5h5D1Q36qoK40Tplz94x_HZYHOJJC_edU")
 Sheet_name ="slr1"
@@ -39,6 +40,7 @@ csv_url=link.format(FILE_ID=file_id)
 #csv_url='https://drive.google.com/uc?export=download&id=1-tjNjMP6w0RUV4GhJWw08ql3wYwsNU69'
 df = pd.read_csv(csv_url)
 df
+
 
 #%%
 file_id='2023826519'
@@ -62,6 +64,7 @@ load_from_gspreadsheet('1h7HU0X_Q4T5h5D1Q36qoK40Tplz94x_HZYHOJJC_edU','202382651
 
 
 #%%
+#pip install pygsheets
 import pygsheets
 #pip install pygsheets # in anaconda prompt as admin
 gc = pygsheets.authorize()
@@ -78,3 +81,13 @@ wks.update_cells('A2', my_nparray.to_list())
 
 # share the sheet with your friend
 sh.share("myFriend@gmail.com")
+
+
+
+
+#%%% https://pypi.org/project/gsheets/
+pip install gsheets
+from gsheets import Sheets
+sheets
+sheets['1X2AjCyh1Kcs-CA8ilGZyBZBobuFP7cSS9D-3a5LK6sk']
+s = Sheets

@@ -13,7 +13,7 @@ df1 = pd.read_csv('data/iris.csv')
 df1.head()
 df1
 #change for your folder
-df1a = pd.read_csv('E:/pywork/pyProjects/duanalytics/pyAnalytics/data/iris.csv')
+df1a = pd.read_csv('E:/analytics/projects/pyAnalytics/data/iris.csv')
 df1a.head()
 
 #when reverse slash use two back slash
@@ -24,11 +24,13 @@ df2.head()
 #import from explorer
 import subprocess
 
-subprocess.call("explorer E:\\pywork\\data", shell=True)
+subprocess.call("explorer E:\\analytics\\data", shell=True)
 
+#pip install easygui
 import easygui
 file = easygui.fileopenbox()
 file
 #not working
-#df3 = pd.read_csv(file = easygui.fileopenbox())
+df3 = pd.read_csv(easygui.fileopenbox())
+df3
 #https://www.shanelynn.ie/python-pandas-read_csv-load-data-from-csv-files/
