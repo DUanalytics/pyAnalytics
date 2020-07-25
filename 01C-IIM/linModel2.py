@@ -9,7 +9,10 @@ import seaborn as sns
 
 
 #read data
-media = pd.DataFrame(pd.read_csv('data/mediacompany.csv'))
+#media = pd.DataFrame(pd.read_csv('data/mediacompany.csv'))
+url ='https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/mediacompany.csv'
+media = pd.DataFrame(pd.read_csv(url))
+
 media.head()
 
 #check duplicates
