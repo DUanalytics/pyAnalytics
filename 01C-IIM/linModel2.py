@@ -1,6 +1,6 @@
 #Topic: Linear Regression 2 Media Coy Case
 #-----------------------------
-#libraries <
+#libraries
 
 import numpy as np
 import pandas as pd
