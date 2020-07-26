@@ -21,9 +21,9 @@ import seaborn as sns # used to create the Confusion Matrix
 import matplotlib.pyplot as plt # used to display charts
 
 #data from csv
-url = "https://stats.idre.ucla.edu/stat/data/binary.csv"
-df = pd.read_csv(url)
-df
+# url = "https://stats.idre.ucla.edu/stat/data/binary.csv"
+# df = pd.read_csv(url)
+# df
 
 #data
 gmat =  [780,750,690,710,680,730,690,720,740, 690,610,690,710,680, 770,610,580, 650,540, 590,620, 600,550,550, 570,670,660,580,650,660,640,620,660, 660,680,650,670,580,590,690]

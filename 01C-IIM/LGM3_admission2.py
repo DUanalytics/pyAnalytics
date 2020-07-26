@@ -1,7 +1,6 @@
 #Topic: Logistic Regression - GRE
 #-----------------------------
 #libraries
-
 import pandas as pd
 import statsmodels.api as sm
 import pylab as pl
@@ -38,6 +37,19 @@ df.hist() ; pl.show()
 #Histograms are often one of the most helpful tools you can use during the exploratory phase of any data analysis project. They're normally pretty easy to plot, quick to interpret, and they give you a nice visual representation of your problem.
 #dummy variables : pandas gives you a great deal of control over how categorical variables are represented. We're going dummify the "prestige" column using get_dummies.
 #get_dummies creates a new DataFrame with binary indicator variables for each category/option in the column specified. In this case, prestige has four levels: 1, 2, 3 and 4 (1 being most prestigious). When we call get_dummies, we get a dataframe with four columns, each of which describes one of those levels.
+
+#solve this case 
+#predict student will get select on basis of gre, gpa, prestige
+
+
+
+
+
+
+
+
+
+
 
 # dummify rank
 dummy_ranks = pd.get_dummies(df['prestige'], prefix='prestige')

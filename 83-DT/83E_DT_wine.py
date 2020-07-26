@@ -31,5 +31,5 @@ print(data.DESCR)
 estimator = DecisionTreeClassifier()
 estimator.fit(X, y)
 
-graph = Source(tree.export_graphviz(estimator, out_file=None   , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
+graph = Source(tree.export_graphviz(estimator, out_file=None , feature_names=labels, class_names=['0', '1', '2']  , filled = True))
 display(SVG(graph.pipe(format='svg')))

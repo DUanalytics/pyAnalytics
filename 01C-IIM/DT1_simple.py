@@ -2,7 +2,6 @@
 #-----------------------------
 #libraries
 
-
 #Decision Tree - one of the most popular ML algo
 #obsvervation to conclusion(category); Observations are represented as branches, conclusions as leaves
 #classification tree - target variable discrete value
