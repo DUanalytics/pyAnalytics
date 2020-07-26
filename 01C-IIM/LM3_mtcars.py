@@ -6,6 +6,11 @@ import matplotlib.pyplot as plt
 from pydataset import data
 mtcars = data('mtcars')
 data=mtcars
+id(mtcars)
+id(data)
+data = mtcars.copy()
+id(data)
+
 data.head()
 data.columns
 data.dtypes

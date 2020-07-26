@@ -15,3 +15,5 @@ logit_mod = sm.Logit(spector_data.endog, spector_data.exog)
 logit_res = logit_mod.fit()
 #Optimization terminated successfully.   Current function value: 0.402801 Iterations 7
 print(logit_res.summary())
+
+#https://www.statsmodels.org/stable/discretemod.html

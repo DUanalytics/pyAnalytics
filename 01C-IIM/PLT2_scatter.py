@@ -29,8 +29,10 @@ df['wt']; df['mpg']
 plt.scatter(x='wt', y='mpg', data=df)
 plt.show();
 
+df.carb.value_counts()
 #color, transparency, shape
-plt.scatter(x='wt', y='mpg', s='hp', alpha=.5, c='gear', data=df)
+plt.scatter?
+plt.scatter(x='wt', y='mpg', s='hp', alpha=.5, c='carb', data=df)
 plt.legend(loc='upper left')
 plt.show();
 
@@ -55,7 +57,8 @@ plt.scatter(total_bill, tip)
 plt.title(label='Total Bill vs Tip')
 plt.xlabel('Total Bill')
 plt.ylabel('Tip')
-plt.show()
+plt.show();
+
 
 #%% marker size
 plt.scatter(total_bill, tip, s=1)
@@ -77,6 +80,15 @@ scatter = plt.scatter(total_bill, tip, s=size_of_table_scaled)
 handles, labels = scatter.legend_elements(prop='sizes')
 plt.legend(handles, labels)
 plt.show();
+
+df
+scatter = plt.scatter('wt', 'mpg', s='hp', data=df)
+handles, labels = scatter.legend_elements(prop='sizes')
+plt.xlabel('wt')
+plt.ylabel('mpg')
+plt.legend(handles, labels)
+plt.show();
+
 
 #%% color
 plt.scatter(total_bill, tip, color='b')

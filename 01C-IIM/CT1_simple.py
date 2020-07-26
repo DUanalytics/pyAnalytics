@@ -51,3 +51,6 @@ plt.show();
 
 kl = KneeLocator(x=range(1,11), y=sse, curve='convex', direction='decreasing')
 kl.elbow
+
+
+##https://realpython.com/k-means-clustering-python/
