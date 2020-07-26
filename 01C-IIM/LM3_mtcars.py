@@ -11,6 +11,7 @@ data.columns
 data.dtypes
 data.shape
 #%%% Sample by number
+
 s1 = data.sample(10)
 s1
 #%%%
