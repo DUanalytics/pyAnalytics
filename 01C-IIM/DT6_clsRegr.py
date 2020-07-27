@@ -1,19 +1,21 @@
 #Topic:Decision Tree - Class and Regr
 #-----------------------------
-#libraries
+#Read the case from this link
 #https://stackabuse.com/decision-trees-in-python-with-scikit-learn/
 
 
-#%% Classification Tree
+#%% Classification Tree - Predict if not is face or otherwise depending upon features
+
 #libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
 import os
-os.listdir('E:/analytics/projects/pyanalytics/data')
+os.listdir('E:/analytics/projects/pyanalytics/data') #change the folder to see what are the file in folder
 #dataset
-data = pd.read_csv('E:/analytics/projects/pyanalytics/data/bill_authentication.csv')
+#data = pd.read_csv('E:/analytics/projects/pyanalytics/data/bill_authentication.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/bill_authentication.csv')
 data.head()
 data.shape
 data.columns
@@ -61,6 +63,7 @@ tree.plot_tree(decision_tree=clsModel, max_depth=2, feature_names=['Var', 'Skew'
 Source(tree.export_graphviz(clsModel))
 
 dot_data1 = tree.export_graphviz(clsModel, max_depth=3, out_file=None, filled=True, rounded=True,  special_characters=True, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org','Fake'])  
+#check the folder location after installing the graphviz
 import os
 os.environ["PATH"] += os.pathsep + 'c:/Program Files (x86)/Graphviz2.38/bin/'
 import graphviz 
@@ -73,11 +76,12 @@ graph1
 
 
 
-#%% Regression Tree
+#%% Regression Tree - Predict Petrol Consumption on other parameters
 #Predict Numerical value based on IV
-os.listdir('E:/analytics/projects/pyanalytics/data')
+#os.listdir('E:/analytics/projects/pyanalytics/data')
 
-data2 = pd.read_csv('E:/analytics/projects/pyanalytics/data/petrol_consumption.csv')
+#data2 = pd.read_csv('E:/analytics/projects/pyanalytics/data/petrol_consumption.csv')
+data2 = pd.read_csv('https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/petrol_consumption.csv')
 data2.head()
 data2.shape
 data2.columns
