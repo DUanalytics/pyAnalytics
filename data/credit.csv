@@ -1,0 +1,15 @@
+agegp,income,student,creditrating,buypc
+Youth,High,No,Fair,No
+Youth,High,No,Excellent,No
+Middle ,High,No,Fair,Yes
+Senior,Medium,No,Fair,Yes
+Senior,Low,Yes,Fair,Yes
+Middle ,Low,Yes,Excellent,No
+Youth,Low,Yes,Excellent,Yes
+Youth,Low,Yes,Excellent,Yes
+Senior,Medium,No,Fair,No
+Youth,Low,Yes,Fair,Yes
+Middle ,Medium,Yes,Fair,Yes
+Middle ,Medium,Yes,Excellent,Yes
+Middle ,Medium,No,Excellent,Yes
+Senior,Medium,No,Excellent,No

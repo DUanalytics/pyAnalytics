@@ -1,9 +1,0 @@
-digraph Tree {
-node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
-edge [fontname=helvetica] ;
-0 [label="raining <= 0.5\nsamples = 2\nvalue = [1, 1]\nclass = No Umbrella", fillcolor="#ffffff"] ;
-1 [label="samples = 1\nvalue = [1, 0]\nclass = No Umbrella", fillcolor="#e58139"] ;
-0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
-2 [label="samples = 1\nvalue = [0, 1]\nclass = Umbrella", fillcolor="#399de5"] ;
-0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
-}
