@@ -1,6 +1,6 @@
 #Word Cloud
 #-----------------------------
-#%
+#Using some words
 # Libraries
 #pip install wordcloud
 from wordcloud import WordCloud
