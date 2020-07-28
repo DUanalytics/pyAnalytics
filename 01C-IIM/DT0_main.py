@@ -3,8 +3,7 @@
 #Read the case from this link
 #https://stackabuse.com/decision-trees-in-python-with-scikit-learn/
 
-
-#%% Classification Tree - Predict if not is face or otherwise depending upon features
+#%% Classification Tree - Predict if the Currency is FAKE or not depending upon features
 
 #libraries
 import pandas as pd
