@@ -52,7 +52,7 @@ y2
 # import the regressor 
 from sklearn.ensemble import RandomForestClassifier 
   
- # create regressor object 
+ # create classifier object 
 classifier = RandomForestClassifier(n_estimators = 100, random_state = 0) 
   
 # fit the regressor with x and y data 
@@ -71,8 +71,6 @@ newData = np.array([2.7, 120]).reshape(1, 2)
 newData
 ypred2 = classifier.predict(newData)  # test the output by changing values 
 ypred2
-
-
 
 #https://www.geeksforgeeks.org/random-forest-regression-in-python/
 
