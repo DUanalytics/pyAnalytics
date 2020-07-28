@@ -1,6 +1,5 @@
 #Topic: Random Forests
 #-----------------------------
-#libraries
 
 # Importing the libraries 
 import numpy as np 
@@ -12,9 +11,8 @@ from pydataset import data
 mtcars = data('mtcars')
 mtcars.head()
 df = mtcars.copy()
-
-#data = pd.read_csv('') 
-print(data)
+df
+df[['wt','hp']]
 
 #%% Features and Target
 X = df[['wt','hp']].values
