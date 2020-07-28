@@ -60,7 +60,7 @@ tree.plot_tree(decision_tree=clsModel, feature_names=['Var', 'Skew', ' Kur',  'E
 tree.plot_tree(decision_tree=clsModel, max_depth=2, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org','Fake'], fontsize=12)
 
 Source(tree.export_graphviz(clsModel))
-
+Source(tree.export_graphviz(clsModel, max_depth=3))
 dot_data1 = tree.export_graphviz(clsModel, max_depth=3, out_file=None, filled=True, rounded=True,  special_characters=True, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org','Fake'])  
 #check the folder location after installing the graphviz
 import os
