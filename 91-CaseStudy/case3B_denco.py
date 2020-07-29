@@ -9,9 +9,9 @@ pd.set_option('display.max_columns',15)
 pd.set_option('display.width', 1000)
 pd.options.display.float_format = '{:.2f}'.format
 #read data
-#url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/denco.csv'
-df = pd.read_csv('data/denco.csv')
-#df = pd.read_csv(url)
+url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/denco.csv'
+#df = pd.read_csv('data/denco.csv')
+df = pd.read_csv(url)
 #see properties of data
 df.head()
 df.columns

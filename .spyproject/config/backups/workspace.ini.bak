@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['01C-IIM\\DT1_simple.py']
+recent_files = ['01C-IIM\\DT0_main.py', '01C-IIM\\RF0_main.py', '01C-IIM\\CT0_main.py', '01C-IIM\\PLT7_mosaic.py']
 

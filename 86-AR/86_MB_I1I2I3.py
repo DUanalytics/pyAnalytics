@@ -33,34 +33,49 @@ frequent_itemsets = apriori(df, min_support= support_threshold, use_colnames = T
 frequent_itemsets
 print(frequent_itemsets) #dataframe with the itemsets
 
-#%%%%  - Support
-support3 = association_rules(frequent_itemsets, metric="support", min_threshold = .3)
-print(support3)
-print(support3[['antecedents', 'consequents', 'support','confidence']])
-#---
-support2 = association_rules(frequent_itemsets, metric="support", min_threshold = .2)
-print(support2[['antecedents', 'consequents', 'support','confidence']])
+#%%%%  - Support Rules
+association_rules?
+#output - DF with antecedents -> consequent
+supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .3)
+print(supportRules3)
+supportRules3.head()
 
-#%%%% Lift
+print(supportRules3[['antecedents', 'consequents', 'support','confidence','lift']])
+#---
+supportRules2 = association_rules(frequent_itemsets, metric="support", min_threshold = .2)
+print(supportRules2[['antecedents', 'consequents', 'support','confidence','lift']])
+
+
+#%%%% Lift  : generally > 1 for strong associations
 
 lift1 = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 print(lift1)
+lift1
 print(lift1[['antecedents', 'consequents', 'support', 'lift','confidence']])
 #--
 lift2 = association_rules(frequent_itemsets, metric="lift", min_threshold=2)
-print(lift2)
+print(lift2)  #high positive correlation
 print(lift2[['antecedents', 'consequents', 'support', 'lift','confidence']])
 
+#twin condition : lift> 2;  confidence > .5, support > .2
 lift2[(lift2.confidence > .5) & (lift2.support > .2)]
-
+#when I5 is bought, I1 & I2 are also bought
 #%%%% Confidence
-confidence10 = association_rules(frequent_itemsets, metric="confidence", min_threshold=1)
-print(confidence10)
-print(confidence10[['antecedents', 'consequents', 'support','confidence']])
+confidence6 = association_rules(frequent_itemsets, metric="confidence", min_threshold=.6)
+print(confidence6)
+print(confidence6[['antecedents', 'consequents', 'support','confidence']])
 #
 confidence6 = association_rules(frequent_itemsets, metric="confidence",  min_threshold=.6)
 print(confidence6[['antecedents', 'consequents', 'support','confidence']])
 
+
+#%%%
+#min support =.3
+association_rules(frequent_itemsets, metric="support", min_threshold = .3)[[ 'antecedents','consequents','support', 'confidence','lift']]
+#min life =1 
+association_rules(frequent_itemsets, metric="lift", min_threshold = 1)[[ 'antecedents','consequents','support', 'confidence','lift']]
+#min confidence =.6 
+association_rules(frequent_itemsets, metric="confidence", min_threshold = .6)[['antecedents','consequents','support', 'confidence','lift']]
 
 #Part-1 Over : Interpret the results 
 #%%%% 
