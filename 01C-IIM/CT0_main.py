@@ -8,11 +8,11 @@
 import pandas as pd
 import numpy as np
 import random as rd
-import matplotlib.pylot as plt
+import matplotlib.pyplot as plt
 
 #data 
 #data = pd.read_csv('data/clustering.csv')
-url='hhttps://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/clustering.csv'
+url='https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/clustering.csv'
 data = pd.read_csv(url)
 data.shape
 data.head()
@@ -33,7 +33,7 @@ data.dtypes
 data.isnull().any()
 data.isnull().any(axis=1)
 data.index[data.isnull().any(axis=1)]
-data.iloc[6]
+data.iloc[6]  #see the null values
 data.isnull().sum().sum()  #75 missing values 
 data.isnull().sum(axis=0)  #columns missing
 data.isnull().sum(axis=1)
@@ -53,7 +53,7 @@ pd.DataFrame(data2_scaled).describe()
 
 #kmeans
 from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=2, init='k-means++')  #hyper parameters
+kmeans = KMeans(n_clusters=2)  #hyper parameters
 
 kmeans.fit(data2_scaled)
 kmeans.inertia_  #sum of sq distances of samples to their centeroid
