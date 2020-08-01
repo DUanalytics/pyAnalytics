@@ -13,6 +13,7 @@ type(alldatasets)
 
 import pydataset
 data('iris')
+data('iris', show_doc=True)
 
 from pydataset import data
 data('iris')

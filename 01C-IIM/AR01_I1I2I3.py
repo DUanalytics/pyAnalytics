@@ -10,8 +10,10 @@ from mlxtend.frequent_patterns import association_rules
 import time
 import logging
 pd.set_option('display.max_columns',None)
+
 #-----
 transactions = [['I1','I2','I5'],['I2','I4'],['I2','I3'] ,['I1','I2','I4'],['I1','I3'], ['I2','I3'],['I1','I3'], ['I1','I2','I3','I5'],['I1','I2','I3']]
+
 transactions
 #----
 te = TransactionEncoder()
@@ -36,7 +38,7 @@ print(frequent_itemsets) #dataframe with the itemsets
 #%%%%  - Support Rules
 association_rules?
 #output - DF with antecedents -> consequent
-supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .3)
+supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .1)
 print(supportRules3)
 supportRules3.head()
 
@@ -128,3 +130,8 @@ http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
 https://www.kaggle.com/datatheque/association-rules-mining-market-basket-analysis
 http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
 
+#summary
+#metric - support, confidence, lift
+#frequent item set, rule (threshold - sp, conf, lift)
+#X->Y   : which rules interesting
+#Combo plan, relayout, discount, ad, recommendation system

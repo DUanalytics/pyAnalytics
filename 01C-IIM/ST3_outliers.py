@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 #samle data
 marks1 = [3,50,74,76,81,54,85,67,77,41]
 len(marks1)
@@ -28,7 +27,7 @@ from scipy import stats
 z = np.abs(stats.zscore(marks1))
 print(z)
 
-np.where(z > 3)
+np.where(z > 3) #outliers
 np.where(z > 2)
 
 
@@ -42,7 +41,7 @@ IQR2 = stats.iqr(pd.Series(marks1))
 IQR2
 
 #outlier : < Q1 - IQR or > Q3 + IQR
-(marks1 < Q1-IQR) | (marks1 > Q3+IQR)
+(marks1 < Q1-1.5 * IQR) | (marks1 > Q3+ 1.5 * IQR)
 
 #dataframe
 from pydataset import data 
@@ -84,19 +83,38 @@ pd.set_option('display.max_rows', None)
 print((boston < (Q1 - 1.5 * IQR)) |(boston > (Q3 + 1.5 * IQR)))
 dfTF = (boston < (Q1 - 1.5 * IQR)) |(boston > (Q3 + 1.5 * IQR))
 
+dfTF.shape
+sns.boxplot(x=boston.crim)
 dfTF.sum(axis=0)
+dfTF.sum(axis=1)
+
 dfTF.crim.value_counts()
 
 #Z-score
 #want to remove or filter the outliers and get the clean data. This can be done with just one line code as we have already calculated the Z-score.
+boston
+z
+DF1 = (boston < (Q1 - 1.5 * IQR)) |(boston > (Q3 + 1.5 * IQR))
+DF1
+DF1.head()
+dfTF
+dfTF[(z < 2).all(axis=1)]
+z>3
+
 boston_wo = boston[(z < 3).all(axis=1)]
 boston_wo.head()
+boston.shape  #shape of original data with outliers
+boston_wo.shape #after removing outliers
+sns.boxplot(x=boston_wo.crim)
+sns.boxplot(x=boston.crim)
 
-boston.shape
-boston_wo.shape
 
 boston_wo2 = boston[~((boston < (Q1 - 1.5 * IQR)) |(boston > (Q3 + 1.5 * IQR))).any(axis=1)]
 boston_wo2.shape
+
+#some outliers still cropped up... how to remove them
+#
+
 
 #https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba
 #https://haridas.in/outlier-removal-clustering.html
