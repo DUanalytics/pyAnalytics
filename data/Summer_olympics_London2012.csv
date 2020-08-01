@@ -1,0 +1,86 @@
+rank,Country,Gold,Silver,Bronze,Total
+1,USA,46,29,29,104
+2,China,38,27,23,88
+3,Great Britain,29,17,19,65
+4,Russia,24,26,32,82
+5,South Korea,13,8,7,28
+6,Germany,11,19,14,44
+7,France,11,11,12,34
+8,Italy,8,9,11,28
+9,Hungary,8,4,5,17
+10,Australia,7,16,12,35
+11,Japan,7,14,17,38
+12,Kazakhstan,7,1,5,13
+13,Netherlands,6,6,8,20
+14,Ukraine,6,5,9,20
+15,New Zealand,6,2,5,13
+16,Cuba,5,3,6,14
+17,Iran,4,5,3,12
+18,Jamaica,4,4,4,12
+19,Czech Republic,4,3,3,10
+20,North Korea,4,0,2,6
+21,Spain,3,10,4,17
+22,Brazil,3,5,9,17
+23,South Africa,3,2,1,6
+24,Ethiopia,3,1,3,7
+25,Croatia,3,1,2,6
+26,Belarus,2,5,5,12
+27,Romania,2,5,2,9
+28,Kenya,2,4,5,11
+29,Denmark,2,4,3,9
+30,Azerbaijan,2,2,6,10
+30,Poland,2,2,6,10
+32,Turkey,2,2,1,5
+33,Switzerland,2,2,0,4
+34,Lithuania,2,1,2,5
+35,Norway,2,1,1,4
+36,Canada,1,5,12,18
+37,Sweden,1,4,3,8
+38,Colombia,1,3,4,8
+39,Georgia,1,3,3,7
+39,Mexico,1,3,3,7
+41,Ireland,1,1,3,5
+42,Argentina,1,1,2,4
+42,Slovenia,1,1,2,4
+42,Serbia,1,1,2,4
+45,Tunisia,1,1,1,3
+46,Dominican Republic,1,1,0,2
+47,Trinidad and Tobago,1,0,3,4
+47,Uzbekistan,1,0,3,4
+49,Latvia,1,0,1,2
+50,Algeria,1,0,0,1
+50,The Bahamas,1,0,0,1
+50,Grenada,1,0,0,1
+50,Uganda,1,0,0,1
+50,Venezuela,1,0,0,1
+55,India,0,2,4,6
+56,Mongolia,0,2,3,5
+57,Thailand,0,2,1,3
+58,Egypt,0,2,0,2
+59,Slovakia,0,1,3,4
+60,Armenia,0,1,2,3
+60,Belgium,0,1,2,3
+60,Finland,0,1,2,3
+63,Bulgaria,0,1,1,2
+63,Estonia,0,1,1,2
+63,Indonesia,0,1,1,2
+63,Malaysia,0,1,1,2
+63,Puerto Rico,0,1,1,2
+63,Chinese Taipei,0,1,1,2
+69,Botswana,0,1,0,1
+69,Cyprus,0,1,0,1
+69,Gabon,0,1,0,1
+69,Guatemala,0,1,0,1
+69,Montenegro,0,1,0,1
+69,Portugal,0,1,0,1
+75,Greece,0,0,2,2
+75,Moldova,0,0,2,2
+75,Qatar,0,0,2,2
+75,Singapore,0,0,2,2
+79,Afghanistan,0,0,1,1
+79,Bahrain,0,0,1,1
+79,Hong Kong,0,0,1,1
+79,Saudi Arabia,0,0,1,1
+79,Kuwait,0,0,1,1
+79,Morocco,0,0,1,1
+79,Tajikistan,0,0,1,1

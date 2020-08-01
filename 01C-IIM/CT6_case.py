@@ -75,17 +75,14 @@ plt.scatter(X[:,0],X[:,1], c=cluster.labels_, cmap='rainbow')
 #The problem that we are going to solve in this section is to segment customers into different groups based on their shopping trends.
 #The dataset for this problem can be downloaded from the following link:
 url='https://stackabuse.s3.amazonaws.com/files/hierarchical-clustering-with-python-and-scikit-learn-shopping-data.csv'
-
-
 import matplotlib.pyplot as plt
 import pandas as pd
 #%matplotlib inline
 import numpy as np
-
 df = pd.read_csv(url)
 #customer_data = pd.read_csv('data/shopping-data.csv')
 customer_data = df.copy()
-
+customer_data.head()
 #explore data
 customer_data
 customer_data.head()
@@ -145,6 +142,7 @@ from sklearn.cluster import KMeans
 Kmean2 = KMeans(n_clusters=2)
 Kmean2.fit(X2)
 centers2 = Kmean2.cluster_centers_
+X2
 centers2
 Kmean2.labels_
 
@@ -152,6 +150,7 @@ plt.scatter(X2[:,0], X2[:,1], s=50, c = Kmean2.labels_)
 plt.scatter(centers2[:,0], centers2[:,1], s=100, marker='*', color =['red'])
 plt.show();
 
+#%%%iris 
 
 from pydataset import data
 iris = data('iris')
