@@ -99,3 +99,4 @@ boston_wo2 = boston[~((boston < (Q1 - 1.5 * IQR)) |(boston > (Q3 + 1.5 * IQR))).
 boston_wo2.shape
 
 #https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba
+#https://haridas.in/outlier-removal-clustering.html

@@ -40,7 +40,6 @@ alldatasets[ alldatasets['dataset_id'].str.contains("iris") | alldatasets['datas
 print(df1) 
 
 
-
 mtcars = data('mtcars')
 data1 = mtcars.copy()
 data1.head()
