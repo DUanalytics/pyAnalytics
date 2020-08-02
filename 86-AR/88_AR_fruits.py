@@ -22,7 +22,7 @@ te_ary.astype("int")
 #After fitting, the unique column names that correspond to the data array shown above can be accessed via the columns_ attribute:
 te.columns_
 
-f we desire, we can turn the one-hot encoded array back into a transaction list of lists via the inverse_transform function:
+#if we desire, we can turn the one-hot encoded array back into a transaction list of lists via the inverse_transform function:
 
 first4 = te_ary[:4]
 te.inverse_transform(first4)

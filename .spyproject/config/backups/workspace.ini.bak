@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['C:\\Users\\du\\.spyder-py3\\temp.py', '01C-IIM\\CT5_case.py', '01C-IIM\\CT6_case.py', '01C-IIM\\LM3_mtcars.py', '01C-IIM\\CT2_simple.py', '01C-IIM\\CT1_simple.py', '01C-IIM\\CT0_main.py', '70-plots\\autoplotter.py', '91-CaseStudy\\casePlots1.py', '01C-IIM\\PD0_main.py']
+recent_files = ['01C-IIM\\ST3_outliers.py', '01C-IIM\\datasets.py', '01C-IIM\\AR01_I1I2I3.py', '01C-IIM\\PLT1A_mixed.py']
 

@@ -5,10 +5,12 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-pip install plotnine
+#pip install plotnine #similar to ggplots
+#https://plotnine.readthedocs.io/en/stable/index.html
 import plotnine  #ggplot type
 
 from plotnine import ggplot, geom_point, aes, stat_smooth, facet_wrap
+plotnine.facet_wrap?
 from plotnine.data import mtcars
 
 (ggplot(mtcars, aes('wt', 'mpg', color='factor(gear)')) + geom_point() + stat_smooth(method='lm') + facet_wrap('~gear'))
