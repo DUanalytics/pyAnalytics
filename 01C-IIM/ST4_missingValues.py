@@ -6,8 +6,10 @@ import numpy as np
 import pandas as pd
 
 url = 'data/missingdata1.csv'
+url = 'https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/missingdata1.csv'
 df = pd.read_csv(url)
 df
+
 #missing data - NaN
 #na is not missing, it is a text
 
