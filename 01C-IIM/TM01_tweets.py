@@ -154,3 +154,50 @@ for tweet in results:
 #Assignment - Sentimental Analysis on tweet, find overall opinion on GST in india
 #Assignment - Social graph on most popular users that tweet about ICC cricket
 
+
+#Sentiment Analysis
+import nltk
+nltk.download('vader_lexicon')
+nltk.download('punkt')
+# first, we import the relevant modules from the NLTK library
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# next, we initialize VADER so we can use it within our Python script
+sid = SentimentIntensityAnalyzer()
+
+# the variable 'message_text' now contains the text we will analyze.
+message_text = '''Like you, I am getting very frustrated with this process. I am genuinely trying to be as reasonable as possible. I am not trying to "hold up" the deal at the last minute. I'm afraid that I am being asked to take a fairly large leap of faith after this company (I don't mean the two of you -- I mean Enron) has screwed me and the people who work for me.'''
+message_text
+# Calling the polarity_scores method on sid and passing in the message_text outputs a dictionary with negative, neutral, positive, and compound scores for the input text
+#neg: Negative
+#neu: Neutral
+#pos: Positive
+#compound: Compound (i.e. aggregated score)
+
+scores = sid.polarity_scores(message_text)
+scores
+print(message_text)
+
+text2 = 'PM Modi addressed Smart India Hackathon via video conferencing. PM Modi spoke about the new National Education Policy and said, “21st century is the era of knowledge. This is the time for increased focus on learning, research, innovation. This is exactly what India’s National Education Policy, 2020 does.'
+scores2 = sid.polarity_scores(text2)
+scores2
+.859 - .141
+#https://towardsdatascience.com/sentimental-analysis-using-vader-a3415fef7664
+sid.polarity_scores?
+
+# Write a review as one continuous string (multiple sentences are ok)
+review = 'The shoes I brought were amazing.'
+# Obtain the sid scores for your review
+sid.polarity_scores(review)
+#OUTPUT-{'neg': 0.0, 'neu': 0.513, 'pos': 0.487, 'compound': 0.5859}
+
+review='The mobile phone I bought was the WORST and very BAD'
+# Obtain the sid scores for your review
+sid.polarity_scores(review)
+
+
+
+
+#https://towardsdatascience.com/twitter-sentiment-analysis-classification-using-nltk-python-fa912578614c
+#https://www.kaggle.com/ngyptr/python-nltk-sentiment-analysis
+#http://t-redactyl.io/blog/2017/04/using-vader-to-handle-sentiment-analysis-with-social-media-text.html

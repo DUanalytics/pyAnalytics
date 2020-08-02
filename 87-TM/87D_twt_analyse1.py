@@ -1,6 +1,7 @@
 #Download Tweets from Internet
 #-----------------------------
 #Download tweets from twitter
+#pip install tweepy
 import tweepy
 from tweepy import OAuthHandler
 
@@ -22,3 +23,5 @@ for item in tweets:    print(item)
 
 #data related to tweet, note its datastructure
 #under development
+
+IIMC_India
