@@ -1,0 +1,43 @@
+Case ID;Event ID;Timestamp;Activity;Resource;Costs
+1;35654423;30-12-2010:11.02;register request;Pete;50
+1;35654424;31-12-2010:10.06;examine thoroughly;Sue;400
+1;35654425;05-01-2011:15.12;check ticket;Mike;100
+1;35654426;06-01-2011:11.18;decide;Sara;200
+1;35654427;07-01-2011:14.24;reject request;Pete;200
+2;35654483;30-12-2010:11.32;register request;Mike;50
+2;35654485;30-12-2010:12.12;check ticket;Mike;100
+2;35654487;30-12-2010:14.16;examine casually;Sean;400
+2;35654488;05-01-2011:11.22;decide;Sara;200
+2;35654489;08-01-2011:12.05;pay compensation;Ellen;200
+3;35654521;30-12-2010:14.32;register request;Pete;50
+3;35654522;30-12-2010:15.06;examine casually;Mike;400
+3;35654524;30-12-2010:16.34;check ticket;Ellen;100
+3;35654525;06-01-2011:09.18;decide;Sara;200
+3;35654526;06-01-2011:12.18;reinitiate request;Sara;200
+3;35654527;06-01-2011:13.06;examine thoroughly;Sean;400
+3;35654530;08-01-2011:11.43;check ticket;Pete;100
+3;35654531;09-01-2011:09.55;decide;Sara;200
+3;35654533;15-01-2011:10.45;pay compensation;Ellen;200
+4;35654641;06-01-2011:15.02;register request;Pete;50
+4;35654643;07-01-2011:12.06;check ticket;Mike;100
+4;35654644;08-01-2011:14.43;examine thoroughly;Sean;400
+4;35654645;09-01-2011:12.02;decide;Sara;200
+4;35654647;12-01-2011:15.44;reject request;Ellen;200
+5;35654711;06-01-2011:09.02;register request;Ellen;50
+5;35654712;07-01-2011:10.16;examine casually;Mike;400
+5;35654714;08-01-2011:11.22;check ticket;Pete;100
+5;35654715;10-01-2011:13.28;decide;Sara;200
+5;35654716;11-01-2011:16.18;reinitiate request;Sara;200
+5;35654718;14-01-2011:14.33;check ticket;Ellen;100
+5;35654719;16-01-2011:15.50;examine casually;Mike;400
+5;35654720;19-01-2011:11.18;decide;Sara;200
+5;35654721;20-01-2011:12.48;reinitiate request;Sara;200
+5;35654722;21-01-2011:09.06;examine casually;Sue;400
+5;35654724;21-01-2011:11.34;check ticket;Pete;100
+5;35654725;23-01-2011:13.12;decide;Sara;200
+5;35654726;24-01-2011:14.56;reject request;Mike;200
+6;35654871;06-01-2011:15.02;register request;Mike;50
+6;35654873;06-01-2011:16.06;examine casually;Ellen;400
+6;35654874;07-01-2011:16.22;check ticket;Mike;100
+6;35654875;07-01-2011:16.52;decide;Sara;200
+6;35654877;16-01-2011:11.47;pay compensation;Mike;200

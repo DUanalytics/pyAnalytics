@@ -6,19 +6,21 @@
 import numpy as np
 import pandas as pd
 
+import pydataset
+data('iris')
+data('iris', show_doc=True)#help
+
+#better way 
 from pydataset import data
 data()
 alldatasets = data().copy()
 type(alldatasets)
 
-import pydataset
-data('iris')
-data('iris', show_doc=True)
 
 from pydataset import data
 data('iris')
 data('marketing')
-
+data('titanic')
 
 alldatasets.head()
 
@@ -53,6 +55,8 @@ cars = data('cars')
 data3 = cars.copy()
 data3.head()
 
+#titanic
+data('titanic')
 
 alldatasets['dataset_id'].str.contains('ais')
 

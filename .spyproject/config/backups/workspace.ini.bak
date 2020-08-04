@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['01C-IIM\\ST3_outliers.py', '01C-IIM\\datasets.py', '01C-IIM\\AR01_I1I2I3.py', '01C-IIM\\PLT1A_mixed.py']
+recent_files = ['newEnv\\pycaret.py']
 
