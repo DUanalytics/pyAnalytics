@@ -8,36 +8,52 @@
 #The merge type to use is specified using the “how” parameter in the merge command, taking values “left”, “right”, “inner” (default), or “outer”
 #on− Columns (names) to join on. Must be found in both the left and right DataFrame objects.
 #how – type of join needs to be performed – ‘left’, ‘right’, ‘outer’, ‘inner’, Default is inner join
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from pydataset import data
+import seaborn as sns
+
 #Master Data
 master = pd.DataFrame({'rollno':[1,2,3,4,5,7],"sname": ['Akhil', 'Avisha',"Kuntal","Guru","Narishma","Laxman"], "gender":['M',"F","M","M","M","M"]})
 master
+
 np.random.randint(50,80,4)
-result = pd.DataFrame({'rollno':[1,2,3,4,6], 'subject1':np.random.randint(50,80,5), 'subject2':np.random.randint(55,75,5)})
+result = pd.DataFrame({'rollno':[1,2,3,4,6], 'subject1' :np.random.randint(50,80,5), 'subject2' :np.random.randint(55,75,5)})
 result
 
 #basic
 summary1 = pd.merge(master, result)
-summary
+summary1
+#full join - common
 pd.merge(master, result, on='rollno')
+#all columns of master data and only those from secondary sheet where master data exists
 pd.merge(master, result, on='rollno', how='left')
 
 #specify options
 summary2 = pd.merge(master, result, left_on='rollno', right_on='rollno')
 summary2
 
-#Left Join
+#Left Join : rollno is common in both
 summary3 = pd.merge(master, result, how='left')
 summary3
-#right join
+
+#right join : all rows of secondary
 summary4 = pd.merge(master, result, how='right')
 summary4
+
 #right with indicator : how joined
 summary4b = pd.merge(master, result, how='right',indicator=True)
 summary4b
-
+summary4c = pd.merge(master, result, how='left',indicator=True)
+summary4c
+summary4d = pd.merge(master, result, how='inner', indicator=True)
+summary4d  #inner means common to both
+summary4e = pd.merge(master, result, how='outer', indicator=True)
+summary4e  #outer means all from left and right
 
 #subset of columns
-summary5 = pd.merge(master[['rollno','gender']], result[['rollno','subject1']], how='right')
+summary5 = pd.merge(master[['rollno','gender']], result[['rollno', 'subject1']], how='right')
 summary5
 
 #all 
@@ -50,4 +66,4 @@ summary7
 
 #Links
 #https://www.shanelynn.ie/merge-join-dataframes-python-pandas-index-1/
-#http://www.datasciencemadesimple.com/join-merge-data-frames-pandas-python/
+#http://www.datasciencemadesimple.com/join-merge-data-frames-pandas-python/#https://datacarpentry.org/python-ecology-lesson/05-merging-data/index.html

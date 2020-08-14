@@ -94,3 +94,21 @@ plt.subplot(1, 2, 2)
 # explicitly cast the image to uint8 before displaying it.
 plt.imshow(np.uint8(img_tinted))
 plt.show();
+
+#plot inline or otherwise
+%matplotlib inline
+%matplotlib 
+%matplotlib notebook #will lead to interactive plots embedded within the notebook
+%matplotlib inline #will lead to static images of your plot embedded in the notebook
+#After running this command (it needs to be done only once per kernel/session), any cell within the notebook that creates a plot will embed a PNG image of the resulting graphic:
+fig.savefig('my_figure.png')   #save fig
+!ls -lh my_figure.png
+
+from IPython.display import Image
+Image('my_figure.png')
+
+fig = plt.figure()
+fig.canvas.get_supported_filetypes()
+
+#https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/04.00-Introduction-To-Matplotlib.ipynb#scrollTo=k-Ca-xT6uavO
+#A potentially confusing feature of Matplotlib is its dual interfaces: a convenient MATLAB-style state-based interface, and a more powerful object-oriented interface
