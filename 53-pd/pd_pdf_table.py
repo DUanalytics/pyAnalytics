@@ -9,8 +9,33 @@ import seaborn as sns
 
 #pip install tabula-py
 from tabula import read_pdf
-df = read_pdf('data/mtcarsPDF.pdf')
-read_pdf('data/mtcarsPDF.pdf', output_format='json')
+read_pdf?
+df = read_pdf('data/mtcarsPDF.pdf', pages='all')
+df
+read_pdf('data/mtcarsPDF.pdf', output_format='json', pages='all')
 
 from tabula import convert_into
-convert_into('data/mtcarsPDF.pdf', 'mtcarsPDFCSV.csv', output_format='csv')
+convert_into('data/mtcarsPDF.pdf', 'mtcarsPDFCSV.csv', output_format='csv', pages=1)
+
+convert_into_by_batch('data', output_format='csv', pages='all')
+
+
+#%%% not working
+#pip install camelot-py[cv]
+#pip install ghostscript
+import camelot
+import ghostscript
+#https://www.ghostscript.com/download/gsdnld.html
+camelot.read_pdf?
+tables = camelot.read_pdf(filepath='data/mtcarsPDF.pdf', pages='1')
+tables
+#Please make sure that Ghostscript is installed
+tables.n
+tables[0].df
+
+tables[0].to_csv('data/camelot.csv')
+tables.export('data/camelot2.csv', f='csv', compress= True)
+
+
+
+pip install setuptools#
