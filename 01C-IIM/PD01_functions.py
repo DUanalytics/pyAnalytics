@@ -189,12 +189,19 @@ mtcarsDF['mpg'].count()
 #other stats functions - count, sum, mean, mad, median, min, max, mode, abs, prod, std, var, sem, skew, kurt, quantile, cumsum, cumprod, cummax, cummin, describe
 mtcarsDF.describe()  # default only numeric
 
+#%%value_counts
+mtcarsDF.cyl.value_counts()  #count group wise
+mtcarsDF.cyl.value_counts(normalize=True)  #proportion
+mtcarsDF.cyl.value_counts(ascending=True)  #ascending order
+mtcarsDF.cyl.value_counts(dropna=False)  #do not drop missing values
+
+#continous data
+mtcarsDF.mpg.value_counts()
+mtcarsDF.mpg.value_counts(bins=5)  #class intervals
+
 #%% sort
 mtcarsDF.sort_values(by='gear', axis=0)
 mtcarsDF.sort_values(by=['gear', 'mpg'])
-
-
-
 
 
 #%%% groupby
