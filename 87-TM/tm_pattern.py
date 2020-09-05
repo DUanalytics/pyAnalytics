@@ -156,9 +156,12 @@ print(find_urls('To search anything, go to www.google.com', unique=True))
 #%%Parsing PDF Documments
 #The Pattern library contains PDF object that can be used to parse a PDF document. PDF (Portable Document Format) is a cross platform file which contains images, texts, and fonts in a stand-alone document.
 
-Let's see how a PDF document can be parsed with the PDF object:
-
 from pattern.web import URL, PDF
-
 pdf_doc = URL('http://demo.clab.cs.cmu.edu/NLP/syllabus_f18.pdf').download()
+pdf_doc
 print(PDF(pdf_doc.decode('utf-8')))
+
+
+#%% Clearning Cache
+from pattern.web import cache
+cache.clear()

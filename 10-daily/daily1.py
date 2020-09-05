@@ -1,7 +1,7 @@
 #Daily Practise File
 #-----------------------------
 #Data Structures
-#List - ordered collection of items, mutable : [square ]
+#List - ordered collection of items, mutable(changeable) : [square ]
 list1 = [1,2,3,4,5,'a','Dhiraj',"Upadhyaya",True]  #list type of object with data
 list1  #print when through spyder
 type(list1)  #type of object
@@ -19,7 +19,7 @@ sorted(list2)
 list2[2]
 list2[2] = 'Z'  #list is mutable, ie. values can be changed
 list2
-#%%
+#%%mutatble - changed, immutable- cannot be changed
 #tuple - multiple type of objects like list, immutable: ( round brackets) : no changes
 tuple1 = (1, 2, 'a', 'b')
 tuple1
@@ -257,7 +257,7 @@ data2a
 data2a = pd.read_csv('mtcars.csv') #when csv is in project folder
 data2a
 data2b
-data2b = pd.read_csv('E:/pywork/pyprojects/duanalytics/pyanalytics/mtcars.csv')
+data2b = pd.read_csv('E:/analytics/projects/pyanalytics/mtcars.csv')
 data2b
 #csv in any other location - full path
 data2b
@@ -266,3 +266,8 @@ data2a.head()
 data2c = pd.read_excel('mtcarsExcel.xlsx',header=0)
 #header=None
 data2c.head()
+
+
+
+#end here....
+#now practise numpy and pandas....
