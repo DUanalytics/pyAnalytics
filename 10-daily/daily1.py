@@ -8,13 +8,13 @@ type(list1)  #type of object
 print(list1)  #print when running complete file
 list1
 sorted([1,5,3,2,4,5,324,43,4,4,3,23,434,53442,244,2245224,523])
-list2 = ['f','c','d','e','f']
+list2 = ['f','c','d','e',"f"]
 list2
 list2.count('f')
 len(list2)
 dir(list)
 dir(tuple)
-dir(list) #functions which can be operated on list of DS
+dir(list) #functions which can be operated on list type of DS
 sorted(list2)
 list2[2]
 list2[2] = 'Z'  #list is mutable, ie. values can be changed
@@ -26,7 +26,8 @@ tuple1
 type(tuple1)
 tuple1[1]
 tuple1[1] = 0  #changes not possible, immutable
-
+tuple1 = (5,45)
+tuple1  #overwriting  
 #%%
 #Dictionary - key-value pairs : { curly bracket and colon key:value}
 dict1 = {1:'Ramesh', 2:'Suresh', 3:'Priyanka'}
@@ -41,6 +42,8 @@ car['brand']
 car['year']
 car.get('year')
 dir(car)
+dir?
+dir   #control + I
 car['brand'] = 'MARUTI'
 car  #mutable , value can be changed
 
@@ -94,21 +97,24 @@ type(str1)
 print(str1)
 str2="Yash"
 str2.lower()
-dict?
 dir(str)
 str2[1] = 'Z' #immutable , but new string can be assigned
 str2 = 'Dhiraj'
 str2
 
+#list, tuple, dictionary, set, strings.
 #%% - Sequence
 #sequence - tuple and list are used
 list1 = [1,2,3,4,5]
 list2 = ['a','bb','ccc', 'dddd', 'eeeee']
-
+list1
 #for loop : indentations with colon : Run next 2 lines together
 for i in list1:
     print(i)
+
+  
 for i in list1:    print(i , end ='\t')
+print?  #help
 for i in list2:    print(i, 'DU' , sep='-' , end ='xxx')
 #a-DU-xxx ; i+sep+end
 for i in list1:    print(i , 'HHHE', sep=' X ' , end ='\t')
@@ -147,6 +153,7 @@ marksz
 
 #%% #numpy - array - same data type - numerical python
 list1 = [1,2,3,5]
+list1
 import numpy
 numpy.array([10,20])
 numpy.array([list1])
