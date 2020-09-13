@@ -152,8 +152,8 @@ mtcarsDF.describe()  # default only numeric
 
 #%% sort
 mtcarsDF.sort_values(by='gear', axis=0)
-mtcarsDF.sort_values(by=['gear', 'mpg'])
-
+mtcarsDF.sort_values(by=['gear', 'mpg']).head(n=10)
+mtcarsDF.sort_values(by=['cyl','mpg'], ascending=[True, False]).head(n=20)
 
 
 

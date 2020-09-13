@@ -1,4 +1,4 @@
-#Topic: Import data from URL and Gsheet
+#Topic: Import data from CSV, Excel, URL and Gsheet
 #-----------------------------
 #libraries
 #https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
