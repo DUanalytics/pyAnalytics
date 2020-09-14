@@ -61,6 +61,7 @@ Stock_Index_Price
 
 
 # with statsmodels
+import statsmodels.api as sm  #2nd method
 X = sm.add_constant(X) # adding a constant
  
 model = sm.OLS(Y, X).fit()
@@ -72,3 +73,4 @@ print(print_model)
 #we got consistent results by applying both sklearn and statsmodels.
 #ref
 #https://datatofish.com/multiple-linear-regression-python/
+#end here
