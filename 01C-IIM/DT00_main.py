@@ -26,6 +26,7 @@ y
 y.value_counts()
 #split data
 from sklearn.model_selection import train_test_split
+#https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.20)
 X_train.shape
 X_test.shape
@@ -70,9 +71,6 @@ from subprocess import call
 call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
 graph1 = graphviz.Source(dot_data1)  
 graph1 
-
-
-
 
 
 #%% Regression Tree - Predict Petrol Consumption on other parameters
@@ -146,8 +144,7 @@ graph2 = graphviz.Source(dot_data2)
 graph2 
 
 
-
-#this is not working
+#error
 # Source(tree.export_graphviz(regrModel))
 # from io import StringIO
 # from IPython.display import Image

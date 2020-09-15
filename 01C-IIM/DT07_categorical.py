@@ -1,5 +1,6 @@
 #Topic: DT using Categorical values
 #-----------------------------
+#category values should be numeric hence encoding is required
 #libraries
 
 import pandas as pd
