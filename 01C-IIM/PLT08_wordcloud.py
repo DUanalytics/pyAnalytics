@@ -4,8 +4,9 @@ from wordcloud import WordCloud
 from wordcloud import WordCloud
 
 # Read the whole text.
-s = 'dhiraj dhiraj upadhyaya dhiraj dhiraj noida delhi'
+s = 'adithya adithya adithya adithya dhiraj upadhyaya dhiraj dhiraj noida delhi'
 text = s
+
 
 # Generate a word cloud image
 wordcloud = WordCloud().generate(text)

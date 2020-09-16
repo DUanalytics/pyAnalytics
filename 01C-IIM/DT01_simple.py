@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 #https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
 
 #DT
-X = [[0], [1]] #is it raining #0-no, 1-yes
+X = [[0,1], [1,0]] #is it raining #0-no, 1-yes ; humidity
 Y = [1,0]  #class labels -  0- play no, 1- play yes
 X
 Y
