@@ -200,9 +200,16 @@ mtcarsDF.groupby('gear').mean().add_prefix('MEAN_')
 
 gearGp = mtcarsDF.groupby('gear')
 gearGp.mean()
-gearGp.nth(1)
-gearGp.nth([1,3])
-
+gearGp.nth(1)  #nth row in each gp
+gearGp.nth([1,3])  # 1st and 3rd row in each gp
+gearGp.first() #1st row in each gp
+gearGp.last() #last row in each gp
+gearGp.max()  #max value for each gp : max mpg for 3,4,5 gears is.. 
+gearGp.min()
+gearGp.size()   #size or count per gp
+gearGp.count()
+gearGp.mean()
+gearGp.describe()  #standard summary for each gp and variable
 
 #crosstab
 import pandas as pd
