@@ -55,4 +55,14 @@ kmeans.n_iter_  #in 6 times, clusters stabilised
 kmeans.labels_[:5]
 kmeans.cluster_centers_.shape
 kmeans.cluster_centers_[0:1]
+
+data.groupby('kmeans.labels').mean()
+clusterNos = kmeans.labels_
+clusterNos
+type(clusterNos)
+
+data.groupby([clusterNos]).mean()
 #https://realpython.com/k-means-clustering-python/
+
+#agglomerative
+#steps
