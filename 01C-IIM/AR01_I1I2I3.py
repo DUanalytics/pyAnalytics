@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+#pip install mlxtend
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
@@ -94,11 +95,29 @@ frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets[ 'sup
 
 
 
+#%%% Links
+http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
+https://www.kaggle.com/datatheque/association-rules-mining-market-basket-analysis
+http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
+
+#summary
+#metric - support, confidence, lift
+#frequent item set, rule (threshold - sp, conf, lift)
+#X->Y   : which rules interesting
+#Combo plan, relayout, discount, ad, recommendation system
+
+transactions = [['Bread','Butter','Jam'],['Butter','Cheese'],['Butter','Egg'] ,['Bread','Butter','Cheese'],['Bread','Egg'], ['Butter','Egg'],['Bread','Egg'], ['Bread','Butter','Egg','Jam'],['Bread','Butter','Egg']]
+
+
+
+#%%%
 #%%%%
 #### Part - 3 
+#pip install efficient_apriori
 from efficient_apriori import apriori
 #install efficient_apriori
 #https://pypi.org/project/efficient-apriori/
+df
 itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
 itemsets2
 rules2
@@ -124,14 +143,3 @@ rules4["con_len"] = rules4["consequents"].apply(lambda x: len(x))
 rules4
 rules4[(rules4['ant_len'] >= 1) & (rules4['confidence'] > 0.75) & (rules4['lift'] > 1.2) ]
 rules4[rules4['antecedents'] == {'I1','I2'}]
-
-#%%% Links
-http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
-https://www.kaggle.com/datatheque/association-rules-mining-market-basket-analysis
-http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
-
-#summary
-#metric - support, confidence, lift
-#frequent item set, rule (threshold - sp, conf, lift)
-#X->Y   : which rules interesting
-#Combo plan, relayout, discount, ad, recommendation system
