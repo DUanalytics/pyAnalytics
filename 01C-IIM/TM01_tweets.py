@@ -1,4 +1,4 @@
-#Twitter : Tweets Download
+#Twitter : Tweets Download & Sentiment Analysis
 #-----------------------------
 #Download tweets from twitter
 import tweepy  #install pip install tweepy
@@ -194,8 +194,6 @@ sid.polarity_scores(review)
 review='The mobile phone I bought was the WORST and very BAD'
 # Obtain the sid scores for your review
 sid.polarity_scores(review)
-
-
 
 
 #https://towardsdatascience.com/twitter-sentiment-analysis-classification-using-nltk-python-fa912578614c

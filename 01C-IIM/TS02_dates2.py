@@ -3,7 +3,11 @@
 #%
 from datetime import datetime
 datetime(year=2020, month=09, day=18)
-
+datetime.today() #todays date
+datetime.now() 
+datetime.now().strftime('%A %y %B %d :: %c ::: %H-%M:%S')
+datetime.today().day , datetime.today().month
+datetime.today().year, datetime.today().weekday()
 from dateutil import parser
 date = parser.parse('18th of September, 2020')
 date
@@ -56,3 +60,6 @@ pd.timedelta_range(0, periods=9, freq='150T')
 
 
 #practise more from internet resources
+#https://docs.python.org/3/library/datetime.html
+#https://www.programiz.com/python-programming/datetime
+#https://www.guru99.com/date-time-and-datetime-classes-in-python.html
