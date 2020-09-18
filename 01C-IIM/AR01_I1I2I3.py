@@ -35,7 +35,7 @@ support_threshold = 0.01
 frequent_itemsets = apriori(df, min_support= support_threshold, use_colnames = True)
 frequent_itemsets
 print(frequent_itemsets) #dataframe with the itemsets
-
+6/9
 #%%%%  - Support Rules
 association_rules?
 #output - DF with antecedents -> consequent
