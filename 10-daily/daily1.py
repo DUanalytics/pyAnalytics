@@ -27,7 +27,7 @@ type(tuple1)
 tuple1[1]
 tuple1[1] = 0  #changes not possible, immutable
 tuple1 = (5,45)
-tuple1  #overwriting  
+tuple1  #overwriting is possible
 #%%
 #Dictionary - key-value pairs : { curly bracket and colon key:value}
 dict1 = {1:'Ramesh', 2:'Suresh', 3:'Priyanka'}
@@ -42,8 +42,8 @@ car['brand']
 car['year']
 car.get('year')
 dir(car)
-dir?
-dir   #control + I
+#dir?  # help
+dir   #select the text and press control + I
 car['brand'] = 'MARUTI'
 car  #mutable , value can be changed
 
