@@ -14,9 +14,8 @@ dir(math)
 #? after function
 print?
 print('dhiraj', 'upadhyaya', sep=':', end =' ^^^')
-
 #Control + I after selecting the function
-print
+print #highlight the print word and press control + I
 import
 #see on lower left windows - Help
 

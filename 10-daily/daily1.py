@@ -7,16 +7,18 @@ list1  #print when through spyder
 type(list1)  #type of object
 print(list1)  #print when running complete file
 list1
-sorted([1,5,3,2,4,5,324,43,4,4,3,23,434,53442,244,2245224,523])
+sorted([100000,5,3,2,4,5,324,43,4,4,3,23,434,53442,244,2245224,523])
 list2 = ['f','c','d','e',"f"]
 list2
 list2.count('f')
+list2.count('d')
 len(list2)
 dir(list)
 dir(tuple)
 dir(list) #functions which can be operated on list type of DS
 sorted(list2)
-list2[2]
+list2
+list2[2]  #index starts from 0,1,...
 list2[2] = 'Z'  #list is mutable, ie. values can be changed
 list2
 #%%mutatble - changed, immutable- cannot be changed
