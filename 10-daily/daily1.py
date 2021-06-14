@@ -49,7 +49,8 @@ dir   #select the text and press control + I
 car['brand'] = 'MARUTI'
 car  #mutable , value can be changed
 
-#%%frozen Dictionaries
+#%%frozen Dictionaries https://pypi.org/project/frozendict/
+#conda install -c conda-forge frozendict #from anaconda as admin
 #pip install frozendict   #install this library
 from frozendict import frozendict
 fd = frozendict({ 'brand': 'Honda' })
@@ -116,11 +117,11 @@ for i in list1:
 
   
 for i in list1:    print(i , end ='\t')
-print?  #help
+#print?  #help
 for i in list2:    print(i, 'DU' , sep='-' , end ='xxx')
 #a-DU-xxx ; i+sep+end
 for i in list1:    print(i , 'HHHE', sep=' X ' , end ='\t')
-print?
+
 for i in list1:    print('Dhiraj ', i + 6)
 
 tuple1 = (1, 2, 'a', 'b')
@@ -128,7 +129,7 @@ tuple1
 list5 = ['a',1]
 list5
 for i in tuple1:    print(i, end ='\t')
-range?  # start, stop, step; does not take keyword
+help(range)  # start, stop, step; does not take keyword
 range(1, 100, 2)  #nothing happens, though it generates 
 for i in range(1, 100, 2):    print(i, end=' ')
 
@@ -172,10 +173,10 @@ np
 np.mean(np.arange(1,10000000))
 np1
 type(np1)
-np?
+help(np)
 #help on numpy 
 dir(np)  #functions available in numpy
-np.mean?  # help on mean function of numpy
+help(np.mean)  # help on mean function of numpy
 
 np2 = np.array([ 90, 50, 60, 70 ])
 np2
@@ -194,14 +195,14 @@ np3.reshape((-1,1))  #1 column from 2 column
 #https://pandas.pydata.org/pandas-docs/stable/
 
 import pandas as pd
-pd?
+help(pd)
 dir(pd)
 
 df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60.5, 70 ], 'gender':['M', 'M','M', 'F']})
 df1
 type(df1) 
 
-df1.columns  #columnanes
+df1.columns  #colum nanes
 df1.index  #row ids/ names  - here auto created
 df1.describe() #description of numerical values
 df1.dtypes #data types
@@ -260,12 +261,12 @@ data.to_excel(writer, sheet_name='sheet2')
 writer.save()
 
 #%%
-data.to_excel?
+help(data.to_excel)
 #load from CSV and Excel
-data2a
+data2a  #not defined
 data2a = pd.read_csv('mtcars.csv') #when csv is in project folder
 data2a
-data2b
+data2b #not defined
 data2b = pd.read_csv('E:/analytics/projects/pyanalytics/mtcars.csv')
 data2b
 #csv in any other location - full path
@@ -275,8 +276,6 @@ data2a.head()
 data2c = pd.read_excel('mtcarsExcel.xlsx',header=0)
 #header=None
 data2c.head()
-
-
 
 #end here....
 #now practise numpy and pandas....
