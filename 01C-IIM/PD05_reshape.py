@@ -24,7 +24,7 @@ group
 
 random.choices( population=groupCBAPs,weights=[0.4, 0.6],k=10)
 #numpy.random.choice(items, trials, p=probs)
-np.random.choice(a=groupCBAP, size=10,replace=True, p=[.2,.8])
+np.random.choice(a=groupCBAPs, size=10,replace=True, p=[.2,.8])
 marks1 = np.random.randint(40,100,size=10)
 #course = random.choices( population=['MBA','MBAex','FPM'] ,weights=[0.4, 0.3,0.3],k=10)
 course = np.random.choice(a=['MBA','MBAex','FPM'], size=10,replace=True, p=[.4,.3,.3])
@@ -62,8 +62,7 @@ student3Melt.head()
 student3Melt.groupby(['gender', 'subject'])['marks'].agg(func=['mean', 'min'])
 
 #long to wide
-
-
+#https://hausetutorials.netlify.app/posts/2020-05-17-reshape-python-pandas-dataframe-from-long-to-wide-with-pivottable/
 
 #pivot format
 student3a = student3[['name', 'course', 'marks1', 'marks2']]
@@ -75,6 +74,8 @@ student3.pivot_table(student3a, index = ['name','course'])
 
 student4 = pd.DataFrame([['dhiraj', 54, 'M', 10000], ['kanika', 28, None, 5000], ['tanvi', 20, 'F', None], ['kounal',45,'M',None],['akhil',None,'M',None]])
 student4
+student4.isna()
+student4.dropna(axis = 0, how = 'any', inplace = False)
 
 student4.columns = ['name', 'age','gender','fees']
 student4.sort_values(ascending=False, by='name')  #temporary sort
@@ -96,5 +97,7 @@ student4.to_csv(index=True, path_or_buf = 'student4.csv')
 student4.to_excel("student4.xlsx")
 student4.to_excel("student4B.xlsx",sheet_name='s1', index=False)  
 
+
+#https://www.codegrepper.com/code-examples/python/complete+cases+na+pandas
 
 

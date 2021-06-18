@@ -186,8 +186,18 @@ dir(np)
 np3 = np.array([[1,4],[3,1],[5,6],[10,50]])
 np3
 np3.shape
-
+np3.shape[0]
+np3.shape[1]
+x= np3.shape[0] * np3.shape[1]
+x
+x%2 == 0
+x%3 == 0 #true 
+len(np3)
 np3.reshape((-1,1))  #1 column from 2 column
+np3.reshape((-1))
+np3.reshape((-1,2))
+np3.reshape((-1,3))  #error
+np3.reshape((-1,4))
 
 #http://cs231n.github.io/python-numpy-tutorial/
 #%% #pandas - dataframe, excel like
@@ -222,10 +232,13 @@ plt.hist(df1['marks'])
 
 #https://seaborn.pydata.org/index.html
 import seaborn as sns
+sns.get_dataset_names()
 # sns.set(style="ticks", color_codes=True)
 iris = sns.load_dataset("iris")
 iris.head()
 iris.tail()
+np.log(iris.sepal_length)
+np.log([1,10,1000])
 df1.groupby('gender').size()
 iris.groupby('species').size().plot(kind='bar')
 sns.pairplot(iris)  #relationship diagrams

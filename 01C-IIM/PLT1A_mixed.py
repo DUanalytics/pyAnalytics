@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import plotnine  #ggplot type
 
 from plotnine import ggplot, geom_point, aes, stat_smooth, facet_wrap
-plotnine.facet_wrap?
+help(plotnine.facet_wrap)
 from plotnine.data import mtcars
 
 (ggplot(mtcars, aes('wt', 'mpg', color='factor(gear)')) + geom_point() + stat_smooth(method='lm') + facet_wrap('~gear'))

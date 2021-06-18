@@ -17,7 +17,7 @@ student.columns
 #CSV file in web
 #link https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/salesdata.csv
 
-pd.read_csv?
+help(pd.read_csv)
 sales = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/salesdata.csv', index_col=None))
 sales.head(5)
 sales.shape
@@ -32,11 +32,14 @@ sales2 = sales.drop(columns=['Unnamed: 0'], axis=1)
 sales2.head
 sales2.reset_index()
 sales2.columns
-sales.describe
+sales2.describe
 pd.melt('sales2')
-pd.pivot?
-pd.pivot(data='sales', columns='month', index=['product_id'])
-
+help(pd.pivot)
+#https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
+sales2
+pd.pivot_table(sales2, values='sales', columns=['month'], aggfunc=np.sum)
+pd.pivot(data=sales2, index='month', values='values')
+pd.pivot(data=sales2, columns='month')
 sales3 = pd.concat([sales2, sales2])
 sales3.head()
 sales.describe

@@ -35,8 +35,13 @@ mtcars.axes
 mtcars.values
 
 #%%% access DF
+#https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
+#Series : s.loc[indexer]
+#DataFrame : df.loc[row_indexer,column_indexer]
 mtcarsDF[0:5]
-mtcarsDF[0:5,0:3]
+mtcarsDF.loc[:,'mpg']
+mtcarsDF.loc['Fiat 128','mpg']
+mtcarsDF.loc['Fiat 128':,'wt':]
 
 #single value: at
 mtcarsDF.at['Mazda RX4', 'mpg']
@@ -46,13 +51,14 @@ mtcarsDF.at['Mazda RX4', 'mpg']
 mtcarsDF.iat[0,0]
 mtcarsDF.iat[0,0:5]
 
-#set of values : loc : index values
+#set of values : loc : label value
+#purely label based indexing. This is a strict inclusion based protocol. Every label asked for must be in the index, or a KeyError will be raised. When slicing, both the start bound AND the stop bound are included, if present in the index. Integers are valid labels, but they refer to the label and not the position.
 mtcarsDF.index
 mtcarsDF.loc[['Mazda 4X4']]
 mtcarsDF.loc['Mazda 4X4', ['mpg']]
 mtcarsDF.loc[7:9]
 
-#iloc
+#loc : purely label based indexing
 mtcarsDF
 mtcarsDF.loc['Mazda RX4']
 mtcarsDF.loc['Mazda RX4', 'mpg']
@@ -60,7 +66,7 @@ mtcarsDF.loc['Mazda RX4', ['mpg', 'wt']]
 mtcarsDF.loc['Merc 280', ['mpg', 'wt']]
 mtcarsDF.loc['Mazda RX4':'Datsun 710']  #difficult to implement
 
-#loc uses index labels, iloc considers position in the index
+#iloc uses index labels, iloc considers position in the index
 
 mtcarsDF.iloc[1:10, 1:5]
 mtcarsDF.iloc[1:10:2, 1:5:2]
@@ -89,12 +95,12 @@ mtcarsDF.filter(regex='am', axis=1)  #colnames axis=1
 #%%statistics 0- column, 1-row
 mtcarsDF.mean(axis=0)
 mtcarsDF.mean(axis=1)
-mtcarsDF.kurt(axis=0)
+mtcarsDF.kurt(axis=0)  #peakendness
 mtcarsDF.kurt(axis=1)
 mtcarsDF.max(axis=0)
 mtcarsDF.max(axis=1)
 mtcarsDF.rank(axis=0)
-mtcarsDF.skew(axis=0)
+mtcarsDF.skew(axis=0) #shift
 mtcarsDF.skew(axis=1)
 
 
@@ -168,7 +174,8 @@ mtcarsDF.groupby('carb').first()  #first item of each group
 mtcarsDF.groupby('carb').last()
 mtcarsDF.groupby('gear')['mpg'].mean()
 mtcarsDF.groupby('gear').count()
-mtcarsDF.groupby('gear')['mpg'].count()
+mtcarsDF.groupby('gear')['mpg'].count()  #not useful
+mtcarsDF.groupby('gear')['mpg'].mean()  #useful
 mtcarsDF.groupby('cyl')['mpg','wt'].mean()
 mtcarsDF.groupby(['cyl','gear'])['mpg','wt'].mean()
 
@@ -185,8 +192,8 @@ mtcarsDF.groupby('gear')['mpg','wt'].agg('mean')
 mtcarsDF.groupby('gear')['mpg','wt'].agg(['mean','max'])
 mtcarsDF.groupby('gear').agg([np.mean, np.sum])  #all columns, np is faster, numeric values
 mtcarsDF.groupby('gear')['mpg','wt'].agg([np.mean, np.sum, 'count'])
-mtcarsDF.groupby('gear')['mpg'].agg([np.mean, np.sum, 'count']).rename(columns={'meanMPG')
-
+mtcarsDF.groupby('gear')['mpg'].agg([np.mean, np.sum, 'count'])
+#.rename(columns={'meanMPG','sumMPG','countMPG'})
 
 
 mtcarsDF.groupby('gear').agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='mean'))
@@ -226,7 +233,7 @@ mtcarsDF.pivot_table(values=['mpg','hp'], index=['gear'], columns=['am','vs'])
 #index on left, values on columns, columns on left top
 
 #dfply
-#pip install dfply  #install this library first
+#pip install dfply  #install this library first from anaconda
 from dfply import *
 mtcarsDF2 = mtcarsDF.copy()
 id(mtcarsDF)
@@ -238,8 +245,9 @@ catcol = ['cyl', 'vs', 'am', 'gear' , 'carb']
 mtcarsDF2[catcol] = mtcarsDF2[catcol].astype('category')
 mtcarsDF2.dtypes
 #chaining with >>
+mtcarsDF2 >> head(10) >> tail(3)
 mtcarsDF2 >> select(X.mpg)   #X is current DF
-mtcarsDF2 >> select(~X.mpg, ~X.wt).tail()   # exclude
+mtcarsDF2 >> select(~X.mpg, ~X.wt).   # exclude
 mtcarsDF2 >> select(X.mpg, X.wt, X.am) >> head()
 mtcarsDF2 >> select(X.mpg, X.wt)  >> arrange(X.mpg, ascending = False)
 mtcarsDF2 >> select(X.mpg, X.gear, X.wt)  >> arrange(-X.gear, X.mpg) 
@@ -285,11 +293,35 @@ sns.heatmap(xt2)
 sns.heatmap(xt2, cmap='YlGnBu', annot=True, cbar=False)
 
 
-#ggplot
-#pip install ggplot
+#ggplot #https://pypi.org/project/ggplot/
+#$ pip install -U ggplot
+from pandas import Timestamp
+import datetime
+import pandas as pd
+date_types = ( pd.Timestamp,    pd.DatetimeIndex,    pd.Period,    pd.PeriodIndex,   datetime.datetime,    datetime.time)
+#error module 'pandas' has no attribute 'tslib'
 from ggplot import *
-ggplot(data=mtcarsDF, mapping= aes(x='wt', y='mpg')) + geom_point(colour='r')
+help(ggplot)
+p = ggplot(aes(x='carat', y='price'), data=diamonds)
+print(p + geom_point())
+ggplot(aesthetics= aes(x='wt', y='mpg'), data=mtcarsDF) + geom_point(color='red')
+help(ggplot(aesthetics, data))
+
+ggplot(aesthetics=aes(x='gear'), data=mtcarsDF2) + geom_bar(stat='count', fill='green') 
+
 #error tslib https://github.com/yhat/ggpy/issues/662
+#C:\ProgramData\Anaconda3\Lib\site-packages\ggplot
+#C:\ProgramData\Anaconda3\Lib\site-packages\ggplot\stats
+#pip list -v  #c:\programdata\anaconda3\lib\site-packages
+
+#%%plotnine
+pip install plotnine 
+from plotnine.data import economics
+from plotnine import ggplot, aes, geom_line
+(  ggplot(economics)  # What data to use
+    + aes(x="date", y="pop")  # What variable to use
+    + geom_line()  # Geometric object to use for drawing
+)
 
 #%% save to/from excel
 mtcarsDF.to_csv('mtcars.csv') #check the folder in working dir tab
@@ -310,12 +342,10 @@ plt.scatter(x='wt', y='hp', c='am' , cmap='bwr', marker ='+', data=mtcarsDF)
 plt.legend()
 plt.show();
 
-
 #barplot
 
 mtcarsDF.groupby(['gear']).count()
-df = df.groupby(['home_team'])['arrests'].mean()
-
+df = mtcarsDF.groupby(['cyl'])['mpg'].mean()
 df.plot.bar()
 
 
