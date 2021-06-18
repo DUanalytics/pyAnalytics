@@ -1,4 +1,4 @@
-#
+#Missing Data
 #-----------------------------
 #%Imputation
 
@@ -56,12 +56,12 @@ nan_mask = np.isnan(sleep)
 nan_mask
 sleep.loc[[True, False,True],]
 sleep[nan_mask] = np.random.randint(0, 2, size=np.count_nonzero(nan_mask) )
-np.count_nonzero( np.isnan(sleep)) )
+np.count_nonzero( np.isnan(sleep))
 np.count_nonzero(np.isnan(sleep))
 size=np.count_nonzero(nan_mask)
 size
-#%%%
+#%%% not working
 from sklearn.preprocessing import Imputer
-In [2]: imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
-In [3]: imp.fit(train)
-In [4]: train= imp.transform(train)
+imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
+imp.fit(train)
+train= imp.transform(train)
