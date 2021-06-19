@@ -15,7 +15,7 @@ media.head()
 
 #check duplicates
 sum(media.duplicated(subset = 'Date')) == 0
-#if duplicates value will not be =0
+#if duplicates value will not be = 0
 
 #remove last column
 media = media.drop('Unnamed: 7', axis=1)

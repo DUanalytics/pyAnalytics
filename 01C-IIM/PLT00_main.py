@@ -14,9 +14,9 @@ df.columns
 df.dtypes
 
 #scatter
-plt.scatter(x=df.wt, y=df.mpg, color='red', marker='o', size=df.am)
+plt.scatter(x=df.wt, y=df.mpg, color='red', marker='o')
 plt.show();
-
+help(plt.scatter)
 #plot2
 df['wt']; df['mpg']
 size1 = df['hp'].to_numpy() 
