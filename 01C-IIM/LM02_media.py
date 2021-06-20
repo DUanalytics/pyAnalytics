@@ -12,15 +12,15 @@ url ='https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/medi
 media = pd.DataFrame(pd.read_csv(url))
 
 media.head()
-
+media.duplicated()
 #check duplicates
 sum(media.duplicated(subset = 'Date')) == 0
 #if duplicates value will not be = 0
-
+media.columns
 #remove last column
 media = media.drop('Unnamed: 7', axis=1)
 media.head()
-
+sum(media.duplicated(subset = 'Date')) == 0
 #description
 media.describe
 media.shape
@@ -57,6 +57,7 @@ sns.boxplot(media['Views_show'])
 media.plot.line(x='Date', y='Views_show')
 
 #DOW
+media.shape
 sns.barplot(data = media, x='Day_of_week', y='Views_show')
 #which week it was highest - Sun, Sat
 #weekdays and weekend(1)

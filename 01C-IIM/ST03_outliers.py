@@ -32,12 +32,16 @@ np.where(z > 2)
 
 
 #quantile
+marks2, type(marks2)
+np.sort(marks2)
+np.quantile([marks2], q=[.25, .5, .75,1])
+pd.Series(marks1).quantile()  #default 0.25
 Q1 = pd.Series(marks1).quantile(0.25)
 Q3 = pd.Series(marks1).quantile(0.75)
 Q1, Q3
 IQR = Q3 - Q1
 IQR
-IQR2 = stats.iqr(pd.Series(marks1)) 
+IQR2 = stats.iqr(pd.Series(marks1))   #iqr from function in py
 IQR2
 
 #outlier : < Q1 - IQR or > Q3 + IQR

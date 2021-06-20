@@ -23,7 +23,7 @@ df.corr()
 
 
 #skewness & Kurtosis
-%matplotlib inline
+#%matplotlib inline
 import numpy as np
 import pandas as pd
 from scipy.stats import kurtosis
@@ -42,8 +42,8 @@ print("mean : ", np.mean(data))
 print("var  : ", np.var(data))
 print("skew : ",skew(data))
 print("kurt : ",kurtosis(data))
-
-
+#https://www.spcforexcel.com/knowledge/basic-statistics/are-skewness-and-kurtosis-useful-statistics
+#https://www.researchgate.net/post/What_is_the_acceptable_range_of_skewness_and_kurtosis_for_normal_distribution_of_data distribution
 
 
 

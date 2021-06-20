@@ -9,9 +9,9 @@ Stock_Market = {'Year': [2017,2017,2017, 2017,2017,2017,2017,2017, 2017,2017,201
 type(Stock_Market)
 
 df = pd.DataFrame(Stock_Market, columns=['Year','Month','Interest_Rate', 'Unemployment_Rate', 'Stock_Index_Price' ]) 
-df.head(n=2)
+df.head(n=5)
 print (df)
-
+df.shape
 #check that a linear relationship exists between the:
 #Stock_Index_Price (dependent variable) and Interest_Rate (independent variable)
 #Stock_Index_Price (dependent variable) and Unemployment_Rate (independent variable)

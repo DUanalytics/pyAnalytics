@@ -47,7 +47,7 @@ X, y
 
 #split data : Then, apply train_test_split. For example, you can set the test size to 0.25, and therefore the model testing will be based on 25% of the dataset, while the model training will be based on 75% of the dataset:
 
-X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.25,random_state=0)
 X_train, X_test
 
 #apply logistic regression
@@ -57,7 +57,7 @@ logistic_regression.fit(X_train,y_train)
 y_pred=logistic_regression.predict(X_test)
 
 #print the Accuracy and plot the Confusion Matrix:
-print('Accuracy: ',metrics.accuracy_score(y_test, y_pred))
+print('Accuracy: ', metrics.accuracy_score(y_test, y_pred))
 y_test
 y_pred
 confusion_matrix = pd.crosstab(y_test, y_pred, rownames=['Actual'], colnames=['Predicted'])
@@ -95,3 +95,6 @@ print (y_pred2)
 #The first and fourth candidates are not expected to be admitted, while the other candidates are expected to be admitted.
 #df.concat(y_pred2)
 pd.concat([df2, pd.Series(y_pred2)], axis=1, sort=False)
+
+
+#end here..
