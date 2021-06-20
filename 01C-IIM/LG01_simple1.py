@@ -1,7 +1,6 @@
 #Topic:Logistic Regression
 #-----------------------------
 #libraries
-
 #S1 : libraries
 import matplotlib.pyplot as plt
 import numpy as np

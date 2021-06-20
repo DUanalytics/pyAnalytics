@@ -119,6 +119,5 @@ boston_wo2.shape
 #some outliers still cropped up... how to remove them
 #
 
-
 #https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba
 #https://haridas.in/outlier-removal-clustering.html
