@@ -20,9 +20,8 @@ y
 model = LogisticRegression(solver='liblinear', random_state=0)
 model.fit(x, y)
 model = LogisticRegression(solver='liblinear', random_state=0).fit(x, y)
-
+x
 model.classes_
-
 model.intercept_
 model.coef_  #odd ratio
 
@@ -30,8 +29,7 @@ model.coef_  #odd ratio
 y
 model.predict_proba(x)  #prob of 0 & 1 class
 #each corresponds to single observation. ie prob of class being 0 & 1 for value 1 is .629 & .37 resp
-x
-
+x, y
 model.predict(x)  #actual predictions : which is on higher side. since prob for value 1 was .629, hence class is 0
 
 y
@@ -43,11 +41,11 @@ confusion_matrix(y, model.predict(x))
 #FN TP 
 #we want more TN(Acutal-0, Predict-0) & TP
 #FN (Actual-1, Predict-0)
-
+y
 cm = confusion_matrix(y, model.predict(x))
 cm
 sns.heatmap(cm, annot=True)
-
+(3+6)/10
 #report
 classification_report(y, model.predict(x))
 

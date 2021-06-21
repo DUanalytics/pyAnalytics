@@ -51,6 +51,9 @@ accuracy_score(y_true=y_test, y_pred=ypred1)
 newData = X.sample(4)
 clsModel.predict(newData)
 
+
+
+
 #visualise 
 #pip install graphviz
 from graphviz import Source
@@ -71,6 +74,13 @@ from subprocess import call
 call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
 graph1 = graphviz.Source(dot_data1)  
 graph1 
+
+#prune dtree
+
+dtree = tree.DecisionTreeClassifier(criterion = "gini", splitter = 'random', max_leaf_nodes = 10, min_samples_leaf = 5, max_depth= 5)
+dtree.fit(X_train,y_train)
+tree.plot_tree(decision_tree=dtree)
+
 
 
 #%% Regression Tree - Predict Petrol Consumption on other parameters
