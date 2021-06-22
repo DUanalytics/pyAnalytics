@@ -81,8 +81,6 @@ dtree = tree.DecisionTreeClassifier(criterion = "gini", splitter = 'random', max
 dtree.fit(X_train,y_train)
 tree.plot_tree(decision_tree=dtree)
 
-
-
 #%% Regression Tree - Predict Petrol Consumption on other parameters
 #Predict Numerical value based on IV
 #os.listdir('E:/analytics/projects/pyanalytics/data')
