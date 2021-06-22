@@ -76,8 +76,8 @@ graph1 = graphviz.Source(dot_data1)
 graph1 
 
 #prune dtree
-
-dtree = tree.DecisionTreeClassifier(criterion = "gini", splitter = 'random', max_leaf_nodes = 10, min_samples_leaf = 5, max_depth= 5)
+#https://statinfer.com/204-3-10-pruning-a-decision-tree-in-python/
+dtree = tree.DecisionTreeClassifier(criterion = "gini", splitter = 'random', max_leaf_nodes = 10, min_samples_leaf = 5, max_depth= 3)
 dtree.fit(X_train,y_train)
 tree.plot_tree(decision_tree=dtree)
 
@@ -163,3 +163,6 @@ graph2
 # tree.export_graphviz(decision_tree=regrModel, out_file=dot_data, filled=True, rounded=True, special_characters=True)
 # graph= pydotplus.graph_from_dot_data(dot_data.getvalue())
 # Image(graph.create_png())
+
+
+#https://www.datacamp.com/community/tutorials/decision-tree-classification-python
