@@ -35,7 +35,7 @@ kmeans.labels_[:5]
 
 
 #%%choosing no of clusters
-kmeans_kwargs = {'init':'random', 'n_init':10, 'max_iter': 300, 'random_state': 42,}
+kmeans_kwargs = {'init':'random', 'n_init':10, 'max_iter': 300, 'random_state': 42}
 sse=[]
 for k in range(1, 11):
     kmeans = KMeans(n_clusters=k, **kmeans_kwargs)
