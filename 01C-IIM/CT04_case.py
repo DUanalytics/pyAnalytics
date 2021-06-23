@@ -100,6 +100,15 @@ aggCluster.fit_predict(data2_scaled)
 aggCluster
 aggCluster.labels_
 
+
+#simple eg
+from sklearn.cluster import AgglomerativeClustering
+import numpy as np
+X = np.array([[1, 2], [1, 4], [1, 0], [4, 2], [4, 4], [4, 0]])
+clustering = AgglomerativeClustering().fit(X)
+clustering
+AgglomerativeClustering()
+clustering.labels_
 #compare
 compare = pd.DataFrame({'kmCluster': kmeans.labels_, 'HCaggl': aggCluster.labels_, 'Diff': kmeans.labels_ - aggCluster.labels_})
 compare
