@@ -37,7 +37,7 @@ frequent_itemsets
 print(frequent_itemsets) #dataframe with the itemsets
 6/9
 #%%%%  - Support Rules
-association_rules?
+help(association_rules)
 #output - DF with antecedents -> consequent
 supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .1)
 print(supportRules3)
@@ -96,9 +96,9 @@ frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets[ 'sup
 
 
 #%%% Links
-http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
-https://www.kaggle.com/datatheque/association-rules-mining-market-basket-analysis
-http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
+#http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/
+#https://www.kaggle.com/datatheque/association-rules-mining-market-basket-analysis
+#http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
 
 #summary
 #metric - support, confidence, lift
@@ -107,16 +107,50 @@ http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/association_rules/
 #Combo plan, relayout, discount, ad, recommendation system
 
 transactions = [['Bread','Butter','Jam'],['Butter','Cheese'],['Butter','Egg'] ,['Bread','Butter','Cheese'],['Bread','Egg'], ['Butter','Egg'],['Bread','Egg'], ['Bread','Butter','Egg','Jam'],['Bread','Butter','Egg']]
-
+te = TransactionEncoder()
+te_ary = te.fit(transactions).transform(transactions)
+te_ary
+te.columns_
+df = pd.DataFrame(te_ary, columns=te.columns_)
+df
 
 
 #%%%
 #%%%%
 #### Part - 3 
 #pip install efficient_apriori
-from efficient_apriori import apriori
+#from efficient_apriori import apriori
 #install efficient_apriori
 #https://pypi.org/project/efficient-apriori/
+#https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python
+#pip install apyori
+from apyori import apriori
+association_rules = apriori(df, min_support=0.0045, min_confidence=0.2, min_lift=3, min_length=2)
+association_results = list(association_rules)
+association_results
+print(len(association_results))
+print(association_results[0])
+for item in association_results:
+
+    # first index of the inner list
+    # Contains base item and add item
+    pair = item[0] 
+    items = [x for x in pair]
+    print("Rule: " + items[0] + " -> " + items[1])
+
+    #second index of the inner list
+    print("Support: " + str(item[1]))
+
+    #third index of the list located at 0th
+    #of the third index of the inner list
+
+    print("Confidence: " + str(item[2][0][2]))
+    print("Lift: " + str(item[2][0][3]))
+    print("=====================================")
+
+    
+
+#method3  : under draft
 df
 itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
 itemsets2

@@ -7,7 +7,6 @@ from wordcloud import WordCloud
 s = 'adithya adithya adithya adithya dhiraj upadhyaya dhiraj dhiraj noida delhi'
 text = s
 
-
 # Generate a word cloud image
 wordcloud = WordCloud().generate(text)
 wordcloud
@@ -18,7 +17,6 @@ import matplotlib.pyplot as plt
 
 # take relative word frequencies into account, lower max_font_size
 wordcloud = WordCloud(background_color="white", max_words=len(s), max_font_size=40, relative_scaling=.5).generate(text)
-
 plt.figure()
 plt.imshow(wordcloud)
 plt.show();
@@ -55,7 +53,7 @@ text=("Data visualization or data visualisation is viewed by many disciplines as
 #wave_mask = np.array(Image.open("wave.jpg"))
 #copy this wave.jpg in root folder of project 
 # Make the figure
-#wordcloud = WordCloud(mask=wave_mask).generate(text)
+#wordcloud = WordCloud(mask=wave_mask).generate(text)  #not found
 wordcloud = WordCloud().generate(text)
 plt.figure()
 plt.imshow(wordcloud, interpolation="bilinear")
