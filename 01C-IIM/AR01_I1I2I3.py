@@ -43,10 +43,10 @@ supportRules3 = association_rules(frequent_itemsets, metric="support", min_thres
 print(supportRules3)
 supportRules3.head()
 
-print(supportRules3[['antecedents', 'consequents', 'support','confidence','lift']])
+print(supportRules3[['antecedents', 'consequents', 'support', 'confidence', 'lift']])
 #---
 supportRules2 = association_rules(frequent_itemsets, metric="support", min_threshold = .2)
-print(supportRules2[['antecedents', 'consequents', 'support','confidence','lift']])
+print(supportRules2[['antecedents', 'consequents', 'support', 'confidence','lift']])
 
 
 #%%%% Lift  : generally > 1 for strong associations
@@ -54,11 +54,11 @@ print(supportRules2[['antecedents', 'consequents', 'support','confidence','lift'
 lift1 = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
 print(lift1)
 lift1
-print(lift1[['antecedents', 'consequents', 'support', 'lift','confidence']])
+print(lift1[['antecedents', 'consequents', 'support', 'lift', 'confidence']])
 #--
 lift2 = association_rules(frequent_itemsets, metric="lift", min_threshold=2)
 print(lift2)  #high positive correlation
-print(lift2[['antecedents', 'consequents', 'support', 'lift','confidence']])
+print(lift2[['antecedents', 'consequents', 'support', 'lift', 'confidence']])
 
 #twin condition : lift> 2;  confidence > .5, support > .2
 lift2[(lift2.confidence > .5) & (lift2.support > .2)]
@@ -118,9 +118,7 @@ df
 #%%%
 #%%%%
 #### Part - 3 
-#pip install efficient_apriori
-#from efficient_apriori import apriori
-#install efficient_apriori
+
 #https://pypi.org/project/efficient-apriori/
 #https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python
 #pip install apyori
@@ -131,7 +129,6 @@ association_results
 print(len(association_results))
 print(association_results[0])
 for item in association_results:
-
     # first index of the inner list
     # Contains base item and add item
     pair = item[0] 
@@ -150,7 +147,28 @@ for item in association_results:
 
     
 
-#method3  : under draft
+#%%%method3  : under draft
+#https://pypi.org/project/efficient-apriori/
+#pip install efficient_apriori
+from efficient_apriori import apriori
+transactions = [('eggs', 'bacon', 'soup'),   ('eggs', 'bacon', 'apple'), ('soup', 'bacon', 'banana')]
+transactions
+itemsets, rules = apriori(transactions, min_support=0.5, min_confidence=1)
+print(rules)  # [{eggs} -> {bacon}, {soup} -> {bacon}]
+
+itemsets, rules = apriori(transactions, min_support=0.2, min_confidence=1)
+# Print out every rule with 2 items on the left hand side,
+# 1 item on the right hand side, sorted by lift
+rules_rhs = filter(lambda rule: len(rule.lhs) == 2 and len(rule.rhs) == 1, rules)
+for rule in sorted(rules_rhs, key=lambda rule: rule.lift):
+  print(rule)  # Prints the rule and its confidence, support, lift, ...
+
+#with ids
+from efficient_apriori import apriori
+transactions = [('eggs', 'bacon', 'soup'),   ('eggs', 'bacon', 'apple'), ('soup', 'bacon', 'banana')]
+itemsets, rules = apriori(transactions, output_transaction_ids=True)
+print(itemsets)
+
 df
 itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
 itemsets2
@@ -164,6 +182,16 @@ for rule in sorted(rules_rhs, key=lambda rule: rule.lift):  print(rule)
 # Print out every rule with 2 items on the left hand side,
 
 #%%%
+
+transactions = [['I1','I2','I5'],['I2','I4'],['I2','I3'] ,['I1','I2','I4'],['I1','I3'], ['I2','I3'],['I1','I3'], ['I1','I2','I3','I5'],['I1','I2','I3']]
+transactions
+#----
+te = TransactionEncoder()
+te_ary = te.fit(transactions).transform(transactions)
+te_ary
+te.columns_
+df = pd.DataFrame(te_ary, columns=te.columns_)
+df
 from mlxtend.frequent_patterns import association_rules
 from mlxtend.frequent_patterns import apriori
 support_threshold = 0.01
@@ -171,9 +199,21 @@ frequent_itemsets = apriori(df, min_support= support_threshold, use_colnames = T
 frequent_itemsets
 rules4 = association_rules(frequent_itemsets, metric="lift", min_threshold =1.2)
 rules4
+#no of items - left and right side
 rules4["ant_len"] = rules4["antecedents"].apply(lambda x: len(x))
 rules4
 rules4["con_len"] = rules4["consequents"].apply(lambda x: len(x))
 rules4
 rules4[(rules4['ant_len'] >= 1) & (rules4['confidence'] > 0.75) & (rules4['lift'] > 1.2) ]
 rules4[rules4['antecedents'] == {'I1','I2'}]
+
+#%%%
+transactions = [['I1','I2','I5'],['I2','I4'],['I2','I3'] ,['I1','I2','I4'],['I1','I3'], ['I2','I3'],['I1','I3'], ['I1','I2','I3','I5'],['I1','I2','I3']]
+transactions
+
+from efficient_apriori import apriori
+#transactions = [('eggs', 'bacon', 'soup'),   ('eggs', 'bacon', 'apple'), ('soup', 'bacon', 'banana')]
+itemsets, rules = apriori(transactions, output_transaction_ids=True)
+print(itemsets)
+itemsets, rules = apriori(transactions, min_support=0.4, min_confidence=.6)
+print(rules)

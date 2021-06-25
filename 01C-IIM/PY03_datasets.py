@@ -16,11 +16,12 @@ data()
 alldatasets = data().copy()
 type(alldatasets)
 
-
+#https://github.com/iamaziz/PyDataset
 from pydataset import data
+data('titanic', show_doc=True)
 data('iris')
 data('marketing')
-data('titanic')
+data('mtcars', show_doc=True)
 
 alldatasets.head()
 
