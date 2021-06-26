@@ -1,4 +1,6 @@
-#Topic Time Series
+#Topic Time Series - SMA, ES, ARIMA
+
+#https://www.researchgate.net/post/What_is_the_difference_between_ARIMA_and_Exponential_smoothing_model_as_both_are_based_on_their_past_values_and_error_term
 
 #%%%
 #https://www.analyticsvidhya.com/blog/2018/02/time-series-forecasting-methods/

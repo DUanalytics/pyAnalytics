@@ -14,7 +14,7 @@ import pandas as pd
 import datetime
 
 start1 = datetime.datetime(2017, 1, 1)
-end1 = datetime.datetime(2020, 9, 18)
+end1 = datetime.datetime(2021, 6, 26)
 key = '4D8hkYAV4WEkcTmD9LMW'
 S_sbi = "BSE/BOM500112" # SBI
 #Fetch Data
@@ -36,7 +36,7 @@ data[['Open','High','Low','Close','WAP']].plot()
 data[['Open','Close']].plot()
 #%%%
 #Libraries
-#pip install mpl_finance
+#pip install --upgrade mpl_finance
 from mpl_finance import candlestick_ohlc
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -50,8 +50,8 @@ dayFormatter = DateFormatter('%d') # e.g., 12
 sbi.head()
 data3 = sbi[['Open', 'High', 'Low', 'Close']].copy()
 data3.head()
-date1 = "2019-8-1"
-date2 = "2019-8-30"
+date1 = "2021-5-1"
+date2 = "2021-6-25"
 data3b = data3[(data3.index >= date1) & (data3.index <= date2)]
 data3b
 #%%% Plots
@@ -67,3 +67,7 @@ ax.xaxis_date()
 ax.autoscale_view()
 plt.setp(plt.gca().get_xticklabels(), rotation=45, horizontalalignment= 'right')
 plt.show();
+
+
+
+#end here

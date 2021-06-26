@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-#Created on Fri Jun 14 19:31:48 2019 @author: dhiraj@dell sip
+#MPL - graph with titles
 #Graph and Plots
 #-----------------------------
 #%
@@ -14,11 +13,11 @@ plt.barh(['M','F'], [30,10])
 
 plt.bar(['M','F'], [30,10], color = ['r', 'g'])
 
-#with other options
+#with other options  : run together till plt.show
 plt.bar(['M','F'], [30,10], color = ['r', 'g'])
 plt.title("Student Proportion")
 plt.grid(True)
-plt.show()  #used if running as file
+plt.show();  #used if running as file
 
 #now create a dataframe object
 df = pd.DataFrame({'gender':['M','F'], 'strength':[25,10]})
