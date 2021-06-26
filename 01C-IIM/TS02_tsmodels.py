@@ -15,15 +15,18 @@ sns.set(style='darkgrid', context='talk', palette='Dark2')
 my_year_month_fmt = mdates.DateFormatter('%m/%y')
 
 #%%%%
-pd.date_range?
+help(pd.date_range)
 dates = pd.date_range('2020-09-01',periods=30, freq='B')
 dates   #B Business days (19 & 21 Sep - Sat & Sun)
 np.random.randint(1234)
+help(np.random.randint)
+np.random.seed(100)  #set seed value to get same pattern of numbers
 price = np.random.randint(low=50, high=100, size=30)
-
+price
+np.mean(price)
 data = pd.DataFrame({'price':price}, index=dates)
 data.head(10)
-data.plot(figsize=(10,7))
+data.plot(figsize=(8,5))
 
 #%%% Average
 #Simple Average
@@ -35,9 +38,10 @@ ma3 = data.rolling(window=3, center=True).mean()
 ma3
 ma3.head()
 pd.concat([data, ma3], axis=1)
-ma3.plot(figsize=(10,7))
+ma3.plot(figsize=(5,4))
+(58+74+53)/3
 #plot them together
-fig, ax = plt.subplots(figsize=(10,7))
+fig, ax = plt.subplots(figsize=(5,4))
 ax.plot(data)
 ax.plot(ma3)
 plt.legend('topright')

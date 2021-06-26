@@ -2,7 +2,7 @@
 #-----------------------------
 #%
 from datetime import datetime
-datetime(year=2020, month=09, day=18)
+datetime(year=2021, month=6, day=26)
 datetime.today() #todays date
 datetime.now() 
 datetime.now().strftime('%A %y %B %d :: %c ::: %H-%M:%S')

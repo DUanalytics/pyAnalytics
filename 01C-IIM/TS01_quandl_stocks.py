@@ -12,6 +12,9 @@ import quandl
 import quandl
 import pandas as pd
 import datetime
+pd.set_option('display.max_columns', None)
+pd.set_option('display.expand_frame_repr', False)
+pd.set_option('max_colwidth', -1)
 
 start1 = datetime.datetime(2017, 1, 1)
 end1 = datetime.datetime(2021, 6, 26)
