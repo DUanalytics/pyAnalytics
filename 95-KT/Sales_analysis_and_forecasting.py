@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+# https://towardsdatascience.com/sales-forecasting-with-price-promotion-effects-b5d70207b128
+#https://raw.githubusercontent.com/susanli2016/Machine-Learning-with-Python/master/data/Sales_Product_Price_by_Store.csv
 # In[4]:
 
 
