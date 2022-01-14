@@ -4,8 +4,9 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['45-stats1\\encoding.py', '01C-IIM\\PD10_category.py', '01C-IIM\\WC01_words.py', '01C-IIM\\WC02_youtube.py']
+recent_files = ['95-KT\\Sales_analysis_and_forecasting.py', '01-Misc\\DT_diabetis.py']
 
 [main]
 version = 0.2.0
+recent_files = []
 

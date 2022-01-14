@@ -49,6 +49,7 @@ dir   #select the text and press control + I
 car['brand'] = 'MARUTI'
 car  #mutable , value can be changed
 
+
 #%%frozen Dictionaries https://pypi.org/project/frozendict/
 #conda install -c conda-forge frozendict #from anaconda as admin
 #pip install frozendict   #install this library
