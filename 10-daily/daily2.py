@@ -50,17 +50,18 @@ print(merge)
 
 #%%Functions
 #Simple Function
-def squareOfNumber(x):
+def squareOfNumber1(x):
      return x*x
-def squareOfNumber(x):     return x*x
-
+squareOfNumber1(3)
+def squareOfNumber2(x):     return x*x
+squareOfNumber2(3)
 print(squareOfNumber(3))
  
 #Function using another function
 def do(f,x):     return f(x)
-print (do(squareOfNumber,4))
+print (do(squareOfNumber1,4))
 #f is function squareOfNumber and value is 4
-squareOfNumber(4) 
+squareOfNumber1(4) 
 
 #Inline Function
 print (do(lambda x: x*x*x,5))
