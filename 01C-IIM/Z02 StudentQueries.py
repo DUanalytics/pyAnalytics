@@ -7,11 +7,14 @@ import matplotlib.pyplot as plt
 from pydataset import data
 import seaborn as sns
 
-from pydataset import data
 mtcars = data('mtcars')
+mtcars.head()
+mtcars1 = mtcars
 mtcarsDF = mtcars.copy()
 id(mtcars)
 id(mtcarsDF)
+id(mtcars1)
+help(id)
 
 #group by - aggregate various statistics and sort by column aggregate
 
@@ -23,8 +26,9 @@ mtcarsDF[['mpg','gear','wt']].groupby('gear').agg([np.mean])
 mtcarsDF[['mpg','gear','wt']].groupby('gear').agg([np.mean, min])
 mtcarsDF[['mpg','gear','wt']].groupby('gear').agg([np.mean, min]).reset_index()
 mtcarsDF[['mpg','gear','wt']].groupby('gear', as_index=False).agg([np.mean, min]).reset_index()
-mtcarsDF[['mpg','gear','wt']].groupby('gear', as_index=False).agg([np.mean, min]).reset_index()
+
 mtcarsDF[['mpg','gear','cyl', 'wt']].groupby(['gear','cyl']).agg({'mpg':[np.mean, min]})
+
 gpMT = mtcarsDF[['mpg','gear','cyl','wt']].groupby(['gear','cyl']).agg({'mpg':[np.mean, min, max], 'wt':[np.std,max]}).round(2).reset_index()
 gpMT
 gpMT.columns = gpMT.columns.droplevel()
@@ -33,7 +37,7 @@ gpMT.set_axis(['gear','cyl', 'mpg_mean', 'mpg_min', 'mpg_max', 'wt_std', 'wt_max
 #gpMT.columns = ['gear', 'cyl', 'mpg_mean','mpg_min','mpg_max','wt_std','wt_max']
 gpMT
 gpMT.head()
-gpMT.sort_values(by=['cyl','mpg_min'])
+gpMT.sort_values(by=['cyl','wt_max'])
 
 
 #%%
@@ -43,8 +47,10 @@ from dfply import *
 mtcarsDF2 = mtcars.copy()
 id(mtcarsDF)
 id(mtcarsDF2)
-mtcarsDF2 >> arrange(X.mpg)
-mtcarsDF2 >> group_by(X.gear, X.am, X.cyl) >> summarize(meanWT= X.wt.mean(), maxHP = X.hp.max()) >> ungroup()  >> arrange(X.cyl) >> head(5)
+pd.set_option('display.max_columns', None)
+mtcarsDF2.head()
+mtcarsDF2 >> arrange(X.cyl, X.mpg)
+mtcarsDF2 >> group_by(X.gear, X.am, X.cyl) >> summarize(meanWT= X.wt.mean(), maxHP = X.hp.max()) >> ungroup()  >> arrange(X.cyl) 
 
 
 #pip install dplython  #install this library first from anaconda
