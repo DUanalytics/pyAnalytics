@@ -110,11 +110,13 @@ mtcarsDF.skew(axis=1)
 mtcarsDF['gear'] == 3  #T&F
 mtcars[mtcarsDF['gear'] == 3]  #rows with T for gear=3
 mtcars[mtcarsDF['gear'] != 3, ['gear','am']]
-
+mtcars[mtcarsDF['gear'] != 3, [['gear','am']]] #error
+mtcars[mtcarsDF['gear'] != 3.loc[['gear']]
 #another way
 mtcarsDF[mtcarsDF.gear.eq(3)]  #chaining method
-
-mtcarsDF[mtcarsDF['gear'] == 3 & mtcarsDF['am']== 0]
+mtcarsDF[mtcarsDF['gear'] == 3]
+mtcarsDF[mtcarsDF['am'] == 0]
+mtcarsDF[(mtcarsDF['gear'] == 3) & (mtcarsDF['am']== 0)]
 
 mtcarsDF.gear.unique()
 mtcarsDF.carb.unique()

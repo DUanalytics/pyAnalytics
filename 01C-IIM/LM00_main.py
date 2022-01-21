@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 Stock_Market = {'Year': [2017,2017,2017, 2017,2017,2017,2017,2017, 2017,2017,2017,2017,2016,2016,2016,2016,2016,2016,2016,2016,2016, 2016,2016,2016], 'Month': [12, 11,10,9,8,7,6, 5,4,3, 2,1,12,11, 10,9,8,7,6,5,4,3,2,1], 'Interest_Rate': [2.75,2.5,2.5,2.5,2.5, 2.5,2.5,2.25,2.25, 2.25,2,2,2,1.75,1.75, 1.75,1.75, 1.75,1.75,1.75,1.75,1.75,1.75,1.75], 'Unemployment_Rate': [5.3,5.3, 5.3,5.3,5.4,5.6,5.5, 5.5,5.5,5.6,5.7,5.9,6,5.9,5.8,6.1,6.2,6.1,6.1,6.1, 5.9,6.2,6.2, 6.1],'Stock_Index_Price':[1464,1394,1357,1293,1256,1254,1234,1195, 1159,1167,1130,1075,1047,965, 943,958,971,949,884,866,876,822,704,719]   }  #dictionary format
 type(Stock_Market)
+Stock_Market
+#height(IV) vs weight (DV)
 
 df = pd.DataFrame(Stock_Market, columns=['Year','Month','Interest_Rate', 'Unemployment_Rate', 'Stock_Index_Price' ]) 
 df.head(n=5)
@@ -38,7 +40,8 @@ plt.show() ;
 #Multiple Linear Regression
 from sklearn import linear_model #1st method
 import statsmodels.api as sm  #2nd method
-    
+df.head(5)    
+df.shape
 X = df[['Interest_Rate','Unemployment_Rate']] # here we have 2 variables for multiple regression. If you just want to use one variable for simple linear regression, then use X = df['Interest_Rate'] for example. Alternatively, you may add additional variables within the brackets
 Y = df['Stock_Index_Price']
 X 
@@ -47,11 +50,14 @@ Y
 regr = linear_model.LinearRegression()
 regr.fit(X, Y)
 regr.score(X, Y)  #R2 
+#89% of the variation in Stock Prices is due to Unemployment Rate & Interest Rate
 print('Intercept: \n', regr.intercept_)
 print('Coefficients: \n', regr.coef_)
+df.head()
 #Stock_Index_Price = (Intercept) + (Interest_Rate coef)*X1 + (Unemployment_Rate coef)*X2
 #Stock_Index_Price = (1798.4040) + (345.5401)*X1 + (-250.1466)*X2
-
+dir(regr)
+help(regr)
 # prediction with sklearn
 New_Interest_Rate = 2.75
 New_Unemployment_Rate = 5.3
@@ -76,3 +82,9 @@ print('R2 ', round(regr.score(X, Y),3) , 'Intercept: \n', np.round(regr.intercep
 #ref
 #https://datatofish.com/multiple-linear-regression-python/
 #end here
+from sklearn.linear_model import LinearRegression
+X = np.array([[1, 1], [1, 2], [2, 2], [2, 3]])
+# y = 1 * x_0 + 2 * x_1 + 3
+y = np.dot(X, np.array([1, 2])) + 3
+reg = LinearRegression().fit(X, y)
+reg.score(X, y)
