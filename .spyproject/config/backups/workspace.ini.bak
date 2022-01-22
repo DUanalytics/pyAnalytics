@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['10-daily\\daily1.py', '10-daily\\daily2.py', '01C-IIM\\PD00_main.py', '01C-IIM\\Z02 StudentQueries.py']
+recent_files = ['10-daily\\daily1.py', '10-daily\\daily2.py', '01C-IIM\\PD00_main.py', '01C-IIM\\Z02 StudentQueries.py', '01C-IIM\\CT00_main.py', '01C-IIM\\DT00_main.py', '01C-IIM\\DT01_simple.py', '01C-IIM\\DT02_diabetis.py']
 
 [main]
 version = 0.2.0

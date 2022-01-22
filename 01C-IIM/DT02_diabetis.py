@@ -44,7 +44,7 @@ X_train.head()
 
 #%%%: Building Decision Tree Model :create a Decision Tree Model using Scikit-learn.
 # Create Decision Tree classifer object
-clf = DecisionTreeClassifier()
+clf = DecisionTreeClassifier(max_depth=3)
 # Train Decision Tree Classifer
 clf = clf.fit(X_train,y_train)
 y_train
@@ -78,6 +78,8 @@ display(SVG(graph1.pipe(format='svg')))
 #change labels names
 graph2 = Source( tree.export_graphviz(clf, out_file=None, feature_names=X.columns, filled=True, class_names=['NoDiabetis','Diabetis']))
 graph2
+X_train
+y_train.value_counts()
 #change max_depth : 1 to 4
 Source(tree.export_graphviz(clf, out_file=None, max_depth=1, feature_names=X.columns, class_names=['NonDB','DB'], label='all', filled=True, leaves_parallel=True, impurity=True, node_ids=True, proportion=True, rotate=True, rounded=True, special_characters=False, precision=1))
 #https://stackoverflow.com/questions/27817994/visualizing-decision-tree-in-scikit-learn
@@ -147,7 +149,8 @@ graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_png('diabetes.png')
 Image(graph.create_png())
 
-g
+
+
 
 
 #%%%%
@@ -170,3 +173,7 @@ y_pred = clf.predict(X_test)
 
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+
+
+
+#%% end her

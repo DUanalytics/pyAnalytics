@@ -1,6 +1,7 @@
 #Word Cloud
-from wordcloud import WordCloud
-#pip install wordcloud
+from wordcloud import WordCloud  #check if avl
+#conda install -c conda-forge wordcloud  #or
+#!pip install wordcloud
 from wordcloud import WordCloud
 
 # Read the whole text.

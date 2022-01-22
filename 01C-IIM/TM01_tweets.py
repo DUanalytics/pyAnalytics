@@ -1,7 +1,8 @@
 #Twitter : Tweets Download & Sentiment Analysis
 #-----------------------------
 #Download tweets from twitter
-import tweepy  #install pip install tweepy
+#!pip install tweepy
+import tweepy  
 import csv
 import pandas as pd
 

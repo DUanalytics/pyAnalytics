@@ -6,15 +6,13 @@
 import numpy as np
 import pandas as pd
 
-import pydataset
-data('iris')
-data('iris', show_doc=True)#help
-
 #better way 
 from pydataset import data
 data()
 alldatasets = data().copy()
 type(alldatasets)
+alldatasets.head()
+alldatasets.shape
 
 #https://github.com/iamaziz/PyDataset
 from pydataset import data
@@ -62,7 +60,7 @@ data('titanic')
 alldatasets['dataset_id'].str.contains('ais')
 
 #other datasets
-https://scikit-learn.org/stable/datasets/index.html
+#https://scikit-learn.org/stable/datasets/index.html
 
 
 
