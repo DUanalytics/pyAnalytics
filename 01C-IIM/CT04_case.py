@@ -12,7 +12,7 @@ import matplotlib.pylot as plt
 
 #data 
 #data = pd.read_csv('data/clustering.csv')
-url='hhttps://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/clustering.csv'
+url='https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/clustering.csv'
 data = pd.read_csv(url)
 data.shape
 data.head()

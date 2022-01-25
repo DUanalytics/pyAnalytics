@@ -19,7 +19,10 @@ df
 df.dtypes
 variable_name = {'True' : 0 , 'False' : 1 }
 df[['I1','I2']] = df[['I1','I2']].map(variable_name)
-df
+df.map(variable_names)
 
 #model
 frequent_itemsets = apriori(df, min_support=.1, use_colnames=True)
+
+
+

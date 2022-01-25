@@ -169,8 +169,9 @@ transactions = [('eggs', 'bacon', 'soup'),   ('eggs', 'bacon', 'apple'), ('soup'
 itemsets, rules = apriori(transactions, output_transaction_ids=True)
 print(itemsets)
 
-df
-itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
+transactions
+help(apriori)
+itemsets2, rules2 = apriori(transactions, min_support=0.2, min_confidence = .3)
 itemsets2
 rules2
 

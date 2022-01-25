@@ -14,10 +14,10 @@ import pandas as pd
 import datetime
 pd.set_option('display.max_columns', None)
 pd.set_option('display.expand_frame_repr', False)
-pd.set_option('max_colwidth', -1)
+pd.set_option('max_colwidth', None)
 
-start1 = datetime.datetime(2017, 1, 1)
-end1 = datetime.datetime(2021, 6, 26)
+start1 = datetime.datetime(2020, 1, 1)
+end1 = datetime.datetime(2022, 1, 25)
 key = '4D8hkYAV4WEkcTmD9LMW'
 S_sbi = "BSE/BOM500112" # SBI
 #Fetch Data
@@ -53,8 +53,8 @@ dayFormatter = DateFormatter('%d') # e.g., 12
 sbi.head()
 data3 = sbi[['Open', 'High', 'Low', 'Close']].copy()
 data3.head()
-date1 = "2021-5-1"
-date2 = "2021-6-25"
+date1 = "2021-12-1"
+date2 = "2022-1-25"
 data3b = data3[(data3.index >= date1) & (data3.index <= date2)]
 data3b
 #%%% Plots
@@ -70,7 +70,5 @@ ax.xaxis_date()
 ax.autoscale_view()
 plt.setp(plt.gca().get_xticklabels(), rotation=45, horizontalalignment= 'right')
 plt.show();
-
-
 
 #end here

@@ -17,6 +17,7 @@ from sklearn.preprocessing import StandardScaler
 #simulated / synthentic data
 features, true_labels = make_blobs( n_samples=200, centers=3, cluster_std=2.75, random_state=42)
 features[:5]
+features
 features.shape
 true_labels[:5]
 

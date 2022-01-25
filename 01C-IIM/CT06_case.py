@@ -30,7 +30,7 @@ labelList = range(1, 11)
 plt.figure(figsize=(10, 7))
 dendrogram(linked,  orientation='top',  labels=labelList,  distance_sort='descending', show_leaf_counts=True)
 plt.show();
-
+X
 
 #The algorithm starts by finding the two points that are closest to each other on the basis of Euclidean distance. If we look back at Graph1, we can see that points 2 and 3 are closest to each other while points 7 and 8 are closes to each other. Therefore a cluster will be formed between these two points first. In Graph2, you can see that the dendograms have been created joining points 2 with 3, and 8 with 7. The vertical height of the dendogram shows the Euclidean distances between points. From Graph2, it can be seen that Euclidean distance between points 8 and 7 is greater than the distance between point 2 and 3.
 
