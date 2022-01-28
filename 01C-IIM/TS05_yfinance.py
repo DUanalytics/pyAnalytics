@@ -8,9 +8,10 @@ msft = yf.Ticker("MSFT")
 
 # get stock info
 msft.info
-
+help(msft)
 # get historical market data
 hist = msft.history(period="max")
+hist
 
 # show actions (dividends, splits)
 msft.actions
@@ -26,10 +27,10 @@ msft.financials
 msft.quarterly_financials
 
 # show major holders
-stock.major_holders
+msft.major_holders
 
 # show institutional holders
-stock.institutional_holders
+msft.institutional_holders
 
 # show balance heet
 msft.balance_sheet
@@ -61,3 +62,6 @@ msft.options
 
 # get option chain for specific expiration
 opt = msft.option_chain('YYYY-MM-DD')
+
+
+#end here

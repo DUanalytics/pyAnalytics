@@ -14,7 +14,7 @@ df.quantile(q=.5) #default 50% Q2
 df.quantile([0,.25, .50, .75, 1.0]) #quartiles:Q1, Q2, Q3, Q4
 df.quantile(np.arange(0,1,.1))  #decile
 np.arange(0,100,5)
-df[['mpg','wt']].quantile(np.arange(0,1,.01))  #percentile
+df[['mpg','wt']].quantile(np.arange(0,1,.01))  #percentile at interval of 1 %
 df[['cyl','gear','am']]= df[['cyl','gear','am']].astype('category')
 df.quantile([.1,.5, .9], numeric_only=True, axis=0) #selected percentile
 df.mpg.quantile([0,.25, .50,.6, .75, 1.0]) #numpy single column 
@@ -25,7 +25,7 @@ df["wt"].plot.kde()
 
 
 #Box Plots columns
-fig = plt.figure(figsize=(10, 6))
+fig = plt.figure(figsize=(16, 8))
 plt.suptitle("Box Plots")
 plt.subplot(2, 2, 1) # matrix of 2 x 2 plots : first plot
 df["mpg"].plot.box() 

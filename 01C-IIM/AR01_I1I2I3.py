@@ -23,6 +23,7 @@ te_ary
 te.columns_
 df = pd.DataFrame(te_ary, columns=te.columns_)
 df
+transactions
 #this matrix of transactions : T/ F indicate their presence in each Trans ID
 df.shape
 #get back orginal transactions
@@ -30,7 +31,9 @@ orgtrans1 = te_ary[:]
 te.inverse_transform(orgtrans1)
 
 #%%% #frequent itemsets - Most Imp Step
-support_threshold = 0.01
+support_threshold = 0.01 #.01
+.1 * 100
+.1 * 9
 #https://github.com/rasbt/mlxtend/blob/master/mlxtend/frequent_patterns/apriori.py
 frequent_itemsets = apriori(df, min_support= support_threshold, use_colnames = True)
 frequent_itemsets
@@ -39,7 +42,7 @@ print(frequent_itemsets) #dataframe with the itemsets
 #%%%%  - Support Rules
 help(association_rules)
 #output - DF with antecedents -> consequent
-supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .1)
+supportRules3 = association_rules(frequent_itemsets, metric="support", min_threshold = .4)
 print(supportRules3)
 supportRules3.head()
 
@@ -92,7 +95,6 @@ frequent_itemsets['length'] = frequent_itemsets['itemsets'].apply(lambda x: len(
 frequent_itemsets
 frequent_itemsets[ (frequent_itemsets['length'] >= 1) & (frequent_itemsets[ 'support'] >= 0.3) ]
 frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets[ 'support'] >= 0.3) ]
-
 
 
 #%%% Links

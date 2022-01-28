@@ -1,4 +1,4 @@
-#Topic:Py All Models
+#Topic:Py All Models : last exercise for Workshop
 #-----------------------------
 #libraries
 import pandas as pd
@@ -97,11 +97,33 @@ y_pred
 # Model Accuracy, how often is the classifier correct?
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
-graph = Source(tree.export_graphviz(clf, out_file=None, class_names=['0', '1']  , filled = True))
-display(SVG(graph.pipe(format='svg')))
+#graph = Source(tree.export_graphviz(clf, out_file=None, class_names=['0', '1']  , filled = True))
+#display(SVG(graph.pipe(format='svg')))
 
 
-#%%% Clustering
+#%%% Clustering - 5
+df.columns
+df5
+df5 = df[['gear','hp','wt','mpg']]
+df5
 
-
+import pandas as pd
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import MinMaxScaler
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+df5.describe()
+df5.isna().sum()
+#df5.fillna(df5.mean(), inplace=True)
+df5.info()
+labelEncoder = LabelEncoder()
+df5
+labelEncoder.fit(df5['gear'])  #if gear was category column
+df5
+df5['gear'] = labelEncoder.transform(df5['gear'])
+df5.head()
+df5
 #%%% Time Series

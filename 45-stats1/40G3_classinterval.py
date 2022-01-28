@@ -66,3 +66,6 @@ def get_status(group):   return {'min': group.min(), 'max':group.max()}
 df.groupby(['mcat'])['hp'].apply(get_status).unstack()
 
 df
+
+#end here
+#%%%

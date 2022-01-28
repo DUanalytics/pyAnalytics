@@ -45,10 +45,10 @@ dates - dates[0]
 pd.date_range('1950-01-26','2022-01-26')
 pd.date_range('2022-01-01',periods=12)
 pd.date_range('2022-01-01',periods=12, freq='W') #12 weeks dates
-
-pd.date_range('2022-01-25',periods=12, freq='H')
+help(pd.date_range)
+pd.date_range('2022-01-25',periods=12, freq='6M')
 pd.date_range('2022-01-01',periods=6, freq='M')
-pd.date_range('2017-07-16',periods=6, freq='Q', Q='JAN')
+pd.date_range('2017-07-16',periods=6, freq='3M', Q='JAN')
 pd.date_range('2017-01-01',periods=4, freq='Q-JAN')
 pd.date_range('2017-01-01',periods=6, freq='Q-FEB')
 pd.date_range('2017-01-01',periods=6, freq='BQ-FEB')

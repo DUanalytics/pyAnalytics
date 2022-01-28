@@ -11,10 +11,10 @@ itemsets, rules = apriori(transactions =  teams, min_confidence=.6, min_support=
 rules
 print(rules)
 
-itemsets, rules = apriori(teams, min_support=0.25,  min_confidence=1)
+itemsets, rules = apriori(teams, min_support=0.25,  min_confidence=.6)
 # Print out every rule with 2 items on the left hand side,
 # 1 item on the right hand side, sorted by lift
-rules_rhs = filter(lambda rule: len(rule.lhs) == 2 and len(rule.rhs) == 1, rules)
+rules_rhs = filter(lambda rule: len(rule.lhs) == 1 and len(rule.rhs) >= 1, rules)
 teams
 # Prints the rule and its confidence, support, lift, ...
 for rule in sorted(rules_rhs, key=lambda rule: rule.lift): print(rule) 
