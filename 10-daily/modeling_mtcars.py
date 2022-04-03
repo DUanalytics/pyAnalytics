@@ -102,9 +102,13 @@ print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
 
 #%%% Clustering - 5
+mtcars = data('mtcars')
+mtcars.head()
+df = mtcars
+df.head()
 df.columns
 df5
-df5 = df[['gear','hp','wt','mpg']]
+df5 = df[['mpg','hp','wt','gear']]
 df5
 
 import pandas as pd
@@ -114,11 +118,39 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
 import seaborn as sns
 import matplotlib.pyplot as plt
+from kneed import KneeLocator
+
 %matplotlib inline
 df5.describe()
 df5.isna().sum()
 #df5.fillna(df5.mean(), inplace=True)
 df5.info()
+X = df5.values
+X
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(df5)
+kmeans.inertia_
+kmeans.cluster_centers_
+df5.head()
+kmeans.n_iter_
+kmeans.labels_
+
+#scaling data
+scaler = MinMaxScaler()
+
+df5_scaled = scaler.fit_transform(df5)
+df5_scaled
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(df5)
+kmeans.inertia_
+kmeans.cluster_centers_
+df5.head()
+kmeans.n_iter_
+kmeans.labels_
+
+
+
+#
 labelEncoder = LabelEncoder()
 df5
 labelEncoder.fit(df5['gear'])  #if gear was category column
@@ -126,4 +158,5 @@ df5
 df5['gear'] = labelEncoder.transform(df5['gear'])
 df5.head()
 df5
+
 #%%% Time Series
