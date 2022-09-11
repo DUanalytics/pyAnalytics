@@ -13,6 +13,20 @@ from pydataset import data
 mtcars = data('mtcars')
 mtcars
 type(mtcars)
+#%%% N8102
+##Define the dataset
+#PC1: define the format and structure for the dataset
+#PC2 : define indexes and organize variables as per the defined format
+#PC3: identify data types for each variable of the dataset
+##Apply and Optimise Model
+#PC4: identify and fix missing values in each variable of the dataset
+#PC5: identify and fix incorrect data types in each variable of the dataset
+#PC6: sort the data and create subsets of the data as required
+#PC7: perform operations to transform data types of variables as required
+#PC8: identify and deal with data redundancy by normalizing the dataset
+#PC9: validate preprocessed data using appropriate tools and processes
+
+
 #%%%PC1: define the format and structure for the dataset
 mtcars.describe()   #describe
 mtcars.shape  #rows and columns
