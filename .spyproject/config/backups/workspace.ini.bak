@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['01C-IIM\\TS02_dates2.py', '01C-IIM\\TS02_tsmodels.py', '01C-IIM\\TS04_basics.py', '01C-IIM\\PLT05_pie.py', '45-stats1\\40G2_stats_normal.py', '45-stats1\\40G3_classinterval.py', '45-stats1\\40G4_ttest1.py', '45-stats1\\40G5_quantiles.py', '45-stats1\\40G7_stats_mtcars.py', '10-daily\\modeling_mtcars.py', '01C-IIM\\TM01_tweets.py']
+recent_files = ['10-daily\\daily1.py']
 
 [main]
 version = 0.2.0
