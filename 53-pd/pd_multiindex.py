@@ -126,7 +126,4 @@ df.drop(index='Delhi',level=0,axis=0)
 df.drop(index=['Delhi','Chandigarh'],level=1,axis=0)  #no effect
 df.drop(index=['Delhi','Chandigarh'],level=0,axis=0)  #no data
 df.drop(index=['AIIT'],level=1,axis=0)  #no data
-
-
-
 df.drop(index=['AIIT'], axis=0)
