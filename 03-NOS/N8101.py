@@ -22,8 +22,14 @@ df3 = pd.read_csv(urlData, skiprows=1, nrows=10, names=['MPG','CYL','DISP'], use
 df3.head()
 
 #summary
+#!!!!PC1.	Identify the objective of the analysis
+#To apply statistical analysis and technologies on data to find trends and solve problems
+
 #PC2.	define the type of data to be imported
-#PC3.	define the volume of data to be imported
+# while importing data from csv, excel, web or other sources, user has to know the metadata of the data being imported. Then user can plan to select particular columns or data type of data
+
+##PC3.	define the volume of data to be imported
+# even the volume in terms of rows and columns can be df
 #PC4.	define the key variables to be imported
 #PC5.	identify suitable sources for the data
 #PC6.	perform operations to acquire the data and store it in datasets or data frames

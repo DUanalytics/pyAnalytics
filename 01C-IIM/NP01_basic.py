@@ -7,7 +7,7 @@ import seaborn as sns
 
 #scalar
 x0 = np.random.randint(10); x0
-x0.shape
+x0.shape   #no shape
 #1-Dim
 x1 = np.random.randint(10, size=6); x1
 x1.shape
