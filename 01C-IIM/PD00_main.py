@@ -13,12 +13,14 @@ mtcarsDF = mtcars
 mtcarsDF
 
 #%%describing
-mtcarsDF.shape
+mtcarsDF.shape  #row, col
 mtcarsDF.head(3)
 mtcarsDF.tail(4)
-mtcarsDF.describe
+mtcarsDF.describe()
+mtcarsDF.mpg.describe()
 mtcarsDF.columns
-mtcarsDF.dtypes
+mtcarsDF.dtypes  #float- decimals, int-discreete
+mtcarsDF.head(2)
 
 mtcarsDF.index  #here index by rownames
 type(mtcarsDF)
@@ -31,6 +33,8 @@ id(mtcarsDF)
 mtcars.empty
 mtcars.size
 mtcars.ndim
+mtcars.shape
+32*11
 mtcars.axes
 mtcars.values
 
@@ -39,17 +43,20 @@ mtcars.values
 #Series : s.loc[indexer]
 #DataFrame : df.loc[row_indexer,column_indexer]
 mtcarsDF[0:5]
+mtcarsDF[0:32:5]
+mtcarsDF.head(5)
 mtcarsDF.loc[:,'mpg']
 mtcarsDF.loc['Fiat 128','mpg']
+mtcars.axes
 mtcarsDF.loc['Fiat 128':,'wt':]
-
+mtcarsDF.loc[:'Fiat 128',:'wt']
 #single value: at
 mtcarsDF.at['Mazda RX4', 'mpg']
-mtcarsDF.at['Mazda RX4', 'mpg']
+
 
 #single values : iat : integer
 mtcarsDF.iat[0,0]
-mtcarsDF.iat[0,0:5]
+mtcarsDF.iat[0,0:5] #error
 
 #set of values : loc : label value
 #purely label based indexing. This is a strict inclusion based protocol. Every label asked for must be in the index, or a KeyError will be raised. When slicing, both the start bound AND the stop bound are included, if present in the index. Integers are valid labels, but they refer to the label and not the position.
@@ -67,9 +74,11 @@ mtcarsDF.loc['Merc 280', ['mpg', 'wt']]
 mtcarsDF.loc['Mazda RX4':'Datsun 710']  #difficult to implement
 
 #iloc uses index labels, iloc considers position in the index
-
-mtcarsDF.iloc[1:10, 1:5]
-mtcarsDF.iloc[1:10:2, 1:5:2]
+mtcars.axes
+#mtcarsDF.loc[1:7,[['mpg','wt']]
+mtcars.columns
+mtcarsDF.iloc[0:10, 0:5] #from 1 to 10 rows, from 1 to 5 col
+mtcarsDF.iloc[1:10:2, 1:5:2]## from 1 to 10 rows, select every alternate row, from 1 to 5 cols, select every alterante cols
 mtcarsDF.iloc[1::2, 1::2]
 mtcarsDF.iloc[0]
 mtcarsDF.iloc[1:5]

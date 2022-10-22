@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['03-NOS\\N8101.py', '03-NOS\\N8102.py', '01C-IIM\\DT00_main.py', '01C-IIM\\NP01_basic.py']
+recent_files = ['10-daily\\daily2.py', '10-daily\\daily1.py', '45-stats1\\40G6_skewkurtosis_mt.py', '01C-IIM\\PS01_status.py', '01C-IIM\\DT00_main.py', '01C-IIM\\PD00_main.py']
 
 [main]
 version = 0.2.0
