@@ -4,12 +4,12 @@
 # Load libraries
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeClassifier, export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn import metrics, tree
 from graphviz import Source
 from IPython.display import Image, SVG
-import pydotplus
 
 url='https://raw.githubusercontent.com/DUanalytics/datasets/master/csv/diabetes.csv'
 
@@ -74,6 +74,8 @@ tree.plot_tree(clf)
 tree.export_graphviz(clf, out_file='tree_limited.dot', feature_names=['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin','BMI', 'DiabetesPedigreeFunction', 'Age'] , class_names=['NoD','Diabetis'], filled=True, rounded=True)
 dot -Tpng tree_limited.dot -o tree_limited.png -Gdpi=600
 #install dot utility
+pip install pydot
+import pydot
 from graphviz import Digraph
 dot
 graph=pydotplus.graph_from_dot_data(out.getvalue())

@@ -123,3 +123,6 @@ from sklearn.cluster import AgglomerativeClustering
 #predicting the labels
 labels = agg_clustering.fit_predict(df)
 labels
+
+
+#end

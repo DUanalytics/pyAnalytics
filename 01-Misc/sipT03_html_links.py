@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-#
-#-----------------------------
+
 #%
 import webbrowser
 
 new=2
-url = 'http://learninganalytics.in'
+url = 'http://amity.edu'
 webbrowser.open(url, new=new)
 
 
