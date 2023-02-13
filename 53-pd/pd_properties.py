@@ -12,7 +12,7 @@ type(df)
 
 #properties of DF
 
-df.get_dtype_counts()
+#df.get_dtype_counts()
 df.select_dtypes(include='float64')
 df.select_dtypes(include='int64')
 df.select_dtypes(include='category')
@@ -22,7 +22,7 @@ df.filter(like='gear').head()
 
 df.rename(columns={'am':'Car_Tx', 'vs':'Car_EngineType'}, inplace=True)
 df.columns
-df.filter(regex='\d').head()  #not working
+df.filter(regex='\d')
 #columns that have number
 
 
