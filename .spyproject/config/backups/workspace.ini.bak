@@ -4,7 +4,7 @@ save_data_on_exit = True
 save_history = True
 save_non_project_files = False
 project_type = 'empty-project-type'
-recent_files = ['01C-IIM\\CT03_case.py', '01C-IIM\\AP001.py', '01C-IIM\\AR02_simpleCase.py', '01C-IIM\\AR03_main.py', '01C-IIM\\AR01_I1I2I3.py']
+recent_files = ['01C-IIM\\CT03_case.py', '01C-IIM\\LM00_main.py', '01C-IIM\\LM03_mtcars.py', '01C-IIM\\LM02_media.py']
 
 [main]
 version = 0.2.0
