@@ -30,7 +30,7 @@ import pandas
 pd.set_option("display.max_rows", 101)
 pd.get_option("display.max_rows")
 #passing in a substring will work - as long as it is unambiguous:
-pd.set_option("max_r", 102)
+pd.set_option("display.max_r", 102)
 pd.get_option("display.max_rows")
 
 
@@ -47,9 +47,9 @@ pd.get_option("display.max_rows")
 
 #Frequently Used Options
 df = pd.DataFrame(np.random.randn(7, 2))
-pd.set_option('max_rows', 7)
+pd.set_option('display.max_rows', 7)
 df
-pd.set_option('max_rows', 5)
+pd.set_option('display.max_rows', 5)
 df
 #see ... 
 
@@ -66,7 +66,7 @@ df
 #display.large_repr lets you select whether to display dataframes that exceed max_columns or max_rows as a truncated frame, or as a summary.
 df = pd.DataFrame(np.random.randn(10, 10))
 df
-pd.set_option('max_rows', 5)
+pd.set_option('display.max_rows', 5)
 df
 pd.set_option('large_repr', 'truncate')
 df
@@ -99,13 +99,14 @@ pd.reset_option('max_info_columns')
 
 
 #common options
-mport pandas as pd
+import pandas as pd
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
 df
 
-
 #reset
-pd.reset_option("^display")
+pd.reset_option("^display", silent=True)
+
+#end

@@ -11,7 +11,9 @@ mtcars.head()
 df = mtcars
 #%%  Numpy random
 msk = np.random.rand(len(df)) < 0.8
+#create random no and filter all values < .8
 msk
+len(msk)
 train = df[msk]
 test = df[~msk]
 train
@@ -39,8 +41,12 @@ len(X_test)
 
 #%% Kfold 
 from sklearn.model_selection import KFold
-kf = KFold(n_splits=10, random_state=0)
+
+kf = KFold(n_splits=10)
 y_hat_all = []
+df.columns
+X=df.drop(labels=['mpg'], axis=1)
+y=df.mpg
 for train_index, test_index in kf.split(X, y):
     reg = RandomForestRegressor(n_estimators=50, random_state=0)
     X_train, X_test = X[train_index], X[test_index]
@@ -49,10 +55,9 @@ for train_index, test_index in kf.split(X, y):
     y_hat = clf.predict(X_test)
     y_hat_all.append(y_hat)
 
-
-
 #%%Case 3a: Unbalanced datasets for classification purpose. Following the case 1, here is the equivalent solution:
-
+X
+y
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.3)
 

@@ -121,7 +121,7 @@ x.T  #transpose
 
 #empty matrix with shape of x 
 np.empty_like(x)
-
+?np.tile
 np.tile(x, (2,1))
 np.tile(x, (2,4))
 
