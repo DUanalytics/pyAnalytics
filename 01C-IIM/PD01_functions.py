@@ -3,6 +3,10 @@
 #libraries
 import numpy as np
 import pandas as pd
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.expand_frame_repr', False)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
 #pandas DF are combination of panda Series..
 #one column data is a Series of one datatype, DF can have multiple data types
 

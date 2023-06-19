@@ -114,14 +114,13 @@ mtcarsDF.skew(axis=0) #shift
 mtcarsDF.skew(axis=1)
 
 
-
 #%%filter
 #condition
 mtcarsDF['gear'] == 3  #T&F
 mtcars[mtcarsDF['gear'] == 3]  #rows with T for gear=3
 mtcars[mtcarsDF['gear'] != 3, ['gear','am']]
 mtcars[mtcarsDF['gear'] != 3, [['gear','am']]] #error
-mtcars[mtcarsDF['gear'] != 3.loc[['gear']]
+mtcars[mtcarsDF['gear'] != 3, ['gear']]  #TF
 #another way
 mtcarsDF[mtcarsDF.gear.eq(3)]  #chaining method
 mtcarsDF[mtcarsDF['gear'] == 3]
@@ -133,7 +132,6 @@ mtcarsDF.carb.unique()
 
 gears=[4,5]
 mtcarsDF[mtcarsDF.gear.isin(gears)]
-
 
 #rows NOT condition
 mtcarsDF[~ mtcarsDF.gear.isin(gears)] #cars of not gear(4,5)
@@ -149,8 +147,6 @@ mtcarsDF.query('gear==4')
 mtcarsDF.query('gear=="4"')
 mtcarsDF.query('gear==4 & am==0')
 mtcarsDF.query('gear in [3,7]')
-
-
 
 #%% summaries - group, sort
 mtcarsDF
@@ -172,8 +168,6 @@ mtcarsDF.describe()  # default only numeric
 mtcarsDF.sort_values(by='gear', axis=0)
 mtcarsDF.sort_values(by=['gear', 'mpg']).head(n=10)
 mtcarsDF.sort_values(by=['cyl','mpg'], ascending=[True, False]).head(n=20)
-
-
 
 
 #%%% groupby
@@ -206,7 +200,6 @@ mtcarsDF.groupby('gear').agg([np.mean, np.sum])  #all columns, np is faster, num
 mtcarsDF.groupby('gear')['mpg','wt'].agg([np.mean, np.sum, 'count'])
 mtcarsDF.groupby('gear')['mpg'].agg([np.mean, np.sum, 'count'])
 #.rename(columns={'meanMPG','sumMPG','countMPG'})
-
 
 mtcarsDF.groupby('gear').agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='mean'))
 mtcarsDF.groupby(['gear','am']).agg(meanMPG = pd.NamedAgg(column='mpg', aggfunc='max'))
@@ -270,11 +263,8 @@ mtcarsDF2 >> group_by(X.cyl, X.am) >> summarise(meanMPG = X.mpg.mean())
 
 mtcarsDF2 >> group_by(X.cyl, X.am) >> summarise(meanMPG = X.mpg.mean()) >> arrange(X.cyl, X.meanMPG)
 
-
-
-
 #%% graphs 
-
+%matplotlib inline
 #from pandas: some graphs may not come correct. This is just syntax demo
 mtcarsDF.plot(x='wt', y='mpg')
 mtcarsDF.plot.area(x='wt', y='mpg')
