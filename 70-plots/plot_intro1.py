@@ -14,6 +14,7 @@ df.head()
 df.columns
 df.dtypes
 df.shape
+df = df.sort_values(by='wt')
 #%%
 #plot([x], y, [fmt], *, data=None, **kwargs)
 #plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)
@@ -54,7 +55,7 @@ y1 = df.mpg.values
 x2 = df.wt.values
 y2 = df.hp.values
 plt.plot(x1, y1, 'g-', x2, y2, 'r-')
-plt.show()
+plt.show();
 #%%%  X & Y
 Y = df.mpg
 plt.plot(X,Y)

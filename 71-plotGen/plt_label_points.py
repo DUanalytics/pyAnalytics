@@ -17,3 +17,81 @@ plt.show()
 
 
 #------
+import pandas as pd
+from pydataset import data
+mtcars = data('mtcars')
+mtcars.head()
+plt.scatter(mtcars.wt, mtcars.mpg)
+#plt.annotate(text='figure pixels', xy =(mtcars.wt, mtcars.mpg), xytext=(.1, .1))
+plt.text(x=4, y=15,s='Hi')
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for k, v in mtcars[['wt','mpg']].iterrows():
+   ax.annotate(k, v)
+plt.text(x=4, y=15,s='Hi')
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars[['wt','mpg']].iterrows():
+   ax.annotate(index, row)
+plt.text(x=4, y=15,s='Hi')
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars[['wt','mpg']].iterrows():
+   ax.annotate(str(row['wt'])+ ',' + str(row['mpg']), row)
+plt.text(x=4, y=15,s='Hi')
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars[['wt','mpg']].iterrows():
+   ax.annotate(','.join([str(row['wt']),str(row['mpg']+2)]), row)
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars.iterrows():
+   ax.annotate(','.join([str(row['wt']),str(row['mpg']+2)]), row[['wt','mpg']])
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars.iterrows():
+   ax.annotate(text= ','.join([str(row['wt']),str(row['mpg']+2)]), xy= row[['wt','mpg']])
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars.iterrows():
+   ax.annotate(text= ','.join([str(row['wt']),str(row['mpg']+2)]), xy= row[['wt','mpg']], xycoords='data')
+plt.show();
+
+fig, ax = plt.subplots()
+plt.scatter(mtcars.wt, mtcars.mpg)
+for index, row in mtcars.iterrows():
+   ax.annotate(text= ','.join([str(row['wt']),str(row['mpg']+2)]), xy= row[['wt','mpg']], xycoords='data', textcoords = 'offset pixels')
+plt.show();
+
+for k, v in mtcars[['wt','mpg']].iterrows():   print(k, v)
+itr = next(mtcars.iterrows())[2]
+itr[0]  #index
+itr[1]   #data
+mtcars.head()
+
+
+for i in mtcars.iterrows(): print(i, sep='\t')
+
+for i, j in mtcars.T.items(): print(i)
+for i, j in mtcars.iterrows(): print(i)
+for i, j in mtcars.iterrows(): print(j)
+
+for i, j in mtcars.iterrows(): print(i,j)
+for row in mtcars.iterrows(): print(row)
+
+for index, row in mtcars.iterrows():
+  print(row['mpg'], row['wt'])

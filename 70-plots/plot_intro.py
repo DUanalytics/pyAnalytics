@@ -21,7 +21,7 @@ plt.style.available
 
 plt.style.use('fivethirtyeight')
 
-
+%matplotlib inline
 #subplots
 fig, ax = plt.subplots()
 
@@ -49,6 +49,7 @@ plt.title('Title-1')
 plt.subplot(1,2,2)# 1 row, 2 columns plot : Second plot
 plt.title('Title2')
 plt.bar(height=[10,20,15],x=['A','B','C'])
+fig.suptitle("Combined Graphs T1 & T2")
 plt.show();
 
 # 4 plots in 2 x 2 matrix
@@ -72,7 +73,8 @@ plt.show();
 import matplotlib.pyplot as plt
 x = range(10)
 y = range(10)
-dir(fig); dir(ax)
+dir(fig)
+dir(ax)
 #
 fig, ax = plt.subplots(nrows=2, ncols=2)
 for row in ax:
@@ -106,10 +108,10 @@ plt.show();
 data = [1, 2, 3, 4, 5]
 fig = plt.figure()
 fig.suptitle(".........Title for whole figure", fontsize=16)
-ax = plt.subplot("211")
+ax = plt.subplot(211)
 ax.set_title("1 Plot")
 ax.plot(data)
-ax = plt.subplot("212")
+ax = plt.subplot(212)
 ax.set_title("2 Plot")
 ax.plot(data)
 plt.show();
@@ -117,7 +119,7 @@ plt.show();
 #------------    
 #import matplotlib.pyplot as plt
 for i in range(4):    plt.subplot(2,2,i+1).set_title('Subplot n°{}' .format(i+1))
-plt.show()
+plt.show();
 
 #
 import matplotlib.pyplot as plt
@@ -130,7 +132,7 @@ for i in range(1,5):
     ax.imshow(data)
 
 fig.suptitle('Main title') # or plt.suptitle('Main title')
-plt.show()
+plt.show();
 
 #When using fig.tight_layout() the title must be shifted with fig.subplots_adjust(top=0.88)
 
@@ -163,7 +165,7 @@ plt.setp([a.get_yticklabels() for a in axarr[:, 1]], visible=False)
 fig.tight_layout()
 fig.subplots_adjust(top=0.7)
 
-plt.show()
+plt.show();
 
 #
 # The number of rows in the final figure # The number of columns in the final figure # Which axis (subplot) to use, counting from the one top-left axis
@@ -177,7 +179,7 @@ ax[0].set_title("Plot1")
 ax[0].plot(range(10), 'r')
 ax[1].set_title("Plot2")
 ax[1].plot(range(10), 'g')
-plt.show()
+plt.show();
 
 #
 #When the number of subplots is bigger, or the subplots must have different sizes, subplot2grid or gridspec can be used. Here is an example with subplor2grid:
@@ -186,15 +188,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 fig = plt.figure()
-
 ax1 = plt.subplot2grid((2,2), (0,0))
 ax2 = plt.subplot2grid((2,2), (1,0))
 ax3 = plt.subplot2grid((2,2), (0,1), rowspan=2)
 ax.plot(range(10), 'r', ax=ax1)
-
-
 #
-
 fig = plt.figure()
 ax1 = fig.add_subplot(211)
 ax2 = fig.add_subplot(212)
@@ -202,10 +200,7 @@ ax1.plot(range(10), 'r')
 ax2.plot(range(10), 'g')
 ax1.set_title('ax1 title')
 ax2.set_title('ax2 title')
-plt.show()
-
-
-
+plt.show();
 
 #Example PLot - function
 def example_plot(ax, fontsize=12):
@@ -259,7 +254,6 @@ fig = plt.figure(figsize=(5,4))
 
 ax = plt.subplot(111)
 im = ax.imshow(arr, interpolation="none")
-
 plt.tight_layout()
 #
 
