@@ -83,7 +83,10 @@ itr[0]  #index
 itr[1]   #data
 mtcars.head()
 
-
+plt.clear()
+plt.clf()
+plt.cla()
+plt.close('all') #imp
 for i in mtcars.iterrows(): print(i, sep='\t')
 
 for i, j in mtcars.T.items(): print(i)
