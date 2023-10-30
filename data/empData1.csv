@@ -1,0 +1,33 @@
+ser,empCode,eName,design,dept,cat,DOJ,DOL,sal,DOB,qual,expr,regdNo,regdVal,remarks,daysServed,monServed,age,exprYr
+1,29,Dr. Ashwini L. Bargaje,Clinical Assistant ,Medical ,RMO ,2020-04-12,2023-04-11,21000,1995-07-11,BHMS,2.0,75634,,,1094,36.0,28.0,2.0
+2,25,Mr. Pratap V.Khedkar ,Executive In HR ,HR,Admin ,2021-07-01,2022-06-30,25000,1979-11-14,Bachelor Of Arts ,1.0,,,,364,12.0,44.0,1.0
+3,27,Mr. Shivdatta P. Gholap,Radiology Technician ,Radiology ,Technician ,2021-07-01,2022-06-30,25000,1988-12-18,X-Raay Technician In Diploma ,6.0,,,,364,12.0,35.0,6.0
+4,30,Dr. Akshay W. Sonar,Clinical Assistant ,Medical ,RMO ,2021-07-27,2022-07-26,18000,1997-05-09,BHMS,4.0,1516138419,,,364,12.0,26.0,4.0
+5,23,Dr. Akshay M. Jadhav ,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,19000,1996-10-14,BAMS,1.0,77980,2021-02-24,,364,12.0,27.0,1.0
+6,23,Dr. Anuradha R. Deshmukh ,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,18600,1996-12-05,BHMS,3.0,74571,2026-02-14,,364,12.0,27.0,3.0
+7,25,Dr. Mahesh A. Mandora,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,65000,1987-09-21,BHMS,2.0,1028542012210070,,,364,12.0,36.0,2.0
+8,28,Dr. Nitin K. Mothe,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,18600,1983-05-25,BHMS,2.0,124110,,,364,12.0,40.0,2.0
+9,27,Dr. Pooja B.Kathore ,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,18600,1995-12-05,BHMS,2.0,49553,,,364,12.0,28.0,2.0
+10,24,Dr. Uzma Phopere ,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,18600,1988-12-04,BHMS,1.0,56396,,,364,12.0,35.0,1.0
+11,26,Dr. Varsha M. Pawar,Clinical Assistant ,Medical ,RMO ,2022-01-01,2022-12-31,15300,1996-06-13,BHMS,9.0,77821,,,364,12.0,27.0,0.75
+12,26,Mr. Bhushan Joshi ,Senior Accountant ,Accounts ,Manager ,2022-01-01,2023-12-31,45000,1986-06-25,M. COM,3.0,,,,729,24.0,37.0,3.0
+13,29,Ms. Zarin Ramani,Matron ,Nursing ,Matron ,2022-02-04,2023-02-03,40000,1957-02-10,GNM,20.0,I-21762,1982-03-30,,364,12.0,67.0,20.0
+14,28,Mr. Shrikrushna B. Kokate ,Biological Engineer ,Medical ,Bio Mediacal Admin ,2022-03-22,2023-03-21,24000,1995-05-12,Diploma in Electronics & Telecommunciation Engineering ,4.0,,,,364,12.0,28.0,4.0
+15,24,Mr. Sandeep Giri ,OT Technician ,CVTS Department ,Technician ,2022-04-05,2023-04-05,35000,1987-04-01,OT Technician ,15.0,,,,365,12.0,37.0,15.0
+16,30,Mr.Mohsin Y. Khan,Assistan Growth ,Growth Department ,Assistan ,2022-04-24,2023-04-26,22000,1986-06-03,B.SC,7.0,,,,367,12.0,37.0,7.0
+17,32,Mr. Balu M. Kamble,Assistan Growth,Growth Department ,Assistan ,2022-05-01,2023-04-30,20000,1984-01-07,B.A & M.A ( Sociology),4.0,,,,364,12.0,40.0,4.0
+18,31,Mr. Ganesh G. Gadhave,Assistan Growth ,Growth Department ,Assistan ,2022-05-01,2023-04-30,17000,1997-08-10,12th (HSC),2.0,,,,364,12.0,26.0,2.0
+19,33,Mr.Sunil M.Buchude,Assistan Growth,Growth Department ,Assistan ,2022-05-01,2023-04-30,15000,1995-02-05,B.E Tech,1.0,,,,364,12.0,29.0,1.0
+20,31,Dr.Kiran A. Burkul,Clinical Assistant ,Medical ,RMO ,2022-05-11,2023-05-10,16500,1995-10-02,BHMS,0.0,,,,364,12.0,28.0,
+21,42,Mr. Sandeep D. Sadaphal ,Billing ,Billing ,Executive Billing ,2022-06-01,2023-05-31,22000,1987-11-30,B. Com ,9.0,,,,364,12.0,36.0,9.0
+22,43,Mr. Vikas V. Bhalerao ,OT Technician ,CVTS Department ,Technician ,2022-06-01,2023-05-31,22000,1991-12-07,Agriculture Diploma & B.A,7.0,,,,364,12.0,32.0,7.0
+23,34,Ms. Anita R. Sasne ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,17500,1995-06-27,GNM ,2.0,XXVIII-54493,2022-03-30,,364,12.0,28.0,2.0
+24,38,Ms. Ashwani R. Thombare ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,16000,1998-03-16,ANM Nursing & GNM Nursing ,4.0,XI-15177,2022-03-30,,364,12.0,26.0,4.0
+25,37,Ms. Chhaya B. Savant,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,16000,1984-06-09,GNM,2.0,XXVIII-62511,2022-03-30,,364,12.0,39.0,2.0
+26,39,Mr. Gajanan B. Mundhe ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,16500,1996-05-02,R GNM,9.0,XLVI-4504,2027-03-30,,364,12.0,27.0,0.75
+27,40,Ms. Pradnya S. Khandare ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,15000,1996-10-02,ANM Nursing & GNM Nursing ,4.0,XXVIII-57664,2017-03-30,,364,12.0,27.0,4.0
+28,41,Ms. Ranjana R. Nair,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,16500,1984-02-22,BSC/ RGNM,4.0,,,,364,12.0,40.0,4.0
+29,36,Ms. Usha B. Jadhav ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,15000,1985-01-15,RANM Nursing. Diploma in GNM,4.0,17DN15807,,,364,12.0,39.0,4.0
+30,35,Ms.Vidya N. Jadhav ,Staff Nurse ,Nursing ,Nursing ,2022-06-01,2023-05-31,17500,1993-12-01,R GNM,4.0,XXVIII-67324,2019-12-06,,364,12.0,30.0,4.0
+31,21,Mr. Manoj Bhagwan Sarode ,Executive in Maintenace  ,Maintenace ,Manager ,2022-07-01,2023-06-30,16800,1982-03-16,Diploma in Auto Electrical & Electronic,7.0,,,,364,12.0,42.0,7.0
+32,22,Ms. Amrapali Ankush Tribhuvan ,Staff Nurse ,Nursing ,Nursing ,2022-08-01,2023-07-31,16000,1987-10-14,ANM Nursing & GNM Nursing ,10.0,XXVIII-68563,2027-03-30,,364,12.0,36.0,10.0
